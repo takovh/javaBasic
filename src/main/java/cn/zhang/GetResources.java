@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 
 
 /**
- * ¶ÁÈ¡ÅäÖÃÎÄ¼şÖĞµÄÖµ
+ * è¯»å–é…ç½®æ–‡ä»¶ä¸­çš„å€¼
  */
 public class GetResources {
 	
