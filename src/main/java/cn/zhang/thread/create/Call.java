@@ -7,38 +7,38 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
- * Ê¹ÓÃCallable´´½¨Ïß³Ì
+ * ä½¿ç”¨Callableåˆ›å»ºçº¿ç¨‹
  * Executors.newFixedThreadPool(nThreads)
  * @author tako_
  *
  */
 public class Call {
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
-		//´´½¨Ïß³Ì
+		//åˆ›å»ºçº¿ç¨‹
 		ExecutorService ser = Executors.newFixedThreadPool(2);
-		Race tortoise = new Race("ÎÚ¹ê",1000);
-		Race rabbit = new Race("ÍÃ×Ó",500);
-		//»ñÈ¡Öµ
+		Race tortoise = new Race("ä¹Œé¾Ÿ",1000);
+		Race rabbit = new Race("å…”å­",500);
+		//è·å–å€¼
 		Future<Integer> result1 = ser.submit(tortoise);
 		Future<Integer> result2 = ser.submit(rabbit);
 		
-		Thread.sleep(5000);//5Ãë
-		tortoise.setFlag(false);//Í£Ö¹Ïß³ÌÌåÑ­»·
-		rabbit.setFlag(false);//Í£Ö¹Ïß³ÌÌåÑ­»·
+		Thread.sleep(5000);//5ç§’
+		tortoise.setFlag(false);//åœæ­¢çº¿ç¨‹ä½“å¾ªç¯
+		rabbit.setFlag(false);//åœæ­¢çº¿ç¨‹ä½“å¾ªç¯
 		
 		int num1 = result1.get();
 		int num2 = result2.get();
-		System.out.println("ÎÚ¹êÅÜÁË-->" + num1 + "²½");
-		System.out.println("ÍÃ×ÓÅÜÁË-->" + num2 + "²½");
-		//Í£Ö¹·şÎñ
+		System.out.println("ä¹Œé¾Ÿè·‘äº†-->" + num1 + "æ­¥");
+		System.out.println("å…”å­è·‘äº†-->" + num2 + "æ­¥");
+		//åœæ­¢æœåŠ¡
 		ser.shutdownNow();
 	}
 }
 
 class Race implements Callable<Integer>{
-	private String name;//Ãû³Æ
-	private long time;//ÑÓÊ±
-	private int step = 0;//²½
+	private String name;//åç§°
+	private long time;//å»¶æ—¶
+	private int step = 0;//æ­¥
 	private boolean flag = true;
 	public Race() {}
 	public Race(String name) {
@@ -53,7 +53,7 @@ class Race implements Callable<Integer>{
 	@Override
 	public Integer call() throws Exception {
 		while(flag) {
-			Thread.sleep(time);//ÑÓÊ±
+			Thread.sleep(time);//å»¶æ—¶
 			step++;
 		}
 		return step;

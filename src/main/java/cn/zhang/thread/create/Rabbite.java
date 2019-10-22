@@ -1,18 +1,18 @@
 package cn.zhang.thread.create;
 
 /**
- * Ä£Äâ¹êÍÃÈüÅÜ
- * 1.´´½¨¶àÏß³Ì ¼Ì³ĞTread + ÖØĞ´run(Ïß³ÌÌå)
- * 2.Ê¹ÓÃÏß³Ì£º´´½¨×ÓÀà¶ÔÏó + ¶ÔÏó.start()Ïß³ÌÆô¶¯
+ * æ¨¡æ‹Ÿé¾Ÿå…”èµ›è·‘
+ * 1.åˆ›å»ºå¤šçº¿ç¨‹ ç»§æ‰¿Tread + é‡å†™run(çº¿ç¨‹ä½“)
+ * 2.ä½¿ç”¨çº¿ç¨‹ï¼šåˆ›å»ºå­ç±»å¯¹è±¡ + å¯¹è±¡.start()çº¿ç¨‹å¯åŠ¨
  * @author tako_
  *
  */
 public class Rabbite extends Thread {
 	@Override
 	public void run() {
-		//Ïß³ÌÌå
+		//çº¿ç¨‹ä½“
 		for(int i=0;i<100;i++) {
-			System.out.println("ÍÃ×ÓÅÜÁË" + i + "²½");
+			System.out.println("å…”å­è·‘äº†" + i + "æ­¥");
 		}
 	}
 
@@ -20,9 +20,9 @@ public class Rabbite extends Thread {
 class Tortoise extends Thread {
 	@Override
 	public void run() {
-		//Ïß³ÌÌå
+		//çº¿ç¨‹ä½“
 		for(int i=0;i<100;i++) {
-			System.out.println("ÎÚ¹êÅÜÁË" + i + "²½");
+			System.out.println("ä¹Œé¾Ÿè·‘äº†" + i + "æ­¥");
 		}
 	}
 

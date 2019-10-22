@@ -10,17 +10,17 @@ public class Web12306 implements Runnable {
 			if(num<=0) {
 				break;
 			}
-			System.out.println(Thread.currentThread().getName() + "ÇÀµ½ÁË" + num--);
+			System.out.println(Thread.currentThread().getName() + "æŠ¢åˆ°äº†" + num--);
 		}
 	}
 	public static void main(String[] args) {
 		
-		//ÕæÊµ½ÇÉ«
+		//çœŸå®žè§’è‰²
 		Web12306 web = new Web12306();
-		//´úÀí
-		Thread t1 = new Thread(web, "Â·ÈË¼×");
-		Thread t2 = new Thread(web, "Â·ÈËÒÒ");
-		Thread t3 = new Thread(web, "Â·ÈË±û");
+		//ä»£ç†
+		Thread t1 = new Thread(web, "è·¯äººç”²");
+		Thread t2 = new Thread(web, "è·¯äººä¹™");
+		Thread t3 = new Thread(web, "è·¯äººä¸™");
 		t1.start();
 		t2.start();
 		t3.start();
