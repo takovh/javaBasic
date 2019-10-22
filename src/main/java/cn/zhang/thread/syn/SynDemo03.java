@@ -1,7 +1,7 @@
 package cn.zhang.thread.syn;
 
 /**
- * Í¬Ò»·İ×ÊÔ´±»¶à¸öÏß³ÌsynchronizeÊ¹ÓÃÈİÒ×Ôì³ÉËÀËø
+ * åŒä¸€ä»½èµ„æºè¢«å¤šä¸ªçº¿ç¨‹synchronizeä½¿ç”¨å®¹æ˜“é€ æˆæ­»é”
  * @author tako_
  *
  */
@@ -18,7 +18,7 @@ public class SynDemo03 {
 	}
 }
 
-//½»Ç®
+//äº¤é’±
 class Test01 implements Runnable {
 	Object goods;
 	Object money;	
@@ -45,11 +45,11 @@ class Test01 implements Runnable {
 				
 			}	
 		}
-		System.out.println("Ò»ÊÖ½»Ç®");
+		System.out.println("ä¸€æ‰‹äº¤é’±");
 	}
 }
 
-//½»»õ
+//äº¤è´§
 class Test02 implements Runnable{
 	Object goods;
 	Object money;	
@@ -76,6 +76,6 @@ class Test02 implements Runnable{
 				
 			}	
 		}
-		System.out.println("Ò»ÊÖ½»»õ");
+		System.out.println("ä¸€æ‰‹äº¤è´§");
 	}
 }

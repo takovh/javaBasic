@@ -1,7 +1,7 @@
 package cn.zhang.thread.syn;
 
 /**
- * �������ģʽ��ȷ��һ����ֻ��һ������
+ * 单例设计模式：确保一个类只有一个对象
  * 
  * @author tako_
  *
@@ -13,19 +13,19 @@ public class SynDemo02 {
 }
 
 /**
- * �������ģʽ
- * ȷ��һ����ֻ��һ������
- * ����ʽ
- * 1.������˽�л��������ⲿֱ�Ӵ�������
- * 2.����һ��˽�еľ�̬����
- * 3.����һ������Ĺ����ľ�̬�������ʸñ������������û�ж��󣬴����ö���
+ * 单例设计模式
+ * 确保一个类只有一个对象
+ * 懒汉式
+ * 1.构造器私有化，避免外部直接创建对象
+ * 2.声明一个私有的静态变量
+ * 3.创建一个对外的公共的静态方法访问该变量，如果变量没有对象，创建该对象
  * @author tako_
  *
  */
 class Jvm{
-	//����һ��˽�еľ�̬����
+	//声明一个私有的静态变量
 	private static  Jvm instance = null;
-	//������˽�л��������ⲿֱ�Ӵ�������
+	//构造器私有化，避免外部直接创建对象
 	private Jvm() {	}
 	public static Jvm getInstance() {
 		if(null==instance) {

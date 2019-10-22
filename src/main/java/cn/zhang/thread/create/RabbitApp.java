@@ -7,10 +7,10 @@ package cn.zhang.thread.create;
  */
 public class RabbitApp {
 	public static void main(String[] args) {
-		//1.创建子类对象
+		//1.鍒涘缓瀛愮被瀵硅薄
 		Rabbite rbt = new Rabbite();
 		Tortoise tts = new Tortoise();
-		//2.调用start方法
+		//2.璋冪敤start鏂规硶
 		rbt.start();
 		tts.start();
 	}

@@ -5,7 +5,7 @@ public class StopDemo01 {
 		Study s = new Study();
 		new Thread(s).start();
 		
-		//Íâ²¿¸ÉÉæ
+		//å¤–éƒ¨å¹²æ¶‰
 		for(int i=0;i<100;i++) {
 			if(50==i) s.stop();
 			System.out.println("main..." + i);
@@ -14,16 +14,16 @@ public class StopDemo01 {
 }
 
 class Study implements Runnable{
-	//1£©Ïß³ÌÀàÖÐ¶¨ÒåÏß³ÌÌåÊ¹ÓÃµÄ±êÊ¶
+	//1ï¼‰çº¿ç¨‹ç±»ä¸­å®šä¹‰çº¿ç¨‹ä½“ä½¿ç”¨çš„æ ‡è¯†
 	private boolean flag = true;
 	@Override
 	public void run() {
-		//2)Ïß³ÌÌåÊ¹ÓÃ¸Ã±êÊ¶
+		//2)çº¿ç¨‹ä½“ä½¿ç”¨è¯¥æ ‡è¯†
 		while(flag) {
 			System.out.println("study thread ...");		
 		}
 	}
-	//3)¶ÔÍâÌá¹©·½·¨¸Ä±ä±êÊ¶
+	//3)å¯¹å¤–æä¾›æ–¹æ³•æ”¹å˜æ ‡è¯†
 	public void stop() {
 		this.flag = false;
 	}

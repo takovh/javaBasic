@@ -1,39 +1,39 @@
 package cn.zhang.thread.create;
 
 /**
- * ¾²Ì¬´úÀíÉè¼ÆÄ£Ê½
- * 1.ÕæÊµ½ÇÉ«
- * 2.´úÀí½ÇÉ«
- * 3.¶şÕßÊµÏÖÏàÍ¬µÄ½Ó¿Ú
+ * é™æ€ä»£ç†è®¾è®¡æ¨¡å¼
+ * 1.çœŸå®è§’è‰²
+ * 2.ä»£ç†è§’è‰²
+ * 3.äºŒè€…å®ç°ç›¸åŒçš„æ¥å£
  * @author tako_
  *
  */
 public class StaticProxy {
 	public static void main(String[] args) {
-		//´´½¨ÕæÊµ½ÇÉ«
+		//åˆ›å»ºçœŸå®è§’è‰²
 		You you = new You();
-		//´´½¨´úÀí½ÇÉ« + ÕæÊµ½ÇÉ«µÄÒıÓÃ
+		//åˆ›å»ºä»£ç†è§’è‰² + çœŸå®è§’è‰²çš„å¼•ç”¨
 		WeddingCompany wc = new WeddingCompany(you);
-		//Ö´ĞĞÈÎÎñ
+		//æ‰§è¡Œä»»åŠ¡
 		wc.marry();
 	}
 	
 }
 
-//¹²Í¬µÄ½Ó¿Ú
+//å…±åŒçš„æ¥å£
 interface Marry{
 	public abstract void marry();
 }
 
-//ÕæÊµ½ÇÉ«
+//çœŸå®è§’è‰²
 class You implements Marry{
 	@Override
 	public void marry() {
-		System.out.println("ÕÅìÏºÍÖÜ¼Ò»Û½á»éÁË£¡");
+		System.out.println("å¼ ç…œå’Œå‘¨å®¶æ…§ç»“å©šäº†ï¼");
 	}
 }
 
-//´úÀí½ÇÉ«
+//ä»£ç†è§’è‰²
 class WeddingCompany implements Marry{
 	private Marry you;
 	public WeddingCompany() {}
@@ -41,10 +41,10 @@ class WeddingCompany implements Marry{
 		this.you = you;
 	}
 	private void before() {
-		System.out.println("²¼ÖÃĞÂ·¿...");
+		System.out.println("å¸ƒç½®æ–°æˆ¿...");
 	}
 	private void after() {
-		System.out.println("ÄÖ¶´·¿...");
+		System.out.println("é—¹æ´æˆ¿...");
 	}
 	@Override
 	public void marry() {

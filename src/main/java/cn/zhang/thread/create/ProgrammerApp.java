@@ -9,13 +9,13 @@ public class ProgrammerApp {
 	
 	public static void main(String[] args) {
 		
-		//1£©´´½¨ÕæÊµ½ÇÉ«
+		//1ï¼‰åˆ›å»ºçœŸå®è§’è‰²
 		Programmer pgm = new Programmer();
-		// 2£©´´½¨´úÀí½ÇÉ« + ÕæÊµ½ÇÉ«ÒıÓÃ
+		// 2ï¼‰åˆ›å»ºä»£ç†è§’è‰² + çœŸå®è§’è‰²å¼•ç”¨
 		Thread proxy = new Thread(pgm);
-		//	3£©µ÷ÓÃ.start()Æô¶¯Ïß³Ì
+		//	3ï¼‰è°ƒç”¨.start()å¯åŠ¨çº¿ç¨‹
 		proxy.start();
 		
-		for(int i=0;i<100;i++) System.out.println("ÁÄQQÖĞ¡£¡£¡£");
+		for(int i=0;i<100;i++) System.out.println("èŠQQä¸­ã€‚ã€‚ã€‚");
 	}
 }
