@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * ²âÊÔMapµÄ»ù±¾ÓÃ·¨
- * @author ÕÅìÏ
+ * æµ‹è¯•Mapçš„åŸºæœ¬ç”¨æ³•
+ * @author å¼ ç…œ
  *
  */
 public class TestMap {

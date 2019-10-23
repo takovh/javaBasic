@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- *Ò»¸öMap¶ÔÓ¦Ò»ĞĞ¼ÇÂ¼
- * @author ÕÅìÏ
+ *ä¸€ä¸ªMapå¯¹åº”ä¸€è¡Œè®°å½•
+ * @author å¼ ç…œ
  *
  */
 public class EmployeeTestMap {
@@ -15,9 +15,9 @@ public class EmployeeTestMap {
 	public static void main(String[] args) {
 		Map map = new HashMap();
 		map.put("id", 0301);
-		map.put("name", "¸ßç÷");
+		map.put("name", "é«˜çª");
 		map.put("salary", 3000);
-		map.put("department", "ÏîÄ¿²¿");
+		map.put("department", "é¡¹ç›®éƒ¨");
 		map.put("hireDate", "2010-10");
 		
 		List<Map> list = new ArrayList<Map>();

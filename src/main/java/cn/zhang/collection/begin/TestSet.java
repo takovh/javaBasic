@@ -4,8 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 测试Set常用方法
- * @author 张煜
+ * 娴嬭瘯Set甯哥敤鏂规硶
+ * @author 寮犵厹
  *
  */
 public class TestSet {

@@ -6,8 +6,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * javabean,ÊµÌåÀà
- * @author ÕÅìÏ
+ * javabean,å®ä½“ç±»
+ * @author å¼ ç…œ
  *
  */
 public class Employee {
@@ -27,7 +27,6 @@ public class Employee {
 		try {
 			this.hireDate = format.parse(hireDate);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -10,7 +10,7 @@ class Dog{
 
 public class TestList {
 	/**
-	 * Ã»¼Ó·ºÐÍ»áÓÐ»ÆÉ«¾¯¸æ
+	 * æ²¡åŠ æ³›åž‹ä¼šæœ‰é»„è‰²è­¦å‘Š
 	 * @param args
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -19,7 +19,7 @@ public class TestList {
 		list.add("aaa");
 		list.add(new Date());
 		list.add(new Dog());
-		list.add(1234);//°ü×°Àà×Ô¶¯×°Ïä
+		list.add(1234);//åŒ…è£…ç±»è‡ªåŠ¨è£…ç®±
 		List list2 = new ArrayList();
 		list2.add("bbb");
 		list2.add("ccc");

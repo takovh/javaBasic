@@ -18,7 +18,7 @@ public class MyArrayList /*implements List*/ {
 	}
 
 	public void add(Object obj) {
-		//Êý×éÀ©ÈÝ
+		//æ•°ç»„æ‰©å®¹
 		if(size>elementData.length) {
 			Object newArray[] = new Object[size*2+1];
 			System.arraycopy(elementData, 0, newArray, 0, elementData.length);

@@ -5,18 +5,18 @@ import java.util.List;
 
 /**
  * javabean
- * Ò»¸ö¶ÔÏó´ú±íÒ»ĞĞ¼ÇÂ¼
- * @author ÕÅìÏ
+ * ä¸€ä¸ªå¯¹è±¡ä»£è¡¨ä¸€è¡Œè®°å½•
+ * @author å¼ ç…œ
  *
  */
 public class EmployeeTest {
 	public static void main(String[] args) {
-		Employee e = new Employee(0301, "¸ßç÷", 3000, "ÏîÄ¿²¿", "2010-10");
-		Employee e1 = new Employee(0302, "ÂíÊ¿±ø", 3500, "½ÌÑ§²¿", "2010-10");
-		Employee e2 = new Employee(0302, "ÅáĞÂ", 3500, "½ÌÑ§²¿", "2010-10");
+		Employee e = new Employee(0301, "é«˜çª", 3000, "é¡¹ç›®éƒ¨", "2010-10");
+		Employee e1 = new Employee(0302, "é©¬å£«å…µ", 3500, "æ•™å­¦éƒ¨", "2010-10");
+		Employee e2 = new Employee(0302, "è£´æ–°", 3500, "æ•™å­¦éƒ¨", "2010-10");
 		
 		/**
-		 * List<>±íÊ¾·ºĞÍ
+		 * List<>è¡¨ç¤ºæ³›å‹
 		 */
 		List<Employee> list = new ArrayList<Employee>();
 		list.add(e);
