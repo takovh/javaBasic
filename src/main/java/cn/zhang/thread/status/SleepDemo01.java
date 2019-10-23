@@ -4,8 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * µ¹¼ÆÊ±
- * 1.µ¹Êı10¸öÊı£¬Ò»Ãë´òÓ¡Ò»¸ö
+ * å€’è®¡æ—¶
+ * 1.å€’æ•°10ä¸ªæ•°ï¼Œä¸€ç§’æ‰“å°ä¸€ä¸ª
  * 2.
  * @author tako_
  *
@@ -23,12 +23,12 @@ public class SleepDemo01 {
 		}
 	}
 	
-	//µ¹¼ÆÊ±10¸öÊı
+	//å€’è®¡æ—¶10ä¸ªæ•°
 	public static void test01() throws InterruptedException {
 		int num = 10;
 		for( ;num>0;num--) {
 			System.out.println(num);
-			Thread.sleep(1000);//ÔİÍ£
+			Thread.sleep(1000);//æš‚åœ
 		}
 	}
 }

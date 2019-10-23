@@ -2,12 +2,12 @@ package cn.zhang.thread.syn;
 
 public class SynDemo01 {
 	public static void main(String[] args) {
-		//ÕæÊµ½ÇÉ«
+		//çœŸå®è§’è‰²
 		Web12306 web = new Web12306();
-		//´úÀí
-		Thread t1 = new Thread(web, "Â·ÈË¼×");
-		Thread t2 = new Thread(web, "»ÆÅ£1");
-		Thread t3 = new Thread(web, "»ÆÅ£2");
+		//ä»£ç†
+		Thread t1 = new Thread(web, "è·¯äººç”²");
+		Thread t2 = new Thread(web, "é»„ç‰›1");
+		Thread t3 = new Thread(web, "é»„ç‰›2");
 		
 		t1.start();
 		t2.start();
@@ -22,13 +22,13 @@ class Web12306 implements Runnable {
 	public void run() {
 		// TODO Auto-generated method stub
 		while(flag) {
-			//test01();//²»°²È«
-			test02();//°²È«
-			//test03();//°²È«
+			//test01();//ä¸å®‰å…¨
+			test02();//å®‰å…¨
+			//test03();//å®‰å…¨
 		}
 	}
 	
-	//Ïß³Ì²»°²È«µÄ
+	//çº¿ç¨‹ä¸å®‰å…¨çš„
 	public void test01() {
 		if(num<=0) {
 			flag = false;
@@ -39,10 +39,10 @@ class Web12306 implements Runnable {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println(Thread.currentThread().getName() + "ÇÀµ½ÁË£¬ÓàÆ±" + --num);
+			System.out.println(Thread.currentThread().getName() + "æŠ¢åˆ°äº†ï¼Œä½™ç¥¨" + --num);
 		}		
 	}
-	//Ïß³Ì°²È«µÄ
+	//çº¿ç¨‹å®‰å…¨çš„
 	public synchronized void test02() {
 		if(num<=0) {
 			flag = false;
@@ -53,11 +53,11 @@ class Web12306 implements Runnable {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println(Thread.currentThread().getName() + "ÇÀµ½ÁË£¬ÓàÆ±" + --num);
+			System.out.println(Thread.currentThread().getName() + "æŠ¢åˆ°äº†ï¼Œä½™ç¥¨" + --num);
 		}
 	}
 	
-	//Ïß³Ì°²È«µÄ
+	//çº¿ç¨‹å®‰å…¨çš„
 	public synchronized void test03() {
 		synchronized(this) {
 			if(num<=0) {
@@ -69,7 +69,7 @@ class Web12306 implements Runnable {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				System.out.println(Thread.currentThread().getName() + "ÇÀµ½ÁË£¬ÓàÆ±" + --num);
+				System.out.println(Thread.currentThread().getName() + "æŠ¢åˆ°äº†ï¼Œä½™ç¥¨" + --num);
 			}
 		}	
 	}

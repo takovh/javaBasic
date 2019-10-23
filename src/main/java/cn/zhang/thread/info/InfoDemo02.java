@@ -1,7 +1,7 @@
 package cn.zhang.thread.info;
 
 /**
- * ÓÅÏÈ¼¶(´ú±í¸ÅÂÊ¶ø²»ÊÇÏÈºó)
+ * ä¼˜å…ˆçº§(ä»£è¡¨æ¦‚ç‡è€Œä¸æ˜¯å…ˆå)
  * MAX_PRIORITY 10
  * NORM_PRIORITY 5
  * MIN_PRIORITY 1
@@ -14,9 +14,9 @@ package cn.zhang.thread.info;
 public class InfoDemo02 {
 	public static void main(String[] args) throws InterruptedException {
 		MyThread it1 = new MyThread();
-		Thread p1 = new Thread(it1,"°¤Ìß1");
+		Thread p1 = new Thread(it1,"æŒ¨è¸¢1");
 		MyThread it2 = new MyThread();
-		Thread p2 = new Thread(it2,"°¤Ìß2");
+		Thread p2 = new Thread(it2,"æŒ¨è¸¢2");
 		
 		p1.setPriority(Thread.MIN_PRIORITY);
 		p2.setPriority(Thread.MAX_PRIORITY);

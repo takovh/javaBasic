@@ -1,11 +1,11 @@
 package cn.zhang.thread.syn;
 
 /**
- * ���������ķ�ʽ
- * 1.����ʽ
- * 1).������˽�л��������ⲿֱ�Ӵ�������
- * 2).����һ��˽�еľ�̬����
- * 3).����һ������Ĺ����ľ�̬�������ʸñ������������û�ж��󣬴����ö���
+ * 单例创建的方式
+ * 1.懒汉式
+ * 1).构造器私有化，避免外部直接创建对象
+ * 2).声明一个私有的静态变量
+ * 3).创建一个对外的公共的静态方法访问该变量，如果变量没有对象，创建该对象
  * @author tako_
  *
  */
@@ -13,9 +13,9 @@ public class MyJvm {
 	private static MyJvm instance = null;
 	private MyJvm() {}
 	public static MyJvm getInstance() {
-		if(null==instance) {//��һ�μ�飺���Ч��
+		if(null==instance) {//第一次检查：提高效率
 			synchronized(MyJvm.class) {
-				if(null==instance) {//�ڶ��μ�飺��ȫ
+				if(null==instance) {//第二次检查：安全
 					instance = new MyJvm();
 				}
 			}
@@ -25,10 +25,10 @@ public class MyJvm {
 }
 
 /**
- * ����ʽ
- * 1).������˽�л�
- * 2).����һ��˽�еľ�̬���ԣ�ͬʱ�����ö���
- * 3).�����ṩ�������Եľ�̬����
+ * 饿汉式
+ * 1).构造器私有化
+ * 2).声明一个私有的静态属性，同时创建该对象
+ * 3).对外提供访问属性的静态方法
  * @author tako_
  *
  */
@@ -41,8 +41,8 @@ class MyJvm2 {
 }
 
 /**
- * ����ʹ�õ�ʱ����أ��ӻ��˼���ʱ��
- * ��Ϊ����һ��ʼ�ͻ��ʼ���������ڼ���ʱ��ʼ��
+ * 类在使用的时候加载，延缓了加载时间
+ * 因为属性一开始就会初始化，方法在加载时初始化
  * @author tako_
  *
  */

@@ -13,10 +13,9 @@ public class TestReadFile {
 			char c2 = (char)reader.read();
 			System.out.println(""+c1+c2);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+			System.err.println("系统找不到指定的文件");
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			try {
@@ -24,7 +23,6 @@ public class TestReadFile {
 					reader.close();
 				}
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
