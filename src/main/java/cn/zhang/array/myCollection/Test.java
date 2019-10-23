@@ -1,7 +1,7 @@
 package cn.zhang.array.myCollection;
 /**
- * Ä£ÄâÊµÏÖJDKÖĞÌá¹©µÄArrayListÀà
- * @author ÕÅìÏ
+ * æ¨¡æ‹Ÿå®ç°JDKä¸­æä¾›çš„ArrayListç±»
+ * @author å¼ ç…œ
  *
  */
 public class Test {
