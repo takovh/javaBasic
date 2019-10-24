@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * extends£º·ºĞÍµÄÉÏÏŞ<= ¼´×ÓÀà»ò×ÔÉí
- * 1.Ò»°ãÓÃÓÚÏŞÖÆ²Ù×÷
- * 2. ²»ÄÜÊ¹ÓÃÔÚÌí¼ÓÊı¾İÉÏ£¬Ò»°ã¶¼ÊÇ¶ÁÈ¡²Ù×÷
- * 3.¹æÔò£º
+ * extendsï¼šæ³›å‹çš„ä¸Šé™<= å³å­ç±»æˆ–è‡ªèº«
+ * 1.ä¸€èˆ¬ç”¨äºé™åˆ¶æ“ä½œ
+ * 2. ä¸èƒ½ä½¿ç”¨åœ¨æ·»åŠ æ•°æ®ä¸Šï¼Œä¸€èˆ¬éƒ½æ˜¯è¯»å–æ“ä½œ
+ * 3.è§„åˆ™ï¼š
  * 	List<Fruit> -->List<? extends Fruit>
  *  List<Apple> -->List<? extends Fruit>
  *  List<? extends Apple> -->List<? extends Fruit>
- *  ²»ÄÜ´æ·Å£º
+ *  ä¸èƒ½å­˜æ”¾ï¼š
  *  List<?>
  *  List<? extends Object>
  * 
@@ -23,12 +23,12 @@ public class ExtendsTest {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
-		//extendsÎªÉÏÏŞ
+		//extendsä¸ºä¸Šé™
 		Test<Fruit> t1 = new Test<Fruit>();
 		Test<Apple> t2 = new Test<Apple>();
 		Test<Pear> t3 = new Test<Pear>();
 		
-		//µ÷ÓÃ·½·¨
+		//è°ƒç”¨æ–¹æ³•
 		List<? extends Fruit> list1 = new ArrayList<Fruit>();
 		test(list1);
 		List<Fruit> list2 = new ArrayList<Fruit>();
@@ -38,7 +38,7 @@ public class ExtendsTest {
 		//? extends Apple
 		List<? extends Apple> list4 = new ArrayList<FujiApple>();
 		test(list4);
-		//?ÎªÊ²Ã´²»ĞĞ£¿ÒòÎª<?>µÈÍ¬ÓÚ<? extends Object>
+		//?ä¸ºä»€ä¹ˆä¸è¡Œï¼Ÿå› ä¸º<?>ç­‰åŒäº<? extends Object>
 		List<?> list5 = new ArrayList<Fruit>();
 		List<? extends Object> list6 = new ArrayList<Fruit>();
 		//test(list5);
@@ -53,7 +53,7 @@ public class ExtendsTest {
 		
 		list.addAll(null);
 	}
-	//·ºĞÍÀà
+	//æ³›å‹ç±»
 	static class Test<T extends Fruit>{
 		
 	}

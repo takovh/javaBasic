@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ·ºĞÍµÄÈëÃÅ
- * 1.·ºĞÍ£º±êÇ©¡¢·º»¯ÀàĞÍ
- * 2.×÷ÓÃ£ºÊ¡ĞÄ¡¢°²È«£¨°²È«¼ì²é£©
- * @author ÕÅìÏ
+ * æ³›å‹çš„å…¥é—¨
+ * 1.æ³›å‹ï¼šæ ‡ç­¾ã€æ³›åŒ–ç±»å‹
+ * 2.ä½œç”¨ï¼šçœå¿ƒã€å®‰å…¨ï¼ˆå®‰å…¨æ£€æŸ¥ï¼‰
+ * @author å¼ ç…œ
  *
  */
 public class Simple {
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<String>();
-		//°²È«
-		//list.add(1);//ÀàĞÍ¼ì²é
+		//å®‰å…¨
+		//list.add(1);//ç±»å‹æ£€æŸ¥
 		list.add("so easy!");
-		//Ê¡ĞÄ
+		//çœå¿ƒ
 		String ele = list.get(0);
 		System.out.println(ele);
 	}

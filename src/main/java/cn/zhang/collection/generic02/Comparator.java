@@ -1,18 +1,18 @@
 package cn.zhang.collection.generic02;
 
 /**
- * 	泛型接口与泛型类同理
+ * 	娉涘瀷鎺ュ彛涓庢硾鍨嬬被鍚岀悊
  * @author tako_
  *
  */
 public interface Comparator<T> {
-	//全局常量
+	//鍏ㄥ眬甯搁噺
 	public static final int MAX_VALUE = 1024;
-	//公共抽象方法
+	//鍏叡鎶借薄鏂规硶
 	public abstract void test(T t);
 }
 
-//实现
+//瀹炵幇
 @SuppressWarnings("rawtypes")
 class InterfC1<A> implements Comparator{
 

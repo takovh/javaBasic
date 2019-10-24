@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * super£º·ºĞÍµÄÏÂÏŞ >= ¼´¸¸Àà»ò×ÔÉí
- * 1.Ò»°ãÓÃÓÚÉÏÏŞ²Ù×÷
- * 2.ÄÜ¹»Ìí¼ÓÊı¾İÉÏÃæ£¬²»ÄÜÌí¼Ó¸¸¶ÔÏó
- * 3.¹æÔò£º
+ * superï¼šæ³›å‹çš„ä¸‹é™ >= å³çˆ¶ç±»æˆ–è‡ªèº«
+ * 1.ä¸€èˆ¬ç”¨äºä¸Šé™æ“ä½œ
+ * 2.èƒ½å¤Ÿæ·»åŠ æ•°æ®ä¸Šé¢ï¼Œä¸èƒ½æ·»åŠ çˆ¶å¯¹è±¡
+ * 3.è§„åˆ™ï¼š
  * 	List<Fruit> -->List<? super Apple>
  *  List<Apple> -->List<? super Apple>
  *  List<? super Fruit> -->List<? super Apple>
- *  ²»ÄÜ´æ·Å
+ *  ä¸èƒ½å­˜æ”¾
  *  List<? super FujiApple> -->List<? supper Apple>
  *  
  * @author tako_
@@ -28,7 +28,7 @@ public class SuperTest {
 		List<Object> list3 = new ArrayList<Object>();
 		test(list3);
 		
-		//¹æÔò
+		//è§„åˆ™
 		List<? super Apple> list4 = new ArrayList<Apple>();
 		test(list4);
 		List<? super Fruit> list5 = new ArrayList<Object>();
@@ -40,7 +40,7 @@ public class SuperTest {
 	}
 	
 	public static void test(List<? super Apple> list) {
-		//²»ÄÜÌí¼Ó¸¸Àà¶ÔÏó
+		//ä¸èƒ½æ·»åŠ çˆ¶ç±»å¯¹è±¡
 		list.add(new Apple());
 		list.add(new FujiApple());
 		//list.add(new Fruit());

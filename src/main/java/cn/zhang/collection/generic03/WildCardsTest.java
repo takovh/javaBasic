@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ? -->通配符，类型不确定，用于声明变量或形参上
+ * ? -->閫氶厤绗︼紝绫诲瀷涓嶇‘瀹氾紝鐢ㄤ簬澹版槑鍙橀噺鎴栧舰鍙備笂
  * @author tako_
  *
  */
 public class WildCardsTest {
 	public static void main(String[] args) {
-		//声明
+		//澹版槑
 		List<?> list; 
 		list = new ArrayList<Integer>();
 		list = new ArrayList<String>();

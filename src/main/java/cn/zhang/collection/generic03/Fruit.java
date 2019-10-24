@@ -1,7 +1,7 @@
 package cn.zhang.collection.generic03;
 
 /**
- * ¼Ì³ÐÁ´
+ * ç»§æ‰¿é“¾
  * 		Object
  * 		  |
  * 		Fruit

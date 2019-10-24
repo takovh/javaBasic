@@ -6,27 +6,27 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 /**
- * ·ºÐÍÇ¶Ì×
+ * æ³›åž‹åµŒå¥—
  * @author tako_
  *
  */
 public class StudentApp {
 	public static void main(String[] args) {
 		Student<String> stu = new Student<String>();
-		stu.setScore("ÓÅÐã");
+		stu.setScore("ä¼˜ç§€");
 		System.out.println(stu.getScore());
 		
-		//·ºÐÍÇ¶Ì×
+		//æ³›åž‹åµŒå¥—
 		SchoolClass<Student<String>> class1 = new SchoolClass<Student<String>>();
 		class1.setStu(stu);
 		stu = class1.getStu();
 		String score = stu.getScore();
 		System.out.println(score);
 		
-		//HashMap -->Ê¹ÓÃÁË·ºÐÍµÄÇ¶Ì×
+		//HashMap -->ä½¿ç”¨äº†æ³›åž‹çš„åµŒå¥—
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("a", "java300");
-		map.put("1815283001", "ÕÅìÏ");
+		map.put("1815283001", "å¼ ç…œ");
 		Set<Entry<String, String>> entrySet = map.entrySet();
 		for(Entry<String, String> entry : entrySet) {
 			String key = entry.getKey();
