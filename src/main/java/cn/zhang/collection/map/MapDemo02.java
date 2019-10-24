@@ -4,23 +4,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * ·Ö¼ğ´æ´¢£º1:N
- * Í³¼Æµ¥´Ê³öÏÖµÄ´ÎÊı
+ * åˆ†æ‹£å­˜å‚¨ï¼š1:N
+ * ç»Ÿè®¡å•è¯å‡ºç°çš„æ¬¡æ•°
  * this is a cat and that is a mice and where is the food ?
  * 
- * Ë¼Â·£º
- * 1.·Ö¸î×Ö·û´®
- * 2.·Ö¼ğ´æ´¢
- * 3.°´ÒªÇó²é¿´µ¥´Ê³öÏÖµÄ´ÎÊı
- * 4.¼ÓÈëÃæÏò¶ÔÏó
+ * æ€è·¯ï¼š
+ * 1.åˆ†å‰²å­—ç¬¦ä¸²
+ * 2.åˆ†æ‹£å­˜å‚¨
+ * 3.æŒ‰è¦æ±‚æŸ¥çœ‹å•è¯å‡ºç°çš„æ¬¡æ•°
+ * 4.åŠ å…¥é¢å‘å¯¹è±¡
  * @author tako_
  *
  */
 public class MapDemo02 {
 	public static void main(String[] args) {
-		//1.·Ö¸î×Ö·û´®
+		//1.åˆ†å‰²å­—ç¬¦ä¸²
 		String[] arr = "this is a cat and that is a mice and where is the food ?".split(" ");
-		//2.·Ö¼ğ´æ´¢
+		//2.åˆ†æ‹£å­˜å‚¨
 		Map<String, Letter> map = new HashMap<String, Letter>();
 		for(String key : arr) {
 			if(!map.containsKey(key)) {
@@ -29,7 +29,7 @@ public class MapDemo02 {
 			Letter value = map.get(key);
 			value.setCount(value.getCount()+1);
 		}
-		//3.°´ÒªÇó²é¿´µ¥´Ê³öÏÖµÄ´ÎÊı
+		//3.æŒ‰è¦æ±‚æŸ¥çœ‹å•è¯å‡ºç°çš„æ¬¡æ•°
 		for(String key : map.keySet()) {
 			Letter value = map.get(key);
 			System.out.println(key + "--->" + value.getCount());

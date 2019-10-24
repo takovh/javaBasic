@@ -3,9 +3,9 @@ package cn.zhang.collection.others;
 import java.util.Properties;
 
 /**
- * Properties×ÊÔ´ÅäÖÃÎÄ¼şµÄ¶ÁĞ´
- * 1.keyÓëvalueÖ»ÄÜÎª×Ö·û´®
- * 2.´æ´¢Óë¶ÁÈ¡
+ * Propertiesèµ„æºé…ç½®æ–‡ä»¶çš„è¯»å†™
+ * 1.keyä¸valueåªèƒ½ä¸ºå­—ç¬¦ä¸²
+ * 2.å­˜å‚¨ä¸è¯»å–
  * 	setProperty(key, value)
  * 	getProperty(key)
  * @author tako_
@@ -13,15 +13,15 @@ import java.util.Properties;
  */
 public class PropertiesDemo01 {
 	public static void main(String[] args) {
-		//´´½¨¶ÔÏó
+		//åˆ›å»ºå¯¹è±¡
 		Properties pro = new Properties();
-		//´æ´¢
+		//å­˜å‚¨
 		pro.setProperty("driver", "oracle.jdbc.driver.OracleDriver");
 		pro.setProperty("url", "jdbc:oracle:thin:@localhost:1521:orcl");
 		pro.setProperty("user","Scott");
 		pro.setProperty("pwd","123");
 		
-		//»ñÈ¡
+		//è·å–
 		String url = pro.getProperty("url","default");
 		System.out.println(url);
 		

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Ò»¸ö°à¼¶¶à¸öÑ§Éú
+ * ä¸€ä¸ªç­çº§å¤šä¸ªå­¦ç”Ÿ
  * @author tako_
  *
  */

@@ -6,35 +6,35 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * ·Ö¼ğ´æ´¢£º1:N
- * Í³¼Æµ¥´Ê³öÏÖµÄ´ÎÊı
+ * åˆ†æ‹£å­˜å‚¨ï¼š1:N
+ * ç»Ÿè®¡å•è¯å‡ºç°çš„æ¬¡æ•°
  * this is a cat and that is a mice and where is the food ?
  * 
- * Ë¼Â·£º
- * 1.·Ö¸î×Ö·û´®
- * 2.·Ö¼ğ´æ´¢
- * 3.°´ÒªÇó²é¿´µ¥´Ê³öÏÖµÄ´ÎÊı
+ * æ€è·¯ï¼š
+ * 1.åˆ†å‰²å­—ç¬¦ä¸²
+ * 2.åˆ†æ‹£å­˜å‚¨
+ * 3.æŒ‰è¦æ±‚æŸ¥çœ‹å•è¯å‡ºç°çš„æ¬¡æ•°
  * 
  * @author tako_
  *
  */
 public class MapDemo01 {
 	public static void main(String[] args) {
-		//1.·Ö¸î×Ö·û´®
+		//1.åˆ†å‰²å­—ç¬¦ä¸²
 		String[] arr = "this is a cat and that is a mice and where is the food ?".split(" ");
-		//2.·Ö¼ğ´æ´¢
+		//2.åˆ†æ‹£å­˜å‚¨
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		for(String key : arr) {
 			//System.out.println(key);
 			if(!map.containsKey(key)) {
 				map.put(key, 1);
-			}else {//ÒÑ¾­´æÔÚ
+			}else {//å·²ç»å­˜åœ¨
 				map.put(key, map.get(key)+1);
 			}
 		}
-		//3.°´ÒªÇó²é¿´µ¥´Ê³öÏÖµÄ´ÎÊı
+		//3.æŒ‰è¦æ±‚æŸ¥çœ‹å•è¯å‡ºç°çš„æ¬¡æ•°
 		Set<String> keySet = map.keySet();
-		//»ñÈ¡¶ÔÏó
+		//è·å–å¯¹è±¡
 		Iterator<String> it = keySet.iterator();
 		while(it.hasNext()) {
 			String key = it.next();

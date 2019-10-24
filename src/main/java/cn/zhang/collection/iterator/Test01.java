@@ -20,19 +20,19 @@ public class Test01 {
 		set.add("ccc");
 		
 		/**
-		 * whileÑ­»··½·¨
+		 * whileå¾ªç¯æ–¹æ³•
 		 */
-		System.out.println("*************whileÑ­»··½·¨*************");
+		System.out.println("*************whileå¾ªç¯æ–¹æ³•*************");
 		Iterator<String> iter = set.iterator();
 		while(iter.hasNext()) {
-			String str = (String)iter.next();//·µ»Øµ±Ç°Ö¸ÏòµÄ¶ÔÏó²¢Ö¸ÏòÏÂÒ»¸ö¶ÔÏó
+			String str = (String)iter.next();//è¿”å›å½“å‰æŒ‡å‘çš„å¯¹è±¡å¹¶æŒ‡å‘ä¸‹ä¸€ä¸ªå¯¹è±¡
 			System.out.println(str);
 		}
 		
 		/**
-		 * forÑ­»··½·¨
+		 * forå¾ªç¯æ–¹æ³•
 		 */
-		System.out.println("*************forÑ­»··½·¨*************");
+		System.out.println("*************forå¾ªç¯æ–¹æ³•*************");
 		for(Iterator<String> iter2=set.iterator();iter2.hasNext(); ) {
 			String str = (String)iter2.next();
 			System.out.println(str);

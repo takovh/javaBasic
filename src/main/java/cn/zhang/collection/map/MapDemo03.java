@@ -8,24 +8,24 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * ¶¨ÒåÒ»¸öStudentÀà£¬ÊôĞÔ£ºnameĞÕÃû£¬no°àºÅ£¬score³É¼¨
- * ÏÖÔÚ½«Èô¸É¸öStudent¶ÔÏó·ÅÈëList£¬ÇëÍ³¼Æ³öÃ¿¸ö°à¼¶µÄ×Ü·ÖºÍÆ½¾ù·Ö
- * ·½°¸£ºÃæÏò¶ÔÏó+·Ö¼ğ´æ´¢(1:N)
+ * å®šä¹‰ä¸€ä¸ªStudentç±»ï¼Œå±æ€§ï¼šnameå§“åï¼Œnoç­å·ï¼Œscoreæˆç»©
+ * ç°åœ¨å°†è‹¥å¹²ä¸ªStudentå¯¹è±¡æ”¾å…¥Listï¼Œè¯·ç»Ÿè®¡å‡ºæ¯ä¸ªç­çº§çš„æ€»åˆ†å’Œå¹³å‡åˆ†
+ * æ–¹æ¡ˆï¼šé¢å‘å¯¹è±¡+åˆ†æ‹£å­˜å‚¨(1:N)
  * @author tako_
  *
  */
 public class MapDemo03 {
 	public static void main(String[] args) {
-		//1.¿¼ÊÔ
+		//1.è€ƒè¯•
 		List<Student> stuList = exam();
-		//2.·ÖÎö³É¼¨
+		//2.åˆ†ææˆç»©
 		Map<String, ClassRoom> map = count(stuList);
-		//3.²é¿´³É¼¨£¨×Ü·Ö¡¢Æ½¾ù·Ö£©
+		//3.æŸ¥çœ‹æˆç»©ï¼ˆæ€»åˆ†ã€å¹³å‡åˆ†ï¼‰
 		view(map);
 	}
 	
 	/**
-	 * ²é¿´Ã¿¸ö°àµÄ×Ü·ÖºÍÆ½¾ù·Ö -->±éÀúmap
+	 * æŸ¥çœ‹æ¯ä¸ªç­çš„æ€»åˆ†å’Œå¹³å‡åˆ† -->éå†map
 	 */
 	public static void view(Map<String, ClassRoom> map) {
 		Set<String> keys = map.keySet();
@@ -35,18 +35,18 @@ public class MapDemo03 {
 			ClassRoom room = map.get(no);
 			double total = room.getTotal();
 			double avg = total/room.getStuList().size();
-			System.out.println("°à¼¶no:" + no + " ×Ü·Ö£º" + total + " Æ½¾ù·Ö£º" + avg);
+			System.out.println("ç­çº§no:" + no + " æ€»åˆ†ï¼š" + total + " å¹³å‡åˆ†ï¼š" + avg);
 		}
 	}
 	
 	/**
-	 * Í³¼Æ·ÖÎö
-	 * 1.ÃæÏò¶ÔÏó
-	 * 2.·Ö¼ğ´æ´¢
+	 * ç»Ÿè®¡åˆ†æ
+	 * 1.é¢å‘å¯¹è±¡
+	 * 2.åˆ†æ‹£å­˜å‚¨
 	 */
 	public static Map<String, ClassRoom> count(List<Student> list){
 		Map<String, ClassRoom> map = new HashMap<String, ClassRoom>();
-		//1.±éÀúList
+		//1.éå†List
 		for(Student stu : list) {
 			String no = stu.getNo();
 			double score = stu.getScore();
@@ -62,15 +62,15 @@ public class MapDemo03 {
 	}
 	
 	/**
-	 * Ä£Äâ¿¼ÊÔ ²âÊÔÊı¾İµ½ListÖĞ
+	 * æ¨¡æ‹Ÿè€ƒè¯• æµ‹è¯•æ•°æ®åˆ°Listä¸­
 	 */
 	public static List<Student> exam(){
 		List<Student> list = new ArrayList<Student>();
-		//´æ·ÅÑ§Éú³É¼¨
-		list.add(new Student("ÕÅìÏ","a",100));
-		list.add(new Student("Òü½Ü","a",90));
-		list.add(new Student("ÀîÏÕ¹ó","b",80));
-		list.add(new Student("ÍõºÆ","b",85));
+		//å­˜æ”¾å­¦ç”Ÿæˆç»©
+		list.add(new Student("å¼ ç…œ","a",100));
+		list.add(new Student("å°¹æ°","a",90));
+		list.add(new Student("æé™©è´µ","b",80));
+		list.add(new Student("ç‹æµ©","b",85));
 		return list;
 	}
 }

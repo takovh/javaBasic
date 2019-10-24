@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * Ê¹ÓÃProperties¶ÁÈ¡ÅäÖÃÎÄ¼ş
- * ×ÊÔ´ÅäÖÃÎÄ¼ş£º
+ * ä½¿ç”¨Propertiesè¯»å–é…ç½®æ–‡ä»¶
+ * èµ„æºé…ç½®æ–‡ä»¶ï¼š
  * load(inStream)
  * @author tako_
  *
@@ -15,7 +15,7 @@ import java.util.Properties;
 public class PropertiesDemo03 {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		Properties pro = new Properties();
-		//¶ÁÈ¡Ïà¶ÔÂ·¾¶
+		//è¯»å–ç›¸å¯¹è·¯å¾„
 		pro.load(new FileReader("src/cn/zhang/collection/others/db.properties"));
 		System.out.println(pro.getProperty("user","default"));
 	}

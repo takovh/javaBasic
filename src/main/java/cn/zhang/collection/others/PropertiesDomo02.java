@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * Ê¹ÓÃPropertiesÊä³öµ½ÎÄ¼ş
- * Ò²¾ÍÊÇ×ÊÔ´ÅäÖÃÎÄ¼ş£º
+ * ä½¿ç”¨Propertiesè¾“å‡ºåˆ°æ–‡ä»¶
+ * ä¹Ÿå°±æ˜¯èµ„æºé…ç½®æ–‡ä»¶ï¼š
  * 1. .properties
  * store(out, comments)
  * 
@@ -20,20 +20,20 @@ import java.util.Properties;
  */
 public class PropertiesDomo02 {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		//´´½¨¶ÔÏó
+		//åˆ›å»ºå¯¹è±¡
 		Properties pro = new Properties();
-		//´æ´¢
+		//å­˜å‚¨
 		pro.setProperty("driver", "oracle.jdbc.driver.OracleDriver");
 		pro.setProperty("url", "jdbc:oracle:thin:@localhost:1521:orcl");
 		pro.setProperty("user","Scott");
 		pro.setProperty("pwd","123");
 		
-		//Ê¹ÓÃ¾ø¶ÔÂ·¾¶,Êä³öµ½d:/tmp
-		//pro.store(new FileOutputStream(new File("d:/tmp/db.properties")), "dbÅäÖÃ");
-		//pro.storeToXML(new FileOutputStream(new File("d:/tmp/db.properties")), "dbÅäÖÃ");
+		//ä½¿ç”¨ç»å¯¹è·¯å¾„,è¾“å‡ºåˆ°d:/tmp
+		//pro.store(new FileOutputStream(new File("d:/tmp/db.properties")), "dbé…ç½®");
+		//pro.storeToXML(new FileOutputStream(new File("d:/tmp/db.properties")), "dbé…ç½®");
 		
-		//Ê¹ÓÃÏà¶ÔÂ·¾¶,Êä³öµ½µ±Ç°¹¤³Ì
-		pro.store(new FileOutputStream(new File("src/cn/zhang/collection/others/db.properties")), "dbÅäÖÃ");
-		pro.storeToXML(new FileOutputStream(new File("src/cn/zhang/collection/others/db.xml")), "dbÅäÖÃ");
+		//ä½¿ç”¨ç›¸å¯¹è·¯å¾„,è¾“å‡ºåˆ°å½“å‰å·¥ç¨‹
+		pro.store(new FileOutputStream(new File("src/cn/zhang/collection/others/db.properties")), "dbé…ç½®");
+		pro.storeToXML(new FileOutputStream(new File("src/cn/zhang/collection/others/db.xml")), "dbé…ç½®");
 	}
 }

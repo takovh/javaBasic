@@ -1,19 +1,19 @@
 package cn.zhang.collection.map;
 
 /**
- * javabean ´æ´¢Êý¾Ýpo bo vo °üº¬setterÓëgetter·ÃÎÊÆ÷µÄÀà
+ * javabean å­˜å‚¨æ•°æ®po bo vo åŒ…å«setterä¸Žgetterè®¿é—®å™¨çš„ç±»
  * @author tako_
  *
  */
 public class Letter {
-	private String name;//µ¥´Ê
+	private String name;//å•è¯
 	private int count;//
 	
 	public Letter() {
 		// TODO Auto-generated constructor stub
 	}
 
-	//¹¹ÔìÆ÷
+	//æž„é€ å™¨
 	//alt+shift+s -->o
 	public Letter(String name, int count) {
 		super();
@@ -25,7 +25,7 @@ public class Letter {
 		this.name = name;
 		this.count = 0;
 	}
-	//setterÓëgetter
+	//setterä¸Žgetter
 	//alt+shift+s -->r -->Tab -->enter -->Shift+Tab -->enter
 
 	public String getName() {
