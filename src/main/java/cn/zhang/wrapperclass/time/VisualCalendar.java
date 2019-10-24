@@ -9,29 +9,29 @@ import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 /**
- * ¿ÉÊÓ»¯ÈÕÀú³ÌĞò
- * @author ÕÅìÏ
+ * å¯è§†åŒ–æ—¥å†ç¨‹åº
+ * @author å¼ ç…œ
  *
  */
 public class VisualCalendar {
 	public static void main(String[] args) {
-		System.out.println("ÇëÊäÈëÈÕÆÚ£º£¨yyyy-MM-dd)");
-		Scanner s = new Scanner(System.in);//ÉêÃ÷ÁËÃûÎªSCµÄÊı¾İÊäÈëÉ¨ÃèÒÇ£¨Scanner£©£¬´Ó¶ø»ñµÃÁËÅäÖÃÄÚ´æ
+		System.out.println("è¯·è¾“å…¥æ—¥æœŸï¼šï¼ˆyyyy-MM-dd)");
+		Scanner s = new Scanner(System.in);//ç”³æ˜äº†åä¸ºSCçš„æ•°æ®è¾“å…¥æ‰«æä»ªï¼ˆScannerï¼‰ï¼Œä»è€Œè·å¾—äº†é…ç½®å†…å­˜
 		String test = s.nextLine();
-		s.close();//Ê¹ÓÃScannerºó£¬½áÊøÊı¾İÁ÷£¬ÊÍ·ÅÄÚ´æ	
+		s.close();//ä½¿ç”¨Scanneråï¼Œç»“æŸæ•°æ®æµï¼Œé‡Šæ”¾å†…å­˜	
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 			
 		try {
-			Date d = df.parse(test);//½«String×ªÎªDate
+			Date d = df.parse(test);//å°†Stringè½¬ä¸ºDate
 			Calendar c = new GregorianCalendar();
-			c.setTime(d);//½«Date¸ñÊ½»¯Îª¹«Àú
+			c.setTime(d);//å°†Dateæ ¼å¼åŒ–ä¸ºå…¬å†
 			int day = c.get(Calendar.DATE);
 			
 			c.set(Calendar.DATE, 1);
-			int day_of_week = c.get(Calendar.DAY_OF_WEEK);//Calendar.SUNDAY;ÖÜÈÕÊÇ1
+			int day_of_week = c.get(Calendar.DAY_OF_WEEK);//Calendar.SUNDAY;å‘¨æ—¥æ˜¯1
 			int max_days_in_month = c.getActualMaximum(Calendar.DATE);
 			
-			System.out.println("ÈÕ\tÒ»\t¶ş\tÈı\tËÄ\tÎå\tÁù");
+			System.out.println("æ—¥\tä¸€\täºŒ\tä¸‰\tå››\täº”\tå…­");
 			for(int i = 1;i<day_of_week;i++) System.out.print("\t");
 			for(int i = 1;i<=max_days_in_month;i++) {
 				if(i == day) System.out.print("*");

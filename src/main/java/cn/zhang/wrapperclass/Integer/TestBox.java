@@ -1,27 +1,27 @@
 package cn.zhang.wrapperclass.Integer;
 /**
- * ²âÊÔ×Ô¶¯²ğÏäºÍ×°Ïä
- * @author ÕÅìÏ
+ * æµ‹è¯•è‡ªåŠ¨æ‹†ç®±å’Œè£…ç®±
+ * @author å¼ ç…œ
  *
  */
 public class TestBox {
 	public static void main(String[] args) {
 		Integer [] i = new Integer[2];
-		i[0] = new Integer(100);//¹ıÊ±ÁË,µ«ÊÇ²»Ó°ÏìÊ¹ÓÃ
-		i[1] = 100;//jdk5.0Ö®ºó£¬±àÒëÆ÷½øĞĞÅĞ¶Ï ¡ª¡ª ×Ô¶¯×°Ïä£º±àÒëÆ÷°ïÎÒÃÇĞŞ¸Ä´úÂëÎªi[1] = new Integer(100);
+		i[0] = new Integer(100);//è¿‡æ—¶äº†,ä½†æ˜¯ä¸å½±å“ä½¿ç”¨
+		i[1] = 100;//jdk5.0ä¹‹åï¼Œç¼–è¯‘å™¨è¿›è¡Œåˆ¤æ–­ â€”â€” è‡ªåŠ¨è£…ç®±ï¼šç¼–è¯‘å™¨å¸®æˆ‘ä»¬ä¿®æ”¹ä»£ç ä¸ºi[1] = new Integer(100);
 		for(Integer e : i) System.out.println(e);
 		
 		int m = i[0].intValue();
-		int n = i[0];//jdk5.0Ö®ºó£¬±àÒëÆ÷½øĞĞÅĞ¶Ï ¡ª¡ª ×Ô¶¯²ğÏä£º±àÒëÆ÷°ïÎÒÃÇĞŞ¸Ä´úÂëÎªint n = i[0].intValue();
+		int n = i[0];//jdk5.0ä¹‹åï¼Œç¼–è¯‘å™¨è¿›è¡Œåˆ¤æ–­ â€”â€” è‡ªåŠ¨æ‹†ç®±ï¼šç¼–è¯‘å™¨å¸®æˆ‘ä»¬ä¿®æ”¹ä»£ç ä¸ºint n = i[0].intValue();
 		System.out.println(m);
 		System.out.println(n);
 		
-		System.out.println(i[0] == i[1]);//ÔÙ´ÎÈÏÊ¶ÒıÓÃ£¬ÄÚ´æ·ÖÎö
+		System.out.println(i[0] == i[1]);//å†æ¬¡è®¤è¯†å¼•ç”¨ï¼Œå†…å­˜åˆ†æ
 		System.out.println(i[0].equals(i[1]));
 		
-		Integer d1 = 128;//[-128,127]Ö®¼äµÄÊı£¬ÈÔÈ»µ±×÷»ù±¾Êı¾İÀàĞÍÀ´´¦Àí
+		Integer d1 = 128;//[-128,127]ä¹‹é—´çš„æ•°ï¼Œä»ç„¶å½“ä½œåŸºæœ¬æ•°æ®ç±»å‹æ¥å¤„ç†
 		Integer d2 = 128;
-		Integer d3 = new Integer(100);//new³öÀ´µÄµØÖ·Ò»¶¨²»µÈ
+		Integer d3 = new Integer(100);//newå‡ºæ¥çš„åœ°å€ä¸€å®šä¸ç­‰
 		Integer d4 = new Integer(100);
 		System.out.println(d1 == d2);
 		System.out.println(d3 == d4);

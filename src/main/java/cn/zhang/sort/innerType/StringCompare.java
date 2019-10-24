@@ -2,9 +2,9 @@ package cn.zhang.sort.innerType;
 
 public class StringCompare implements java.util.Comparator<String>{
 	/**
-	 * °´³¤¶È±È½Ï
-	 * ÕýÊý>
-	 * ¸ºÊý<
+	 * æŒ‰é•¿åº¦æ¯”è¾ƒ
+	 * æ­£æ•°>
+	 * è´Ÿæ•°<
 	 * 0==
 	 */
 	@Override

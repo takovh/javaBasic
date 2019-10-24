@@ -14,13 +14,13 @@ public class StarHandler implements InvocationHandler {
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 		Object obj = null;
-		System.out.println("ÕæÕıµÄ·½·¨Ö´ĞĞÇ°£¡");
-		System.out.println("ÃæÌ¸¡¢Ç©ºÏÍ¬¡¢¶©Æ±");
+		System.out.println("çœŸæ­£çš„æ–¹æ³•æ‰§è¡Œå‰ï¼");
+		System.out.println("é¢è°ˆã€ç­¾åˆåŒã€è®¢ç¥¨");
 		if(method.getName().equals("sing")) {
 			obj = method.invoke(realStar, args);
 		}
-		System.out.println("ÕæÕıµÄ·½·¨Ö´ĞĞºó£¡");
-		System.out.println("ÊÕÇ®");
+		System.out.println("çœŸæ­£çš„æ–¹æ³•æ‰§è¡Œåï¼");
+		System.out.println("æ”¶é’±");
 		return obj;
 	}
 

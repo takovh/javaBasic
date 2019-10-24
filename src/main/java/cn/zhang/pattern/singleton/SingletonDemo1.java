@@ -1,13 +1,13 @@
 package cn.zhang.pattern.singleton;
 
 /**
- * ²âÊÔ¶öººÊ½µ¥ÀıÄ£Ê½
- * Ïß³Ì°²È«
+ * æµ‹è¯•é¥¿æ±‰å¼å•ä¾‹æ¨¡å¼
+ * çº¿ç¨‹å®‰å…¨
  * @author tako_
  *
  */
 public class SingletonDemo1 {
-	private static SingletonDemo1 instance = new SingletonDemo1();//Àà³õÊ¼»¯Ê±Á¢¼´¼ÓÔØÕâ¸ö¶ÔÏó
+	private static SingletonDemo1 instance = new SingletonDemo1();//ç±»åˆå§‹åŒ–æ—¶ç«‹å³åŠ è½½è¿™ä¸ªå¯¹è±¡
 	private SingletonDemo1() {
 		
 	}

@@ -2,12 +2,12 @@ package cn.zhang.pattern.flyWeight;
 
 public class Client {
 	public static void main(String[] args) {
-		ChessFlyWeight chess1 = ChessFlyWeightFactory.getChess("ºÚÉ«");
-		ChessFlyWeight chess2 = ChessFlyWeightFactory.getChess("ºÚÉ«");
+		ChessFlyWeight chess1 = ChessFlyWeightFactory.getChess("é»‘è‰²");
+		ChessFlyWeight chess2 = ChessFlyWeightFactory.getChess("é»‘è‰²");
 		System.out.println(chess1);
 		System.out.println(chess2);
 		
-		System.out.println("Ôö¼ÓÍâ²¿×´Ì¬µÄ´¦Àí¡£¡£¡£¡£¡£¡£");
+		System.out.println("å¢åŠ å¤–éƒ¨çŠ¶æ€çš„å¤„ç†ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚");
 		chess1.display(new Coordinate(10,10));
 		chess2.display(new Coordinate(20,20));
 	}

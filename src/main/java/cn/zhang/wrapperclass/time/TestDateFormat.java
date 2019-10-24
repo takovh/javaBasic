@@ -5,27 +5,27 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 /**
- * ³éÏóÀà²»ÄÜÊµÀı»¯£¬²»ÄÜÓÃnewÀ´ÊµÀı»¯³éÏóÀà
- * ³éÏóÀàÖ»ÄÜÓÃÀ´¼Ì³Ğ
- * ³éÏó·½·¨±ØĞë±»×ÓÀàÊµÏÖ
- * DateFormatÊÇ³éÏóÀà,ĞèÒª¿¿×ÓÀàSimpleDateFormatÀ´ÊµÏÖ
- * Ê±¼ä£ºyyyy-MM-dd hh:mm:ss
- * @author ÕÅìÏ
+ * æŠ½è±¡ç±»ä¸èƒ½å®ä¾‹åŒ–ï¼Œä¸èƒ½ç”¨newæ¥å®ä¾‹åŒ–æŠ½è±¡ç±»
+ * æŠ½è±¡ç±»åªèƒ½ç”¨æ¥ç»§æ‰¿
+ * æŠ½è±¡æ–¹æ³•å¿…é¡»è¢«å­ç±»å®ç°
+ * DateFormatæ˜¯æŠ½è±¡ç±»,éœ€è¦é å­ç±»SimpleDateFormatæ¥å®ç°
+ * æ—¶é—´ï¼šyyyy-MM-dd hh:mm:ss
+ * @author å¼ ç…œ
  */
 public class TestDateFormat {
 	public static void main(String[] args) {
-		DateFormat df0 = new SimpleDateFormat("yyyyÄêMMÔÂddÈÕ");
+		DateFormat df0 = new SimpleDateFormat("yyyyå¹´MMæœˆddæ—¥");
 		DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		Date d = new Date(System.currentTimeMillis());
 		String [] str = {
-				df0.format(d),//½«Date°´¸ñÊ½×ª»¯Îª×Ö·û´®£¬format·½·¨·µ»Ø¸Ã¶ÔÏóËùÖÆ¶¨¸ñÊ½µÄ×Ö·û´®
-				df1.format(d) //½«Date°´¸ñÊ½×ª»¯Îª×Ö·û´®£¬format·½·¨·µ»Ø¸Ã¶ÔÏóËùÖÆ¶¨¸ñÊ½µÄ×Ö·û´®
+				df0.format(d),//å°†DateæŒ‰æ ¼å¼è½¬åŒ–ä¸ºå­—ç¬¦ä¸²ï¼Œformatæ–¹æ³•è¿”å›è¯¥å¯¹è±¡æ‰€åˆ¶å®šæ ¼å¼çš„å­—ç¬¦ä¸²
+				df1.format(d) //å°†DateæŒ‰æ ¼å¼è½¬åŒ–ä¸ºå­—ç¬¦ä¸²ï¼Œformatæ–¹æ³•è¿”å›è¯¥å¯¹è±¡æ‰€åˆ¶å®šæ ¼å¼çš„å­—ç¬¦ä¸²
 		};
 		for(String e : str) System.out.println(e);
 		
 		try {
-			Date d0 = df0.parse(str[0]);//½«×Ö·û´®°´¸ñÊ½×ª»¯ÎªDate£¬Ò»¶¨Òª¶ÔÓ¦Æ¥Åä
-			Date d1 = df1.parse(str[1]);//½«×Ö·û´®°´¸ñÊ½×ª»¯ÎªDate£¬Ò»¶¨Òª¶ÔÓ¦Æ¥Åä
+			Date d0 = df0.parse(str[0]);//å°†å­—ç¬¦ä¸²æŒ‰æ ¼å¼è½¬åŒ–ä¸ºDateï¼Œä¸€å®šè¦å¯¹åº”åŒ¹é…
+			Date d1 = df1.parse(str[1]);//å°†å­—ç¬¦ä¸²æŒ‰æ ¼å¼è½¬åŒ–ä¸ºDateï¼Œä¸€å®šè¦å¯¹åº”åŒ¹é…
 			System.out.println(d0);
 			System.out.println(d1);
 		} catch (ParseException e1) {

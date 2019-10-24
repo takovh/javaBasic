@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 /**
- * ²âÊÔÊ¹ÓÃJDBCUtilÀ´¼ò»¯JDBC¿ª·¢
+ * æµ‹è¯•ä½¿ç”¨JDBCUtilæ¥ç®€åŒ–JDBCå¼€å‘
  * @author tako_
  *
  */
@@ -17,7 +17,7 @@ public class Demo11 {
 		try {
 			conn = JDBCUtil.getMysqlConn();
 			ps = conn.prepareStatement("insert into t_user(username,pwd,regTime) values(?,?,?)");
-			ps.setObject(1, "Mike");//²ÎÊıË÷Òı´Ó1¿ªÊ¼
+			ps.setObject(1, "Mike");//å‚æ•°ç´¢å¼•ä»1å¼€å§‹
 			ps.setObject(2, "369");
 			ps.setObject(3, new java.sql.Date(System.currentTimeMillis()));
 			ps.execute();

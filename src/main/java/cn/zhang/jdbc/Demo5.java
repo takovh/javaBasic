@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * ²âÊÔÅú´¦ÀíµÄ»ù±¾ÓÃ·¨
+ * æµ‹è¯•æ‰¹å¤„ç†çš„åŸºæœ¬ç”¨æ³•
  * @author tako_
  *
  */
@@ -17,43 +17,40 @@ public class Demo5 {
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
-			//¼ÓÔØÇı¶¯Àà
+			//åŠ è½½é©±åŠ¨ç±»
 			Class.forName("com.mysql.jdbc.Driver");
-			//½¨Á¢Á¬½Ó
+			//å»ºç«‹è¿æ¥
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testjdbc","root","111111");
-			conn.setAutoCommit(false);//ÊÂÎñÉèÖÃ¹Ø±Õ×Ô¶¯Ìá½»
+			conn.setAutoCommit(false);//äº‹åŠ¡è®¾ç½®å…³é—­è‡ªåŠ¨æäº¤
 			stmt = conn.createStatement();
 			long start = System.currentTimeMillis();
 			for(int i=0;i<20000;i++) {
 				stmt.addBatch("insert into t_user(username,pwd,regTime) values('zhang"+i+"',666666,now())");
 			}
 			stmt.executeBatch();
-			conn.commit();//Ìá½»ÊÂÎñ
+			conn.commit();//æäº¤äº‹åŠ¡
 			long end = System.currentTimeMillis();
-			System.out.println("²åÈë20000ÌõÊı¾İºÄÊ±£º" + (end-start) + "ms");
+			System.out.println("æ’å…¥20000æ¡æ•°æ®è€—æ—¶ï¼š" + (end-start) + "ms");
 		} catch (ClassNotFoundException e) {
-			System.err.println("Êı¾İ¿â¼ÓÔØÊ§°Ü");
+			System.err.println("æ•°æ®åº“åŠ è½½å¤±è´¥");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			//¹Ø±ÕË³Ğò×ñÑ­£ºresultSet-->statement-->connection£¬Èı¸ö¿éÒ»¶¨Òª·Ö¿ªĞ´
+			//å…³é—­é¡ºåºéµå¾ªï¼šresultSet-->statement-->connectionï¼Œä¸‰ä¸ªå—ä¸€å®šè¦åˆ†å¼€å†™
 			try {
 				if(rs!=null) rs.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
 				if(stmt!=null) stmt.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
 				if(conn!=null) conn.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

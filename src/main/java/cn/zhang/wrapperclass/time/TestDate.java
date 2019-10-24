@@ -3,18 +3,18 @@ package cn.zhang.wrapperclass.time;
 import java.util.Date;
 
 /**
- * 测试时间类的用法
- * @author 张煜
+ * 娴嬭瘯鏃堕棿绫荤殑鐢ㄦ硶
+ * @author 寮犵厹
  *
  */
 public class TestDate {
 	public static void main(String[] args) {
 		long t = System.currentTimeMillis();
 		Date [] d = new Date[4];
-		d[0] = new Date();//缺省值为当前时间
+		d[0] = new Date();//缂虹渷鍊间负褰撳墠鏃堕棿
 		d[1] = new Date(System.currentTimeMillis());
 		d[2] = new Date(t);
-		d[3] = new Date(1541059015319L);//long型数字要加L
+		d[3] = new Date(1541059015319L);//long鍨嬫暟瀛楄鍔燣
 		
 		
 		for(Date e : d) System.out.println(e);

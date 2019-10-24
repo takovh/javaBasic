@@ -7,7 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ´´½¨·şÎñÆ÷²¢Æô¶¯
+ * åˆ›å»ºæœåŠ¡å™¨å¹¶å¯åŠ¨
  * get
  * @author tako_
  *
@@ -19,7 +19,7 @@ public class Server1 {
 		server.start();
 	}
 	/**
-	 * Æô¶¯·½·¨
+	 * å¯åŠ¨æ–¹æ³•
 	 */
 	public void start() {		
 		try {
@@ -32,21 +32,21 @@ public class Server1 {
 		
 	}
 	/**
-	 * ½ÓÊÕ¿Í»§¶Ë
+	 * æ¥æ”¶å®¢æˆ·ç«¯
 	 */
 	@SuppressWarnings("unused")
 	private void recieve() {
 		try {
 			Socket client = server.accept();
 			StringBuilder sb = new StringBuilder();
-			String msg = null;//½ÓÊÕ¿Í»§¶ËµÄÇëÇóĞÅÏ¢
+			String msg = null;//æ¥æ”¶å®¢æˆ·ç«¯çš„è¯·æ±‚ä¿¡æ¯
 			BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
 			while((msg=br.readLine()).length()>0) {
 				sb.append(msg);
 				sb.append("\r\n");
 				if(null==msg) break;
 			}
-			//½ÓÊÕ¿Í»§¶ËµÄÇëÇóĞÅÏ¢
+			//æ¥æ”¶å®¢æˆ·ç«¯çš„è¯·æ±‚ä¿¡æ¯
 			String requestInfo = sb.toString().trim();
 			System.out.println(requestInfo);
 		} catch (IOException e) {
@@ -55,7 +55,7 @@ public class Server1 {
 		}
 	}
 	/**
-	 * Í£Ö¹·şÎñÆ÷
+	 * åœæ­¢æœåŠ¡å™¨
 	 */
 	public void stop() {
 		

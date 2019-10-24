@@ -5,18 +5,18 @@ import java.net.URL;
 
 public class URLDemo01 {
 	public static void main(String[] args) throws MalformedURLException {
-		//¾ø¶ÔÂ·¾¶¹¹½¨
+		//ç»å¯¹è·¯å¾„æ„å»º
 		URL url = new URL("https://www.baidu.com:80/index.html#aa?uname=zhangyu");
-		System.out.println("Ğ­Òé£º" + url.getProtocol());
-		System.out.println("ÓòÃû£º" + url.getHost());
-		System.out.println("¶Ë¿Ú£º" + url.getPort());
-		System.out.println("×ÊÔ´£º" + url.getFile());
-		System.out.println("Ïà¶ÔÂ·¾¶£º" + url.getPath());
-		System.out.println("Ãªµã£º" + url.getRef());//Ãªµã
-		System.out.println("²ÎÊı£º" + url.getQuery());//²ÎÊı¡£Èô´æÔÚÃªµã£¬·µ»Ønull
+		System.out.println("åè®®ï¼š" + url.getProtocol());
+		System.out.println("åŸŸåï¼š" + url.getHost());
+		System.out.println("ç«¯å£ï¼š" + url.getPort());
+		System.out.println("èµ„æºï¼š" + url.getFile());
+		System.out.println("ç›¸å¯¹è·¯å¾„ï¼š" + url.getPath());
+		System.out.println("é”šç‚¹ï¼š" + url.getRef());//é”šç‚¹
+		System.out.println("å‚æ•°ï¼š" + url.getQuery());//å‚æ•°ã€‚è‹¥å­˜åœ¨é”šç‚¹ï¼Œè¿”å›null
 		
 		url = new URL("https://www.baidu.com:80/a/");
-		url = new URL(url, "b.txt");//Ïà¶ÔÂ·¾¶
+		url = new URL(url, "b.txt");//ç›¸å¯¹è·¯å¾„
 		System.out.println(url.toString());
 	}
 }

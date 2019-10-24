@@ -1,16 +1,16 @@
 package cn.zhang.wrapperclass.Integer;
 /**
- * ²âÊÔ°ü×°ÀàµÄ»ù±¾ÓÃ·¨
- * @author ÕÅìÏ
+ * æµ‹è¯•åŒ…è£…ç±»çš„åŸºæœ¬ç”¨æ³•
+ * @author å¼ ç…œ
  *
  */
 public class TestInt {
 	public static void main(String[] args) {
 		Integer [] i = new Integer[4];
-		i[0] = new Integer(100);//¹ıÊ±ÁË,µ«ÊÇ²»Ó°ÏìÊ¹ÓÃ
+		i[0] = new Integer(100);//è¿‡æ—¶äº†,ä½†æ˜¯ä¸å½±å“ä½¿ç”¨
 		i[1] = 101;
 		i[2] = Integer.parseInt("102");
-		i[3] = new Integer("103");//¹ıÊ±ÁË,µ«ÊÇ²»Ó°ÏìÊ¹ÓÃ
+		i[3] = new Integer("103");//è¿‡æ—¶äº†,ä½†æ˜¯ä¸å½±å“ä½¿ç”¨
 		for(Integer m : i) {
 			System.out.println(m);
 			System.out.println(m.intValue());

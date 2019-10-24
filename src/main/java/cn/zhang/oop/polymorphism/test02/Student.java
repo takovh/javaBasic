@@ -9,7 +9,7 @@ public class Student extends Person{
 	}
 	
 	public Student(Person headTeacher, String name) {
-//		this.headTeacher.name = headTeacher.name; //����ʧ��
+//		this.headTeacher.name = headTeacher.name; 
 		this.headTeacher = headTeacher;
 		this.name = name;
 	}

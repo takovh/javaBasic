@@ -8,15 +8,15 @@ import java.io.InputStreamReader;
 
 
 /**
- * ×ª»»Á÷£º×Ö½Ú×ª×Ö·û
- * 1.Êä³öÁ÷ OutputStreamWriter ->±àÂë
- * 2.ÊäÈëÁ÷ InputStreamReader ->½âÂë
+ * è½¬æ¢æµï¼šå­—èŠ‚è½¬å­—ç¬¦
+ * 1.è¾“å‡ºæµ OutputStreamWriter ->ç¼–ç 
+ * 2.è¾“å…¥æµ InputStreamReader ->è§£ç 
  * @author tako_
  * 
  */
 public class ConvertDemo02 {
 	public static void main(String[] args) throws IOException {
-		//Ö¸¶¨½âÂë×Ö·û¼¯
+		//æŒ‡å®šè§£ç å­—ç¬¦é›†
 		BufferedReader br = new BufferedReader(
 				new InputStreamReader(
 						new FileInputStream(new File("D:/tmp/c.txt")),"utf-8"

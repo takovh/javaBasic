@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ´´½¨·şÎñÆ÷²¢Æô¶¯
+ * åˆ›å»ºæœåŠ¡å™¨å¹¶å¯åŠ¨
  * post
  * @author tako_
  *
@@ -17,7 +17,7 @@ public class Server2 {
 		server.start();
 	}
 	/**
-	 * Æô¶¯·½·¨
+	 * å¯åŠ¨æ–¹æ³•
 	 */
 	public void start() {		
 		try {
@@ -30,18 +30,18 @@ public class Server2 {
 		
 	}
 	/**
-	 * ½ÓÊÕ¿Í»§¶Ë
+	 * æ¥æ”¶å®¢æˆ·ç«¯
 	 */
 	@SuppressWarnings("unused")
 	private void recieve() {
 		try {
 			Socket client = server.accept();			
-			String msg = null;//½ÓÊÕ¿Í»§¶ËµÄÇëÇóĞÅÏ¢
+			String msg = null;//æ¥æ”¶å®¢æˆ·ç«¯çš„è¯·æ±‚ä¿¡æ¯
 			
 			byte[] data = new byte[20480];
 			int len = client.getInputStream().read(data);
 			
-			//½ÓÊÕ¿Í»§¶ËµÄÇëÇóĞÅÏ¢
+			//æ¥æ”¶å®¢æˆ·ç«¯çš„è¯·æ±‚ä¿¡æ¯
 			String requestInfo = new String(data,0,len).trim();
 			System.out.println(requestInfo);
 		} catch (IOException e) {
@@ -50,7 +50,7 @@ public class Server2 {
 		}
 	}
 	/**
-	 * Í£Ö¹·şÎñÆ÷
+	 * åœæ­¢æœåŠ¡å™¨
 	 */
 	public void stop() {
 		

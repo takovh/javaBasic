@@ -7,29 +7,29 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ·şÎñ¶Ë£¨½ÓÊÕ¶à¸ö¿Í»§¶Ë£©
- * 1.´´½¨·şÎñ¶Ë + ¶Ë¿Ú
- * 2.½ÓÊÕ¿Í»§¶ËµÄÁ¬½Ó ×èÈûÊ½
- * 3.·¢ËÍÊı¾İ + ½ÓÊÕÊı¾İ
+ * æœåŠ¡ç«¯ï¼ˆæ¥æ”¶å¤šä¸ªå®¢æˆ·ç«¯ï¼‰
+ * 1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
+ * 2.æ¥æ”¶å®¢æˆ·ç«¯çš„è¿æ¥ é˜»å¡å¼
+ * 3.å‘é€æ•°æ® + æ¥æ”¶æ•°æ®
  * @author tako_
  *
  */
 public class Demo02Server {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws IOException {
-		//1.´´½¨·şÎñ¶Ë + ¶Ë¿Ú
+		//1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
 		ServerSocket server = new ServerSocket(9999);
-		//2.½ÓÊÕ¿Í»§¶ËµÄÁ¬½Ó ×èÈûÊ½
+		//2.æ¥æ”¶å®¢æˆ·ç«¯çš„è¿æ¥ é˜»å¡å¼
 		Socket client = server.accept();//The method blocks until a connection is made. 
 					
-		DataInputStream dis = new DataInputStream(client.getInputStream());//ÊäÈëÁ÷
-		DataOutputStream dos = new DataOutputStream(client.getOutputStream());//Êä³öÁ÷
+		DataInputStream dis = new DataInputStream(client.getInputStream());//è¾“å…¥æµ
+		DataOutputStream dos = new DataOutputStream(client.getOutputStream());//è¾“å‡ºæµ
 		
-		//3.½ÓÊÕÊı¾İ + ·¢ËÍÊı¾İ
+		//3.æ¥æ”¶æ•°æ® + å‘é€æ•°æ®
 		while(true) {
-			String message = dis.readUTF();//½ÓÊÕÊı¾İ
+			String message = dis.readUTF();//æ¥æ”¶æ•°æ®
 			System.out.println(message);		
-			dos.writeUTF("·şÎñÆ÷-->" + message);//·¢ËÍÊı¾İ
+			dos.writeUTF("æœåŠ¡å™¨-->" + message);//å‘é€æ•°æ®
 			dos.flush();
 		}
 	}

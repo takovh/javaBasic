@@ -8,8 +8,8 @@ import java.net.Socket;
 import java.util.Date;
 
 /**
- * ´´½¨·şÎñÆ÷²¢Æô¶¯
- * ÇëÇó+ÏìÓ¦
+ * åˆ›å»ºæœåŠ¡å™¨å¹¶å¯åŠ¨
+ * è¯·æ±‚+å“åº”
  * @author tako_
  *
  */
@@ -22,7 +22,7 @@ public class Server3 {
 		server.start();
 	}
 	/**
-	 * Æô¶¯·½·¨
+	 * å¯åŠ¨æ–¹æ³•
 	 */
 	public void start() {		
 		try {
@@ -35,38 +35,38 @@ public class Server3 {
 		
 	}
 	/**
-	 * ½ÓÊÕ¿Í»§¶Ë
+	 * æ¥æ”¶å®¢æˆ·ç«¯
 	 */
 	@SuppressWarnings("unused")
 	private void recieve() {
 		try {
 			Socket client = server.accept();			
-			String msg = null;//½ÓÊÕ¿Í»§¶ËµÄÇëÇóĞÅÏ¢
+			String msg = null;//æ¥æ”¶å®¢æˆ·ç«¯çš„è¯·æ±‚ä¿¡æ¯
 			
 			byte[] data = new byte[20480];
 			int len = client.getInputStream().read(data);
 			
-			//½ÓÊÕ¿Í»§¶ËµÄÇëÇóĞÅÏ¢
+			//æ¥æ”¶å®¢æˆ·ç«¯çš„è¯·æ±‚ä¿¡æ¯
 			String requestInfo = new String(data,0,len).trim();
 			System.out.println(requestInfo);
 			
-			//ÏìÓ¦
+			//å“åº”
 			StringBuilder responseContext = new StringBuilder();
-			responseContext.append("<html><head><title>HTTPÏìÓ¦Ê¾Àı</title></head><body>Hello Tomcat!</body></html>");
+			responseContext.append("<html><head><title>HTTPå“åº”ç¤ºä¾‹</title></head><body>Hello Tomcat!</body></html>");
 			StringBuilder response = new StringBuilder();
-			//1.HTTPĞ­Òé°æ±¾¡¢×´Ì¬´úÂë¡¢ÃèÊö
+			//1.HTTPåè®®ç‰ˆæœ¬ã€çŠ¶æ€ä»£ç ã€æè¿°
 			response.append("HTTP/1.1").append(BLANK).append("200").append(BLANK).append("OK").append(CRLF);
-			//2.ÏìÓ¦Í·£¨Respons Head£©
+			//2.å“åº”å¤´ï¼ˆRespons Headï¼‰
 			response.append("Server:tencent Server/0.0.1").append(CRLF);
 			response.append(new Date()).append(CRLF);//"Data:Mon,7Jan2019 13:18:00 GMT"
 			response.append("Content-type:text/html;charset=GBK").append(CRLF);
-			response.append("Content-length:").append(responseContext.toString().getBytes().length).append(CRLF);//ÕıÎÄ³¤¶È£º×Ö½Ú³¤¶È
-			//3.ÕıÎÄÖ®Ç°
+			response.append("Content-length:").append(responseContext.toString().getBytes().length).append(CRLF);//æ­£æ–‡é•¿åº¦ï¼šå­—èŠ‚é•¿åº¦
+			//3.æ­£æ–‡ä¹‹å‰
 			response.append(CRLF);
-			//4.ÕıÎÄ
+			//4.æ­£æ–‡
 			response.append(responseContext);
 			
-			//Êä³öÁ÷
+			//è¾“å‡ºæµ
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
 			bw.write(response.toString());
 			bw.flush();
@@ -78,7 +78,7 @@ public class Server3 {
 		}
 	}
 	/**
-	 * Í£Ö¹·şÎñÆ÷
+	 * åœæ­¢æœåŠ¡å™¨
 	 */
 	public void stop() {
 		

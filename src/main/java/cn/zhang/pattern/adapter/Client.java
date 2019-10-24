@@ -1,7 +1,7 @@
 package cn.zhang.pattern.adapter;
 
 /**
- * 相当于例子中的笔记本，只有USB接口
+ * 鐩稿綋浜庝緥瀛愪腑鐨勭瑪璁版湰锛屽彧鏈塙SB鎺ュ彛
  * @author tako_
  *
  */

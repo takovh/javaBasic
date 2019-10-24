@@ -7,12 +7,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * ×Ö½ÚÊı×é ½ÚµãÁ÷
- * Êı×éµÄ³¤¶ÈÓĞÏŞ, Êı¾İÁ¿²»»áºÜ´ó
+ * å­—èŠ‚æ•°ç»„ èŠ‚ç‚¹æµ
+ * æ•°ç»„çš„é•¿åº¦æœ‰é™, æ•°æ®é‡ä¸ä¼šå¾ˆå¤§
  * 
- * ÎÄ¼şÄÚÈİ²»ÒªÌ«´ó
- * 1.ÎÄ¼ş --³ÌĞò--> ×Ö½ÚÊı×é
- * 2.×Ö½ÚÊı×é --³ÌĞò--> ÎÄ¼ş
+ * æ–‡ä»¶å†…å®¹ä¸è¦å¤ªå¤§
+ * 1.æ–‡ä»¶ --ç¨‹åº--> å­—èŠ‚æ•°ç»„
+ * 2.å­—èŠ‚æ•°ç»„ --ç¨‹åº--> æ–‡ä»¶
  * @author tako_
  *
  */
@@ -22,50 +22,50 @@ public class ByteArrayDemo01 {
 	}
 	
 	/**
-	 * ÊäÈëÁ÷ ²Ù×÷ÓëÎÄ¼şÊäÈëÁ÷Ò»ÖÂ
-	 * ¶ÁÈ¡×Ö½ÚÊı×é
+	 * è¾“å…¥æµ æ“ä½œä¸æ–‡ä»¶è¾“å…¥æµä¸€è‡´
+	 * è¯»å–å­—èŠ‚æ•°ç»„
 	 * @throws IOException 
 	 */
 	public static void read() throws IOException {
-		String msg = "²Ù×÷ÓëÎÄ¼şÊäÈëÁ÷Ò»ÖÂ";
+		String msg = "æ“ä½œä¸æ–‡ä»¶è¾“å…¥æµä¸€è‡´";
 		byte[] src = msg.getBytes();
 		
-		//Ñ¡ÔñÁ÷
+		//é€‰æ‹©æµ
 		InputStream is = new BufferedInputStream(new ByteArrayInputStream(src));
-		//²Ù×÷
+		//æ“ä½œ
 		byte[] flush = new byte[1024];
 		int len = 0;
 		while(-1!=(len=is.read(flush))) System.out.println(new String(flush, 0, len));
-		//ÊÍ·Å×ÊÔ´
+		//é‡Šæ”¾èµ„æº
 		is.close();
 	}
 	public static void read(byte[] src) throws IOException {
-		//Ñ¡ÔñÁ÷
+		//é€‰æ‹©æµ
 		InputStream is = new BufferedInputStream(new ByteArrayInputStream(src));
-		//²Ù×÷
+		//æ“ä½œ
 		byte[] flush = new byte[1024];
 		int len = 0;
 		while(-1!=(len=is.read(flush))) System.out.println(new String(flush, 0, len));
-		//ÊÍ·Å×ÊÔ´
+		//é‡Šæ”¾èµ„æº
 		is.close();
 	}
 	
 	/**
-	 * Êä³öÁ÷ ²Ù×÷ÓëÎÄ¼şÊä³öÁ÷ÓĞĞ©²»Í¬£¬ÓĞĞÂÔö·½·¨£¬²»ÄÜÊ¹ÓÃ¶àÌ¬
+	 * è¾“å‡ºæµ æ“ä½œä¸æ–‡ä»¶è¾“å‡ºæµæœ‰äº›ä¸åŒï¼Œæœ‰æ–°å¢æ–¹æ³•ï¼Œä¸èƒ½ä½¿ç”¨å¤šæ€
 	 * @throws IOException 
 	 */
 	public static byte[] write() throws IOException {
-		//Ä¿µÄµØ
+		//ç›®çš„åœ°
 		byte[] dest;
-		//Ñ¡ÔñÁ÷ ²»Í¬µã
+		//é€‰æ‹©æµ ä¸åŒç‚¹
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		//²Ù×÷ Ğ´³ö
-		String msg = "²Ù×÷ÓëÎÄ¼şÊäÈëÁ÷Ò»ÖÂ";
+		//æ“ä½œ å†™å‡º
+		String msg = "æ“ä½œä¸æ–‡ä»¶è¾“å…¥æµä¸€è‡´";
 		byte[] info = msg.getBytes();
 		baos.write(info, 0, info.length);
-		//»ñÈ¡Êı¾İ
+		//è·å–æ•°æ®
 		dest = baos.toByteArray();
-		//ÊÍ·Å×ÊÔ´
+		//é‡Šæ”¾èµ„æº
 		baos.close();
 		return dest;
 	}

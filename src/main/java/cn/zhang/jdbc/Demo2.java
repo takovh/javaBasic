@@ -6,25 +6,25 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * ²âÊÔÖ´ĞĞsqlÓï¾ä£¬ÒÔ¼°sql×¢ÈëÎÊÌâ
+ * æµ‹è¯•æ‰§è¡Œsqlè¯­å¥ï¼Œä»¥åŠsqlæ³¨å…¥é—®é¢˜
  * @author tako_
  *
  */
 public class Demo2 {
 	public static void main(String[] args) {
 		try {
-			//¼ÓÔØÇı¶¯Àà
+			//åŠ è½½é©±åŠ¨ç±»
 			Class.forName("com.mysql.jdbc.Driver");
-			//½¨Á¢Á¬½Ó
+			//å»ºç«‹è¿æ¥
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testjdbc","root","111111");
 			Statement stmt = conn.createStatement();
-			String sql = "insert into t_user(username,pwd,regTime) values('ÕÔÁù',147,now())";
-			//²âÊÔsql×¢Èë
+			String sql = "insert into t_user(username,pwd,regTime) values('èµµå…­',147,now())";
+			//æµ‹è¯•sqlæ³¨å…¥
 			//String id = "5 or 1=1"
 			//String sql = "delete from t_test where id="+id;
 			stmt.execute(sql);
 		} catch (ClassNotFoundException e) {
-			System.err.println("Êı¾İ¿â¼ÓÔØÊ§°Ü");
+			System.err.println("æ•°æ®åº“åŠ è½½å¤±è´¥");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

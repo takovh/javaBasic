@@ -1,7 +1,7 @@
 package cn.zhang.pattern.factory.simpleFactory;
 
 /**
- * 测试在没有用工厂模式的情况下调用
+ * 娴嬭瘯鍦ㄦ病鏈夌敤宸ュ巶妯″紡鐨勬儏鍐典笅璋冪敤
  * @author tako_
  *
  */

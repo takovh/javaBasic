@@ -1,7 +1,7 @@
 package cn.zhang.IO.others;
 
 /**
- * java.io.Serializable ¿Õ½Ó¿Ú£¬Ö»×÷Îª±êÊ¶
+ * java.io.Serializable ç©ºæ¥å£ï¼Œåªä½œä¸ºæ ‡è¯†
  * @author tako_
  *
  */
@@ -10,7 +10,7 @@ public class Employee implements java.io.Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	//²»ĞèÒªĞòÁĞ»¯
+	//ä¸éœ€è¦åºåˆ—åŒ–
 	private transient String name;
 	private double salary;
 	public Employee() {}

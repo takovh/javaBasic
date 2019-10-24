@@ -9,7 +9,7 @@ public class Sheep2 implements Cloneable {
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
 		Object obj = super.clone();
-		//Ìí¼ÓÈçÏÂ´úÂëÊµÏÖÉî¸´ÖÆ
+		//æ·»åŠ å¦‚ä¸‹ä»£ç å®ç°æ·±å¤åˆ¶
 		Sheep2 s = (Sheep2) obj;
 		s.birthday = (Date) this.birthday.clone();
 		return obj;

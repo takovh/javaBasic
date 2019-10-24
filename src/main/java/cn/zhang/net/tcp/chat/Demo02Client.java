@@ -5,19 +5,19 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
- * ¿Í»§¶Ë
- * 1.´´½¨¿Í»§¶Ë£º·¢ËÍÊı¾İ+½ÓÊÕÊı¾İ£¬±ØĞëÖ¸¶¨·şÎñÆ÷ + ¶Ë¿Ú£¬´ËÊ±¾ÍÔÚÁ¬½Ó
- * Ğ´³öÊı¾İ£ºÊä³öÁ÷
- * ¶ÁÈ¡Êı¾İ£ºÊäÈëÁ÷
- * 2.·¢ËÍÊı¾İ + ½ÓÊÕÊı¾İ
+ * å®¢æˆ·ç«¯
+ * 1.åˆ›å»ºå®¢æˆ·ç«¯ï¼šå‘é€æ•°æ®+æ¥æ”¶æ•°æ®ï¼Œå¿…é¡»æŒ‡å®šæœåŠ¡å™¨ + ç«¯å£ï¼Œæ­¤æ—¶å°±åœ¨è¿æ¥
+ * å†™å‡ºæ•°æ®ï¼šè¾“å‡ºæµ
+ * è¯»å–æ•°æ®ï¼šè¾“å…¥æµ
+ * 2.å‘é€æ•°æ® + æ¥æ”¶æ•°æ®
  * @author tako_
  *
  */
 public class Demo02Client {
 	public static void main(String[] args) throws UnknownHostException, IOException {
-		//1.´´½¨¿Í»§¶Ë
+		//1.åˆ›å»ºå®¢æˆ·ç«¯
 		Socket client = new Socket("localhost", 9999);
-		new Thread(new Demo02Send(client)).start();//Ò»ÌõÂ·¾¶
-		new Thread(new Demo02Recieve(client)).start();//Ò»ÌõÂ·¾¶
+		new Thread(new Demo02Send(client)).start();//ä¸€æ¡è·¯å¾„
+		new Thread(new Demo02Recieve(client)).start();//ä¸€æ¡è·¯å¾„
 	}
 }

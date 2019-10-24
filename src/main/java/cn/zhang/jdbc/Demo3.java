@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * ²âÊÔPreparedStatementµÄ»ù±¾ÓÃ·¨
+ * æµ‹è¯•PreparedStatementçš„åŸºæœ¬ç”¨æ³•
  * ps.setObject(parameterIndex, x);
  * @author tako_
  *
@@ -14,28 +14,27 @@ import java.sql.SQLException;
 public class Demo3 {
 	public static void main(String[] args) {
 		try {
-			//¼ÓÔØÇı¶¯Àà
+			//åŠ è½½é©±åŠ¨ç±»
 			Class.forName("com.mysql.jdbc.Driver");
-			//½¨Á¢Á¬½Ó
+			//å»ºç«‹è¿æ¥
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testjdbc","root","111111");
 			
-			String sql = "insert into t_user(username,pwd,regTime) values(?,?,?)";//?Õ¼Î»·û
+			String sql = "insert into t_user(username,pwd,regTime) values(?,?,?)";//?å ä½ç¬¦
 			PreparedStatement ps = conn.prepareStatement(sql);
-//			ps.setString(1, "Mary");//²ÎÊıË÷Òı´Ó1¿ªÊ¼
+//			ps.setString(1, "Mary");//å‚æ•°ç´¢å¼•ä»1å¼€å§‹
 //			ps.setString(2, "258");
 //			ps.setDate(3, new java.sql.Date(System.currentTimeMillis()));
 			
-			ps.setObject(1, "Mike");//²ÎÊıË÷Òı´Ó1¿ªÊ¼
+			ps.setObject(1, "Mike");//å‚æ•°ç´¢å¼•ä»1å¼€å§‹
 			ps.setObject(2, "369");
 			ps.setObject(3, new java.sql.Date(System.currentTimeMillis()));
-			//²åÈëÒ»ĞĞ¼ÇÂ¼
+			//æ’å…¥ä¸€è¡Œè®°å½•
 			//ps.execute();
 			int count = ps.executeUpdate();
 			System.out.println("count=" + count);
 		} catch (ClassNotFoundException e) {
-			System.err.println("Êı¾İ¿â¼ÓÔØÊ§°Ü");
+			System.err.println("æ•°æ®åº“åŠ è½½å¤±è´¥");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

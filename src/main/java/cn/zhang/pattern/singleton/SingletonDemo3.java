@@ -1,8 +1,8 @@
 package cn.zhang.pattern.singleton;
 
 /**
- * 测试静态内部类实现单例模式
- * 线程安全且调用效率高
+ * 娴嬭瘯闈欐�佸唴閮ㄧ被瀹炵幇鍗曚緥妯″紡
+ * 绾跨▼瀹夊叏涓旇皟鐢ㄦ晥鐜囬珮
  * @author tako_
  *
  */

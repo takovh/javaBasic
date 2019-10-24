@@ -6,12 +6,12 @@ import java.util.List;
 
 public class Demo2 {
 	public static void main(String[] args) {
-		System.out.println("==============StringÅÅĞò===============");
+		System.out.println("==============Stringæ’åº===============");
 		String[] arr = {"a","abcd","abc","def"};
-		Utils.sort(arr);//½µĞò
+		Utils.sort(arr);//é™åº
 		System.out.println(Arrays.toString(arr));
 		
-		System.out.println("==============ListÅÅĞò===============");
+		System.out.println("==============Listæ’åº===============");
 		List<String> list = new ArrayList<String>();
 		list.add("a");
 		list.add("abcd");
@@ -20,9 +20,9 @@ public class Demo2 {
 		Utils.sort(list);
 		System.out.println(list);
 		
-		System.out.println("==============Ê¹ÓÃComparatorÅÅĞòÊı×é===============");
+		System.out.println("==============ä½¿ç”¨Comparatoræ’åºæ•°ç»„===============");
 		String[] arr2 = {"a","abcd","abc","def"};
-		Utils.sort(arr2, new StringCompare());//½µĞò
+		Utils.sort(arr2, new StringCompare());//é™åº
 		System.out.println(Arrays.toString(arr2));
 	}
 }

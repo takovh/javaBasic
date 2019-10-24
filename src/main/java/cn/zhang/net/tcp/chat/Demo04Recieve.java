@@ -5,14 +5,14 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
- * ½ÓÊÕÏß³Ì
+ * æ¥æ”¶çº¿ç¨‹
  * @author tako_
  *
  */
 public class Demo04Recieve implements Runnable {
-	//ÊäÈëÁ÷
+	//è¾“å…¥æµ
 	private DataInputStream dis;
-	//Ïß³Ì±êÊ¶
+	//çº¿ç¨‹æ ‡è¯†
 	private boolean isRunning = true;
 	
 	public Demo04Recieve() {}
@@ -26,7 +26,7 @@ public class Demo04Recieve implements Runnable {
 		}
 	}
 	/**
-	 * ½ÓÊÕÊı¾İ
+	 * æ¥æ”¶æ•°æ®
 	 * @return
 	 */
 	public String recieve() {

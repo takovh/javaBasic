@@ -7,13 +7,13 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
- * ¿Í»§¶Ë£¨ÈºÁÄ + Ë½ÁÄ£©
- * ¼ÓÈëÓÃ»§ID
- * 1.´´½¨¿Í»§¶Ë£º·¢ËÍÊı¾İ+½ÓÊÕÊı¾İ£¬±ØĞëÖ¸¶¨·şÎñÆ÷ + ¶Ë¿Ú£¬´ËÊ±¾ÍÔÚÁ¬½Ó
- * Ğ´³öÊı¾İ£ºÊä³öÁ÷
- * ¶ÁÈ¡Êı¾İ£ºÊäÈëÁ÷
- * 2.·¢ËÍÊı¾İ + ½ÓÊÕÊı¾İ
- * bug:ºóÃæµÄÈËÒªµÈÇ°ÃæµÄÈËÊäÈë×Ô¼ºµÄêÇ³ÆÖ®ºó²ÅÄÜµÇÂ½
+ * å®¢æˆ·ç«¯ï¼ˆç¾¤èŠ + ç§èŠï¼‰
+ * åŠ å…¥ç”¨æˆ·ID
+ * 1.åˆ›å»ºå®¢æˆ·ç«¯ï¼šå‘é€æ•°æ®+æ¥æ”¶æ•°æ®ï¼Œå¿…é¡»æŒ‡å®šæœåŠ¡å™¨ + ç«¯å£ï¼Œæ­¤æ—¶å°±åœ¨è¿æ¥
+ * å†™å‡ºæ•°æ®ï¼šè¾“å‡ºæµ
+ * è¯»å–æ•°æ®ï¼šè¾“å…¥æµ
+ * 2.å‘é€æ•°æ® + æ¥æ”¶æ•°æ®
+ * bug:åé¢çš„äººè¦ç­‰å‰é¢çš„äººè¾“å…¥è‡ªå·±çš„æ˜µç§°ä¹‹åæ‰èƒ½ç™»é™†
  * @author tako_
  *
  */
@@ -22,16 +22,16 @@ public class Demo04Client {
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		Socket client = new Socket("localhost", 9999);
 		setName();
-		new Thread(new Demo04Send(client, name)).start();//Ò»ÌõÂ·¾¶
-		new Thread(new Demo04Recieve(client)).start();//Ò»ÌõÂ·¾¶
+		new Thread(new Demo04Send(client, name)).start();//ä¸€æ¡è·¯å¾„
+		new Thread(new Demo04Recieve(client)).start();//ä¸€æ¡è·¯å¾„
 	}
 	
 	private static void setName() throws IOException {
-		System.out.print("ÇëÊäÈëÄãµÄêÇ³Æ£º");
+		System.out.print("è¯·è¾“å…¥ä½ çš„æ˜µç§°ï¼š");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		name = br.readLine();
 		while(name.equals("")) {
-			System.out.print("êÇ³ÆÎŞĞ§£¬ÇëÖØĞÂÊäÈë:");
+			System.out.print("æ˜µç§°æ— æ•ˆï¼Œè¯·é‡æ–°è¾“å…¥:");
 			br = new BufferedReader(new InputStreamReader(System.in));
 			name = br.readLine();
 		}

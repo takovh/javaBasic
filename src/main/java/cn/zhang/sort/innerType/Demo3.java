@@ -5,13 +5,13 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * 使用Collections对容器的比较
+ * 浣跨敤Collections瀵瑰鍣ㄧ殑姣旇緝
  * @author tako_
  *
  */
 public class Demo3 {
 	public static void main(String[] args) {
-		System.out.println("==============List排序-用Comparator===============");
+		System.out.println("==============List鎺掑簭-鐢–omparator===============");
 		List<String> list = new ArrayList<String>();
 		list.add("a");
 		list.add("abcd");
@@ -20,7 +20,7 @@ public class Demo3 {
 		Collections.sort(list, new StringCompare());
 		System.out.println(list);
 		
-		System.out.println("==============List排序-默认===============");
+		System.out.println("==============List鎺掑簭-榛樿===============");
 		list = new ArrayList<String>();
 		list.add("a");
 		list.add("abcd");

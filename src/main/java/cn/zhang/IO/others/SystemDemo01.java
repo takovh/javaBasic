@@ -9,7 +9,7 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 /**
- * Èı¸ö³£Á¿
+ * ä¸‰ä¸ªå¸¸é‡
  * 1.System.in
  * 2.System.out
  * 3.System.err
@@ -27,19 +27,19 @@ public class SystemDemo01 {
 		System.err.println("err");
 	}
 	public static void test2() {
-		InputStream is = System.in;//¼üÅÌÊäÈë
+		InputStream is = System.in;//é”®ç›˜è¾“å…¥
 		Scanner sc = new Scanner(is);
 		System.out.println("Please input:");
 		System.out.println(sc.nextLine());
 		sc.close();
 	}
 	public static void test3() throws FileNotFoundException {
-		//ÖØ¶¨Ïò SetIn() SetOut() SetErr()
+		//é‡å®šå‘ SetIn() SetOut() SetErr()
 		System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("D:/tmp/a.txt")), true));
-		System.out.println("Hello world!");//¿ØÖÆÌ¨ --> ÎÄ¼ş
-		//»Ø¿ØÖÆÌ¨
+		System.out.println("Hello world!");//æ§åˆ¶å° --> æ–‡ä»¶
+		//å›æ§åˆ¶å°
 		System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream(FileDescriptor.out)), true));
-		System.out.println("back...");//¿ØÖÆÌ¨
+		System.out.println("back...");//æ§åˆ¶å°
 	}
 	
 }

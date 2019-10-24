@@ -1,8 +1,8 @@
 package cn.zhang.pattern.adapter;
 
 /**
- * 适配器（类适配器方式）
- * 相当于例子中的适配器本身（USB和PS/2转接器）
+ * 閫傞厤鍣紙绫婚�傞厤鍣ㄦ柟寮忥級
+ * 鐩稿綋浜庝緥瀛愪腑鐨勯�傞厤鍣ㄦ湰韬紙USB鍜孭S/2杞帴鍣級
  * @author tako_
  *
  */

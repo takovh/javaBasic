@@ -5,8 +5,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ´´½¨·şÎñÆ÷²¢Æô¶¯
- * Ê¹ÓÃResponse+Request
+ * åˆ›å»ºæœåŠ¡å™¨å¹¶å¯åŠ¨
+ * ä½¿ç”¨Response+Request
  * @author tako_
  *
  */
@@ -19,7 +19,7 @@ public class Server5 {
 		server.start();
 	}
 	/**
-	 * Æô¶¯·½·¨
+	 * å¯åŠ¨æ–¹æ³•
 	 */
 	public void start() {		
 		try {
@@ -32,18 +32,18 @@ public class Server5 {
 		
 	}
 	/**
-	 * ½ÓÊÕ¿Í»§¶Ë
+	 * æ¥æ”¶å®¢æˆ·ç«¯
 	 */
 	private void recieve() {
 		try {
 			Socket client = server.accept();			
-			//ÇëÇó
+			//è¯·æ±‚
 			Request req = new Request(client.getInputStream());
 			
-			//ÏìÓ¦
+			//å“åº”
 			Response rep = new Response(client.getOutputStream());
-			rep.println("<html><head><title>HTTPÏìÓ¦Ê¾Àı</title></head><body>");
-			rep.println("»¶Ó­£º").println(req.getParameter("uname")).println("»ØÀ´ÁË£¡");
+			rep.println("<html><head><title>HTTPå“åº”ç¤ºä¾‹</title></head><body>");
+			rep.println("æ¬¢è¿ï¼š").println(req.getParameter("uname")).println("å›æ¥äº†ï¼");
 			rep.println("</body></html>");
 			rep.pushToClient(200);
 			
@@ -53,7 +53,7 @@ public class Server5 {
 		}
 	}
 	/**
-	 * Í£Ö¹·şÎñÆ÷
+	 * åœæ­¢æœåŠ¡å™¨
 	 */
 	public void stop() {
 		

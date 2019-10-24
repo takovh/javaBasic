@@ -2,7 +2,7 @@ package cn.zhang.oop.callBack;
 /*
 public class MyFrame {
 	public void paint() {
-		System.out.println("把自己窗口画出来");
+		System.out.println("鎶婅嚜宸辩獥鍙ｇ敾鍑烘潵");
 	}
 }
 */

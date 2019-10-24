@@ -6,25 +6,25 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ·şÎñ¶Ë
- * 1.´´½¨·şÎñ¶Ë + ¶Ë¿Ú
- * 2.½ÓÊÕ¿Í»§¶ËµÄÁ¬½Ó ×èÈûÊ½
- * 3.·¢ËÍÊı¾İ + ½ÓÊÕÊı¾İ
+ * æœåŠ¡ç«¯
+ * 1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
+ * 2.æ¥æ”¶å®¢æˆ·ç«¯çš„è¿æ¥ é˜»å¡å¼
+ * 3.å‘é€æ•°æ® + æ¥æ”¶æ•°æ®
  * @author tako_
  *
  */
 public class Server {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws IOException {
-		//1.´´½¨·şÎñ¶Ë + ¶Ë¿Ú
-		ServerSocket server = new ServerSocket(8888);//·şÎñ²»¹Ø±Õ£¬²»ĞèÒªserver.close()
-		//2.½ÓÊÕ¿Í»§¶ËµÄÁ¬½Ó ×èÈûÊ½ ÎÕÊÖ
+		//1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
+		ServerSocket server = new ServerSocket(8888);//æœåŠ¡ä¸å…³é—­ï¼Œä¸éœ€è¦server.close()
+		//2.æ¥æ”¶å®¢æˆ·ç«¯çš„è¿æ¥ é˜»å¡å¼ æ¡æ‰‹
 		Socket socket = server.accept();
-		System.out.println("Ò»¸ö¿Í»§¶Ë½¨Á¢Á¬½Ó");//ä¯ÀÀÆ÷·ÃÎÊhttp:localhost:8888
-		//3.·¢ËÍÊı¾İ + ½ÓÊÕÊı¾İ
-		//Êä³öÁ÷
+		System.out.println("ä¸€ä¸ªå®¢æˆ·ç«¯å»ºç«‹è¿æ¥");//æµè§ˆå™¨è®¿é—®http:localhost:8888
+		//3.å‘é€æ•°æ® + æ¥æ”¶æ•°æ®
+		//è¾“å‡ºæµ
 		DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
-		String message = "»¶Ó­Ê¹ÓÃ";
+		String message = "æ¬¢è¿ä½¿ç”¨";
 		dos.writeUTF(message);
 		dos.flush();
 		/*

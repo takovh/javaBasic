@@ -3,9 +3,9 @@ package cn.zhang.IO.file;
 import java.io.File;
 
 /**
- * Êä³ö×ÓËï¼¶Ä¿Â¼|ÎÄ¼şµÄÃû³Æ(¾ø¶ÔÂ·¾¶)
+ * è¾“å‡ºå­å­™çº§ç›®å½•|æ–‡ä»¶çš„åç§°(ç»å¯¹è·¯å¾„)
  * 1.listFiles
- * 2.µİ¹é
+ * 2.é€’å½’
  * @author tako_
  *
  */
@@ -16,7 +16,7 @@ public class Demo03 {
 		printName(parent);
 	}
 	
-	//Êä³öÂ·¾¶
+	//è¾“å‡ºè·¯å¾„
 	public static void printName(File src) {
 		if(null==src||!src.exists()) return;
 		System.out.println(src.getAbsolutePath());

@@ -4,8 +4,8 @@ import java.io.Closeable;
 import java.io.IOException;
 
 /**
- * ¹¤¾ßÀà¹Ø±ÕÁ÷
- * ¿É±ä²ÎÊý£º ... Ö»ÄÜ·ÅÔÚÐÎ²ÎµÄ×îºóÒ»¸öÎ»ÖÃ,´¦Àí·½Ê½ÓëÊý×éÒ»ÖÂ
+ * å·¥å…·ç±»å…³é—­æµ
+ * å¯å˜å‚æ•°ï¼š ... åªèƒ½æ”¾åœ¨å½¢å‚çš„æœ€åŽä¸€ä¸ªä½ç½®,å¤„ç†æ–¹å¼ä¸Žæ•°ç»„ä¸€è‡´
  * @author tako_
  *
  */

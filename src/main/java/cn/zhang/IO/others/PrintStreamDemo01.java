@@ -7,7 +7,7 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 /**
- * PrintStream ´òÓ¡Á÷£¨´¦ÀíÁ÷£©
+ * PrintStream æ‰“å°æµï¼ˆå¤„ç†æµï¼‰
  * @author tako_
  *
  */
@@ -17,7 +17,7 @@ public class PrintStreamDemo01 {
 		PrintStream ps = System.out;
 		ps.println(false);
 		
-		//Êä³öµ½ÎÄ¼ş
+		//è¾“å‡ºåˆ°æ–‡ä»¶
 		File src = new File("D:/tmp/d.txt");
 		ps = new PrintStream(new BufferedOutputStream(new FileOutputStream(src)));
 		ps.println("abc123");

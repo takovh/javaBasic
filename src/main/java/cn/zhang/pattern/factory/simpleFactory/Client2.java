@@ -1,14 +1,14 @@
 package cn.zhang.pattern.factory.simpleFactory;
 
 /**
- * ¼òµ¥¹¤³§Çé¿öÏÂ
+ * ç®€å•å·¥å‚æƒ…å†µä¸‹
  * @author tako_
  *
  */
 public class Client2 {
 	public static void main(String[] args) {
-		Car c1 = CarFactory.creatCar("°ÂµÏ");
-		Car c2 = CarFactory.creatCar("±ÈÑÇµÏ");
+		Car c1 = CarFactory.creatCar("å¥¥è¿ª");
+		Car c2 = CarFactory.creatCar("æ¯”äºšè¿ª");
 		
 		c1.run();
 		c2.run();

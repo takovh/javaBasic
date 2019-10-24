@@ -1,7 +1,7 @@
 package cn.zhang.sort.innerType;
 
 /**
- * 内置类型比较
+ * 鍐呯疆绫诲瀷姣旇緝
  * @author tako_
  *
  */

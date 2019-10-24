@@ -5,8 +5,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ´´½¨·şÎñÆ÷²¢Æô¶¯
- * Ê¹ÓÃResponse
+ * åˆ›å»ºæœåŠ¡å™¨å¹¶å¯åŠ¨
+ * ä½¿ç”¨Response
  * @author tako_
  *
  */
@@ -19,7 +19,7 @@ public class Server4 {
 		server.start();
 	}
 	/**
-	 * Æô¶¯·½·¨
+	 * å¯åŠ¨æ–¹æ³•
 	 */
 	public void start() {		
 		try {
@@ -32,24 +32,24 @@ public class Server4 {
 		
 	}
 	/**
-	 * ½ÓÊÕ¿Í»§¶Ë
+	 * æ¥æ”¶å®¢æˆ·ç«¯
 	 */
 	@SuppressWarnings("unused")
 	private void recieve() {
 		try {
 			Socket client = server.accept();			
-			String msg = null;//½ÓÊÕ¿Í»§¶ËµÄÇëÇóĞÅÏ¢
+			String msg = null;//æ¥æ”¶å®¢æˆ·ç«¯çš„è¯·æ±‚ä¿¡æ¯
 			
 			byte[] data = new byte[20480];
 			int len = client.getInputStream().read(data);
 			
-			//½ÓÊÕ¿Í»§¶ËµÄÇëÇóĞÅÏ¢
+			//æ¥æ”¶å®¢æˆ·ç«¯çš„è¯·æ±‚ä¿¡æ¯
 			String requestInfo = new String(data,0,len).trim();
 			System.out.println(requestInfo);
 			
-			//ÏìÓ¦
+			//å“åº”
 			Response rep = new Response(client.getOutputStream());
-			rep.println("<html><head><title>HTTPÏìÓ¦Ê¾Àı</title></head><body>ÀîÏÕ¹óºÍÒü½ÜÊÇºÃ»ùÓÑ£¡</body></html>");
+			rep.println("<html><head><title>HTTPå“åº”ç¤ºä¾‹</title></head><body>æé™©è´µå’Œå°¹æ°æ˜¯å¥½åŸºå‹ï¼</body></html>");
 			rep.pushToClient(200);
 			
 		} catch (IOException e) {
@@ -58,7 +58,7 @@ public class Server4 {
 		}
 	}
 	/**
-	 * Í£Ö¹·şÎñÆ÷
+	 * åœæ­¢æœåŠ¡å™¨
 	 */
 	public void stop() {
 		

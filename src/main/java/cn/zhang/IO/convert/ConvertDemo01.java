@@ -3,28 +3,28 @@ package cn.zhang.IO.convert;
 import java.io.UnsupportedEncodingException;
 
 /**
- * ½âÂëÓë±àÂë×Ö·û¼¯²»Í³Ò»»ò×Ö½ÚÊı²»ÍêÕû»áÔì³ÉÂÒÂë
+ * è§£ç ä¸ç¼–ç å­—ç¬¦é›†ä¸ç»Ÿä¸€æˆ–å­—èŠ‚æ•°ä¸å®Œæ•´ä¼šé€ æˆä¹±ç 
  * @author tako_
  *
  */
 public class ConvertDemo01 {
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		
-		String str = "Ò»¶şÈıabc123";//GBK
-		//±àÂë1£ºchar-(GBK)->byte
+		String str = "ä¸€äºŒä¸‰abc123";//GBK
+		//ç¼–ç 1ï¼šchar-(GBK)->byte
 		byte[] data1 = str.getBytes();
-		//½âÂë1£ºbyte-(GBK)->char
-		System.out.println(new String(data1));//½âÂëÓë±àÂë×Ö·û¼¯Í³Ò»
+		//è§£ç 1ï¼šbyte-(GBK)->char
+		System.out.println(new String(data1));//è§£ç ä¸ç¼–ç å­—ç¬¦é›†ç»Ÿä¸€
 		
-		//±àÂë2£ºchar-(utf-8)->byte
-		byte[] data2 = str.getBytes("utf-8");//Éè¶¨±àÂë×Ö·û¼¯
-		//½âÂë2£ºbyte-(GBK)->char
-		System.out.println(new String(data2));//½âÂëÓë±àÂë×Ö·û¼¯²»Í³Ò»
+		//ç¼–ç 2ï¼šchar-(utf-8)->byte
+		byte[] data2 = str.getBytes("utf-8");//è®¾å®šç¼–ç å­—ç¬¦é›†
+		//è§£ç 2ï¼šbyte-(GBK)->char
+		System.out.println(new String(data2));//è§£ç ä¸ç¼–ç å­—ç¬¦é›†ä¸ç»Ÿä¸€
 		
-		//±àÂë3£ºchar-(utf-8)->byte
-		byte[] data3 = str.getBytes("utf-8");//Éè¶¨±àÂë×Ö·û¼¯
-		//½âÂë3£ºbyte-->char
-		System.out.println(new String(data3, "utf-8"));//²»Ö¸¶¨ÔòÄ¬ÈÏGBK
+		//ç¼–ç 3ï¼šchar-(utf-8)->byte
+		byte[] data3 = str.getBytes("utf-8");//è®¾å®šç¼–ç å­—ç¬¦é›†
+		//è§£ç 3ï¼šbyte-->char
+		System.out.println(new String(data3, "utf-8"));//ä¸æŒ‡å®šåˆ™é»˜è®¤GBK
 		
 	}
 }

@@ -9,7 +9,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 /**
- * ²âÊÔÊ±¼ä´¦Àí£¨java.sql.Date,Time,Timestamp£©£¬È¡³öÖ¸¶¨Ê±¼ä¶ÎµÄÊý¾Ý
+ * æµ‹è¯•æ—¶é—´å¤„ç†ï¼ˆjava.sql.Date,Time,Timestampï¼‰ï¼Œå–å‡ºæŒ‡å®šæ—¶é—´æ®µçš„æ•°æ®
  * @author tako_
  *
  */
@@ -19,9 +19,9 @@ public class Demo8 {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
-			//¼ÓÔØÇý¶¯Àà
+			//åŠ è½½é©±åŠ¨ç±»
 			Class.forName("com.mysql.jdbc.Driver");
-			//½¨Á¢Á¬½Ó
+			//å»ºç«‹è¿žæŽ¥
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testjdbc","root","111111");
 			ps = conn.prepareStatement("select * from t_user where lastLoginTime>? and lastLoginTime<? order by lastLoginTime");
 			
@@ -34,7 +34,7 @@ public class Demo8 {
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			System.err.println("Êý¾Ý¿â¼ÓÔØÊ§°Ü");
+			System.err.println("æ•°æ®åº“åŠ è½½å¤±è´¥");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
@@ -51,7 +51,7 @@ public class Demo8 {
 		}
 	}
 	/**
-	 * ½«×Ö·û´®´ú±íµÄÈÕÆÚ×ªÎªlongÊý×Ö£¨¸ñÊ½£ºyyyy-MM-dd hh:mm:ss£©
+	 * å°†å­—ç¬¦ä¸²ä»£è¡¨çš„æ—¥æœŸè½¬ä¸ºlongæ•°å­—ï¼ˆæ ¼å¼ï¼šyyyy-MM-dd hh:mm:ssï¼‰
 	 * @param dateString
 	 * @return
 	 * @throws ParseException 

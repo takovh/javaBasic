@@ -5,10 +5,10 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * ²âÊÔCalendarÀàµÄÊ¹ÓÃ
- * CalendarÊÇ³éÏóÀà
- * GregorianCalendarÊÇËûµÄ×ÓÀà
- * @author ÕÅìÏ
+ * æµ‹è¯•Calendarç±»çš„ä½¿ç”¨
+ * Calendaræ˜¯æŠ½è±¡ç±»
+ * GregorianCalendaræ˜¯ä»–çš„å­ç±»
+ * @author å¼ ç…œ
  *
  */
 public class TestCalendar {
@@ -20,13 +20,13 @@ public class TestCalendar {
 		
 		Date d = c.getTime();
 		System.out.println(d);
-		System.out.println("Ò»ÄêµÄµÚ"+c.get(Calendar.WEEK_OF_YEAR)+"ÖÜ");
+		System.out.println("ä¸€å¹´çš„ç¬¬"+c.get(Calendar.WEEK_OF_YEAR)+"å‘¨");
 		
 		c.add(Calendar.DAY_OF_YEAR, 78);
 		
 		d = c.getTime();
 		System.out.println(d);
-		System.out.println("Ò»ÄêµÄµÚ"+c.get(Calendar.WEEK_OF_YEAR)+"ÖÜ");
+		System.out.println("ä¸€å¹´çš„ç¬¬"+c.get(Calendar.WEEK_OF_YEAR)+"å‘¨");
 		
 	}
 }

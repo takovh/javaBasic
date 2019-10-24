@@ -19,7 +19,7 @@ public class RealStar implements Star {
 
 	@Override
 	public void sing() {
-		System.out.println("RealStar(ÖÜ½ÜÂ×±¾ÈË).sing()");
+		System.out.println("RealStar(å‘¨æ°ä¼¦æœ¬äºº).sing()");
 	}
 
 	@Override

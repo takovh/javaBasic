@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
- * Ò»¸öÇëÇóÓëÏìÓ¦¾ÍÊÇÒ»¸öDispatcher¶ÔÏó
+ * ä¸€ä¸ªè¯·æ±‚ä¸å“åº”å°±æ˜¯ä¸€ä¸ªDispatcherå¯¹è±¡
  * @author tako_
  *
  */
@@ -29,7 +29,7 @@ public class Dispatcher implements Runnable{
 		Servlet serv = new Servlet();
 		serv.service(req, rep);
 		try {
-			rep.pushToClient(code);//ÍÆËÍµ½¿Í»§¶Ë
+			rep.pushToClient(code);//æ¨é€åˆ°å®¢æˆ·ç«¯
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

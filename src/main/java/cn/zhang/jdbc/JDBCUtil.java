@@ -9,8 +9,8 @@ import java.sql.Statement;
 import java.util.Properties;
 
 public class JDBCUtil {
-	static Properties pros = null;//¿ÉÒÔ°ïÖú¶ÁÈ¡ºÍ´¦Àí×ÊÔ´ÎÄ¼şÖĞµÄĞÅÏ¢
-	static {//¼ÓÔØJDBCUtilÀàµÄÊ±ºòÊ¹ÓÃ
+	static Properties pros = null;//å¯ä»¥å¸®åŠ©è¯»å–å’Œå¤„ç†èµ„æºæ–‡ä»¶ä¸­çš„ä¿¡æ¯
+	static {//åŠ è½½JDBCUtilç±»çš„æ—¶å€™ä½¿ç”¨
 		pros = new Properties();
 		try {
 			pros.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("db.properties"));
@@ -19,10 +19,10 @@ public class JDBCUtil {
 		}
 	}
 	public static Connection getMysqlConn() {
-		//¼ÓÔØÇı¶¯Àà
+		//åŠ è½½é©±åŠ¨ç±»
 		try {
 			Class.forName(pros.getProperty("mysqlDriver"));
-			//½¨Á¢Á¬½Ó
+			//å»ºç«‹è¿æ¥
 			return DriverManager.getConnection(pros.getProperty("mysqlURL"),pros.getProperty("mysqlUser"),pros.getProperty("mysqlPwd"));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -30,7 +30,7 @@ public class JDBCUtil {
 		} 
 	}
 	
-	//¹Ø±ÕË³Ğò×ñÑ­£ºresultSet-->statement-->connection£¬Èı¸ö¿éÒ»¶¨Òª·Ö¿ªĞ´
+	//å…³é—­é¡ºåºéµå¾ªï¼šresultSet-->statement-->connectionï¼Œä¸‰ä¸ªå—ä¸€å®šè¦åˆ†å¼€å†™
 	public static void close(ResultSet rs, Statement ps, Connection conn) {
 		try {
 			if(rs!=null) rs.close();

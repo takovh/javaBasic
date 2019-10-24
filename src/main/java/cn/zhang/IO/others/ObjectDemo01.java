@@ -10,8 +10,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * ²»ÊÇËùÓĞµÄ¶ÔÏó¶¼¿ÉÒÔĞòÁĞ»¯
- * ²»ÊÇËùÓĞµÄÊôĞÔ¶¼ĞèÒªĞòÁĞ»¯
+ * ä¸æ˜¯æ‰€æœ‰çš„å¯¹è±¡éƒ½å¯ä»¥åºåˆ—åŒ–
+ * ä¸æ˜¯æ‰€æœ‰çš„å±æ€§éƒ½éœ€è¦åºåˆ—åŒ–
  * @author tako_
  *
  */
@@ -26,29 +26,29 @@ public class ObjectDemo01 {
 		}
 	}
 	
-	//ĞòÁĞ»¯
+	//åºåˆ—åŒ–
 	public static void seri(String destPath) throws IOException {
 		Employee emp = new Employee("zhangyu",10000);
-		// ´´½¨Ô´
+		// åˆ›å»ºæº
 		File dest = new File(destPath);
 		//ObjectOutputStream
 		ObjectOutputStream dos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(dest)));
-		// ²Ù×÷
+		// æ“ä½œ
 		dos.writeObject(emp);
 		dos.close();
 	}
 	
-	//·´ĞòÁĞ»¯
+	//ååºåˆ—åŒ–
 	public static void reseri(String destPath) throws IOException, ClassNotFoundException {
-		//´´½¨Ô´
+		//åˆ›å»ºæº
 		File src = new File(destPath);
-		//Ñ¡ÔñÁ÷
+		//é€‰æ‹©æµ
 		ObjectInputStream dis = new ObjectInputStream(
 					new BufferedInputStream(
 								new FileInputStream(src)
 							)
 				);
-		//²Ù×÷£º¶ÁÈ¡µÄË³Ğò±ØĞëÓëĞ´³öÒ»ÖÂ ±ØĞë´æÔÚ²ÅÄÜ¶ÁÈ¡
+		//æ“ä½œï¼šè¯»å–çš„é¡ºåºå¿…é¡»ä¸å†™å‡ºä¸€è‡´ å¿…é¡»å­˜åœ¨æ‰èƒ½è¯»å–
 		Object obj = dis.readObject();
 		if(obj instanceof Employee) {
 			Employee emp = (Employee)obj;

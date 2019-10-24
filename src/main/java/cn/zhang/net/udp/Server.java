@@ -7,29 +7,29 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
 /**
- * ·şÎñ¶Ë
- * 1.´´½¨·şÎñ¶Ë + ¶Ë¿Ú
- * 2.×¼±¸½ÓÊÕÈİÆ÷
- * 3.·â×°³É°ü
- * 4.½ÓÊÕÊı¾İ
- * 5.·ÖÎöÊı¾İ	×Ö½ÚÊı×é-->double
+ * æœåŠ¡ç«¯
+ * 1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
+ * 2.å‡†å¤‡æ¥æ”¶å®¹å™¨
+ * 3.å°è£…æˆåŒ…
+ * 4.æ¥æ”¶æ•°æ®
+ * 5.åˆ†ææ•°æ®	å­—èŠ‚æ•°ç»„-->double
  * @author tako_
  *
  */
 public class Server {
 	public static void main(String[] args) throws IOException {
-		//1.´´½¨·şÎñ¶Ë + ¶Ë¿Ú
+		//1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
 		DatagramSocket server = new DatagramSocket(8888);
-		//2.×¼±¸½ÓÊÕÈİÆ÷
+		//2.å‡†å¤‡æ¥æ”¶å®¹å™¨
 		byte[] container = new byte[1024];
-		//3.·â×°³É°üDatagramPacket(buf, length)
+		//3.å°è£…æˆåŒ…DatagramPacket(buf, length)
 		DatagramPacket packet = new DatagramPacket(container, container.length);
-		//4.½ÓÊÕÊı¾İ
+		//4.æ¥æ”¶æ•°æ®
 		server.receive(packet);
-		//5.·ÖÎöÊı¾İ
+		//5.åˆ†ææ•°æ®
 		double data = convert(packet.getData());
 		System.out.println(data);
-		//6.ÊÍ·Å
+		//6.é‡Šæ”¾
 		server.close();				
 	}
 	public static double convert(byte[] data) throws IOException {

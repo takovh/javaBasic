@@ -5,14 +5,14 @@ import java.util.List;
 
 
 /**
- * 1Êı×éÅÅĞò
+ * 1æ•°ç»„æ’åº
  * 
  * @author tako_
  *
  */
 public class Utils {
 	/**
-	 * Êı×éÅÅĞò-½µĞò
+	 * æ•°ç»„æ’åº-é™åº
 	 * @param arr
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -34,7 +34,7 @@ public class Utils {
 	}
 	
 	/**
-	 * Êı×éÅÅĞò-½µĞò(Ê¹ÓÃ·ºĞÍ)
+	 * æ•°ç»„æ’åº-é™åº(ä½¿ç”¨æ³›å‹)
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static <T extends Comparable<T>> void sort(T[] arr) {
@@ -55,19 +55,19 @@ public class Utils {
 	}
 	
 	/**
-	 * ÈİÆ÷ÅÅĞò
+	 * å®¹å™¨æ’åº
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T extends Comparable<T>> void sort(List<T> list) {
-		//µÚÒ»²½£º×ª³ÉÊı×é
+		//ç¬¬ä¸€æ­¥ï¼šè½¬æˆæ•°ç»„
 		Object[] arr = list.toArray();
 		sort(arr);
-		//µÚ¶ş²½£º¸Ä±äÈİÆ÷ÖĞ¶ÔÓ¦µÄÖµ
+		//ç¬¬äºŒæ­¥ï¼šæ”¹å˜å®¹å™¨ä¸­å¯¹åº”çš„å€¼
 		for(int i=0;i<arr.length;i++) list.set(i, (T)(arr[i]));
 	}
 	
 	/**
-	 * Êı×éµÄÅÅĞò£¨½µĞò£©+Comparator½Ó¿Ú
+	 * æ•°ç»„çš„æ’åºï¼ˆé™åºï¼‰+Comparatoræ¥å£
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void sort(Object[] arr, Comparator com) {

@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * ÏíÔª¹¤³§Àà
+ * äº«å…ƒå·¥å‚ç±»
  * @author tako_
  *
  */
 public class ChessFlyWeightFactory {
-	//ÏíÔª³Ø
+	//äº«å…ƒæ± 
 	private static Map<String, ChessFlyWeight> map = new HashMap<String, ChessFlyWeight>();
 	
 	public static ChessFlyWeight getChess(String color) {

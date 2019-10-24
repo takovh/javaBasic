@@ -4,16 +4,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * ĞÂÎÅÌõÄ¿µÄÊµÌåÀà
+ * æ–°é—»æ¡ç›®çš„å®ä½“ç±»
  * @author tako_
  *
  */
 public class NewsItem implements java.lang.Comparable<NewsItem> {
-	//±êÌâ
+	//æ ‡é¢˜
 	private String title;
-	//µã»÷Á¿
+	//ç‚¹å‡»é‡
 	private int hits;
-	//Ê±¼ä
+	//æ—¶é—´
 	private Date publicTime;
 	public String getTitle() {
 		return title;
@@ -47,19 +47,19 @@ public class NewsItem implements java.lang.Comparable<NewsItem> {
 		this.publicTime = publicTime;
 	}
 
-	//Ê±¼ä½µĞò+µã»÷Á¿ÉıĞò+±êÌâ½µĞò
+	//æ—¶é—´é™åº+ç‚¹å‡»é‡å‡åº+æ ‡é¢˜é™åº
 	@Override
 	public int compareTo(NewsItem o) {
 		// TODO Auto-generated method stub
 		int result = 0;
-		//±È½ÏÊ±¼ä
-		result = -this.publicTime.compareTo(o.publicTime);//½µĞò
-		if(0==result) {//Ê±¼äÏàÍ¬
-			//±È½Ïµã»÷Á¿
-			result = this.hits - o.hits;//ÉıĞò
-			if(0==result) {//µã»÷Á¿ÏàÍ¬
-				//±È½Ï±êÌâ
-				result = -this.title.compareTo(o.title);//½µĞò
+		//æ¯”è¾ƒæ—¶é—´
+		result = -this.publicTime.compareTo(o.publicTime);//é™åº
+		if(0==result) {//æ—¶é—´ç›¸åŒ
+			//æ¯”è¾ƒç‚¹å‡»é‡
+			result = this.hits - o.hits;//å‡åº
+			if(0==result) {//ç‚¹å‡»é‡ç›¸åŒ
+				//æ¯”è¾ƒæ ‡é¢˜
+				result = -this.title.compareTo(o.title);//é™åº
 			}
 		}
 		return result;
@@ -68,9 +68,9 @@ public class NewsItem implements java.lang.Comparable<NewsItem> {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("±êÌâ£º").append(this.title).append(", ");
-		sb.append("Ê±¼ä£º").append(new SimpleDateFormat("MM-dd HH:mm:ss").format(this.publicTime)).append(", ");
-		sb.append("µã»÷Á¿£º").append(this.hits).append("\n");
+		sb.append("æ ‡é¢˜ï¼š").append(this.title).append(", ");
+		sb.append("æ—¶é—´ï¼š").append(new SimpleDateFormat("MM-dd HH:mm:ss").format(this.publicTime)).append(", ");
+		sb.append("ç‚¹å‡»é‡ï¼š").append(this.hits).append("\n");
 		return sb.toString();
 	}
 	

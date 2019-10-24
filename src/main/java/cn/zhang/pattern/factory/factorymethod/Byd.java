@@ -4,8 +4,7 @@ public class Byd implements Car {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		System.out.println("BYDÔÚÅÜ£¡");
+		System.out.println("BYDåœ¨è·‘ï¼");
 	}
 
 }

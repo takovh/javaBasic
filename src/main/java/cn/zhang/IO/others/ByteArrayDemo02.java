@@ -12,47 +12,47 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * 1.ÎÄ¼ş --³ÌĞò--> ×Ö½ÚÊı×é
- * 1)ÎÄ¼şÊäÈëÁ÷  ×Ö½ÚÊı×éÊä³öÁ÷
+ * 1.æ–‡ä»¶ --ç¨‹åº--> å­—èŠ‚æ•°ç»„
+ * 1)æ–‡ä»¶è¾“å…¥æµ  å­—èŠ‚æ•°ç»„è¾“å‡ºæµ
  * 
- * 2.×Ö½ÚÊı×é --³ÌĞò--> ÎÄ¼ş
- * 1)×Ö½ÚÊı×éÊäÈëÁ÷  ÎÄ¼şÊä³öÁ÷
+ * 2.å­—èŠ‚æ•°ç»„ --ç¨‹åº--> æ–‡ä»¶
+ * 1)å­—èŠ‚æ•°ç»„è¾“å…¥æµ  æ–‡ä»¶è¾“å‡ºæµ
  * @author tako_
  *
  */
 public class ByteArrayDemo02 {
 	public static void main(String[] args) throws IOException {
-		byte[] data = getByteFromFile("D:/tmp/a.txt");//1.ÎÄ¼ş1 --³ÌĞò--> ×Ö½ÚÊı×é
-		toFileFromByteArray(data, "D:/tmp/c.txt");//2.×Ö½ÚÊı×é --³ÌĞò--> ÎÄ¼ş2
+		byte[] data = getByteFromFile("D:/tmp/a.txt");//1.æ–‡ä»¶1 --ç¨‹åº--> å­—èŠ‚æ•°ç»„
+		toFileFromByteArray(data, "D:/tmp/c.txt");//2.å­—èŠ‚æ•°ç»„ --ç¨‹åº--> æ–‡ä»¶2
 	}
 	
 	/**
-	 * 1.ÎÄ¼ş --³ÌĞò--> ×Ö½ÚÊı×é
+	 * 1.æ–‡ä»¶ --ç¨‹åº--> å­—èŠ‚æ•°ç»„
 	 * @return
 	 * @throws IOException 
 	 */
 	public static byte[] getByteFromFile(String srcPath) throws IOException {
-		//1.´´½¨ÎÄ¼şÔ´
+		//1.åˆ›å»ºæ–‡ä»¶æº
 		File src = new File(srcPath);
-		//´´½¨×Ö½ÚÊı×éÄ¿µÄµØ
+		//åˆ›å»ºå­—èŠ‚æ•°ç»„ç›®çš„åœ°
 		byte[] dest = null;
 		
-		//2.Ñ¡ÔñÁ÷£ºÎÄ¼şÊäÈëÁ÷ + ×Ö½ÚÊı×éÊä³öÁ÷
-		//ÎÄ¼şÊäÈëÁ÷
+		//2.é€‰æ‹©æµï¼šæ–‡ä»¶è¾“å…¥æµ + å­—èŠ‚æ•°ç»„è¾“å‡ºæµ
+		//æ–‡ä»¶è¾“å…¥æµ
 		InputStream is = new BufferedInputStream(new FileInputStream(src));
-		//×Ö½ÚÊı×éÊä³öÁ÷²»ÄÜÊ¹ÓÃ¶àÌ¬
+		//å­—èŠ‚æ•°ç»„è¾“å‡ºæµä¸èƒ½ä½¿ç”¨å¤šæ€
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		
-		//3.²Ù×÷ ²»¶Ï¶ÁÈ¡ÎÄ¼ş Ğ´³öµ½×Ö½ÚÊı×éÁ÷ÖĞ
+		//3.æ“ä½œ ä¸æ–­è¯»å–æ–‡ä»¶ å†™å‡ºåˆ°å­—èŠ‚æ•°ç»„æµä¸­
 		byte[] flush = new byte[1024];
 		int len = 0;
 		while(-1!=(len=is.read(flush))) {
-			//Ğ´³öµ½×Ö½ÚÊı×éÁ÷ÖĞ
+			//å†™å‡ºåˆ°å­—èŠ‚æ•°ç»„æµä¸­
 			baos.write(flush, 0, len);
 		}
 		baos.flush();
 		
-		//4.»ñÈ¡Êı¾İ
+		//4.è·å–æ•°æ®
 		dest = baos.toByteArray();
 		baos.close();
 		is.close();
@@ -60,24 +60,24 @@ public class ByteArrayDemo02 {
 	}
 	
 	/**
-	 * 2.×Ö½ÚÊı×é --³ÌĞò--> ÎÄ¼ş
-	 * 1)×Ö½ÚÊı×éÊäÈëÁ÷  ÎÄ¼şÊä³öÁ÷
+	 * 2.å­—èŠ‚æ•°ç»„ --ç¨‹åº--> æ–‡ä»¶
+	 * 1)å­—èŠ‚æ•°ç»„è¾“å…¥æµ  æ–‡ä»¶è¾“å‡ºæµ
 	 * @throws IOException 
 	 */
 	public static void toFileFromByteArray(byte[] src, String destPath) throws IOException {
-		//´´½¨Ô´
-		//Ä¿µÄµØ
+		//åˆ›å»ºæº
+		//ç›®çš„åœ°
 		File dest = new File(destPath);
-		//Ñ¡ÔñÁ÷:×Ö½ÚÊı×éÊäÈëÁ÷ + ÎÄ¼şÊä³öÁ÷
-		//×Ö½ÚÊı×éÊäÈëÁ÷
+		//é€‰æ‹©æµ:å­—èŠ‚æ•°ç»„è¾“å…¥æµ + æ–‡ä»¶è¾“å‡ºæµ
+		//å­—èŠ‚æ•°ç»„è¾“å…¥æµ
 		InputStream is = new BufferedInputStream(new ByteArrayInputStream(src));
-		//ÎÄ¼şÊä³öÁ÷
+		//æ–‡ä»¶è¾“å‡ºæµ
 		OutputStream os = new BufferedOutputStream(new FileOutputStream(dest));
-		//²Ù×÷£º²»¶Ï¶ÁÈ¡×Ö½ÚÊı×é
+		//æ“ä½œï¼šä¸æ–­è¯»å–å­—èŠ‚æ•°ç»„
 		byte[] flush = new byte[1024];
 		int len = 0;
 		while(-1!=(len=is.read(flush))) {
-			//Ğ´³öµ½ÎÄ¼şÖĞ
+			//å†™å‡ºåˆ°æ–‡ä»¶ä¸­
 			os.write(flush, 0, len);
 		}
 		os.flush();

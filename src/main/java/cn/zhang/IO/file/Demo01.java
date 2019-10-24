@@ -3,11 +3,11 @@ package cn.zhang.IO.file;
 import java.io.File;
 
 /**
- * Á½¸ö³£Á¿£º
- * 1.Â·¾¶·Ö¸ô·û
- * 2.Ãû³Æ·Ö¸ô·û
+ * ä¸¤ä¸ªå¸¸é‡ï¼š
+ * 1.è·¯å¾„åˆ†éš”ç¬¦
+ * 2.åç§°åˆ†éš”ç¬¦
  * 
- * Ïà¶ÔÂ·¾¶Óë¾ø¶ÔÂ·¾¶¹¹ÔìFile¶ÔÏó
+ * ç›¸å¯¹è·¯å¾„ä¸ç»å¯¹è·¯å¾„æ„é€ Fileå¯¹è±¡
  * @author tako_
  *
  */
@@ -15,25 +15,25 @@ public class Demo01 {
 	public static void main(String[] args) {
 		System.out.println(File.pathSeparator);
 		System.out.println(File.separator);
-		//Â·¾¶±íÊ¾ĞÎÊ½
-		String path = "D:\\tmp\\1.jpg";//×ªÒå×Ö·ûÎÊÌâ
-		path = "D:" + File.separator + "tmp" + File.separator + "1.jpg";//¿çÆ½Ì¨
-		path = "D:/tmp/1.jpg";//ÍÆ¼ö·½Ê½£ºÌæ»»Îª/
+		//è·¯å¾„è¡¨ç¤ºå½¢å¼
+		String path = "D:\\tmp\\1.jpg";//è½¬ä¹‰å­—ç¬¦é—®é¢˜
+		path = "D:" + File.separator + "tmp" + File.separator + "1.jpg";//è·¨å¹³å°
+		path = "D:/tmp/1.jpg";//æ¨èæ–¹å¼ï¼šæ›¿æ¢ä¸º/
 		System.out.println(path);
 		
 		String parentPath = "D:/tmp";
 		String name = "1.jpg";
-		//Ïà¶ÔÂ·¾¶
+		//ç›¸å¯¹è·¯å¾„
 		File src = new File(parentPath,name);
 		src = new File(new File(parentPath),name);
-		//Êä³ö
+		//è¾“å‡º
 		System.out.println(src.getName());
 		System.out.println(src.getPath());
-		//¾ø¶ÔÂ·¾¶
+		//ç»å¯¹è·¯å¾„
 		src = new File("D:/tmp/1.jpg");
 		System.out.println(src.getName());
 		System.out.println(src.getPath());
-		//Ã»ÓĞÅÌ·û£ºÒÔuser.dir¹¹½¨
+		//æ²¡æœ‰ç›˜ç¬¦ï¼šä»¥user.diræ„å»º
 		src = new File("1.jpg");
 		System.out.println(src.getName());
 		System.out.println(src.getPath());

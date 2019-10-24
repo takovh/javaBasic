@@ -2,27 +2,27 @@ package cn.zhang.pattern.proxy.dynamicProxy;
 
 public interface Star {
 	/**
-	 * ÃæÌ¸
+	 * é¢è°ˆ
 	 */
 	void confer();
 	
 	/**
-	 * Ç©ºÏÍ¬
+	 * ç­¾åˆåŒ
 	 */
 	void signContract();
 	
 	/**
-	 * ¶©Æ±
+	 * è®¢ç¥¨
 	 */
 	void bookTicket();
 	
 	/**
-	 * ³ª¸è
+	 * å”±æ­Œ
 	 */
 	void sing();
 	
 	/**
-	 * ÊÕÇ®
+	 * æ”¶é’±
 	 */
 	void collectMoney();
 }

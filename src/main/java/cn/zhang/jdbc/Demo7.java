@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.Random;
 
 /**
- * ²âÊÔÊ±¼ä´¦Àí£¨java.sql.Date,Time,Timestamp£©
+ * æµ‹è¯•æ—¶é—´å¤„ç†ï¼ˆjava.sql.Date,Time,Timestampï¼‰
  * @author tako_
  *
  */
@@ -16,13 +16,13 @@ public class Demo7 {
 		Connection conn = null;
 		PreparedStatement ps1 = null;
 		try {
-			//¼ÓÔØÇı¶¯Àà
+			//åŠ è½½é©±åŠ¨ç±»
 			Class.forName("com.mysql.jdbc.Driver");
-			//½¨Á¢Á¬½Ó
+			//å»ºç«‹è¿æ¥
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testjdbc","root","111111");
 			for(int i=0;i<1000;i++) {
 				ps1 = conn.prepareStatement("insert into t_user(username,pwd,regTime,lastLoginTime) values(?,?,?,?)");
-				ps1.setString(1, "ÕÅìÏ"+i);
+				ps1.setString(1, "å¼ ç…œ"+i);
 				ps1.setObject(2, 123456);
 				java.sql.Date date = new java.sql.Date(System.currentTimeMillis()-200000000);
 				int rand = 100000000 + new Random().nextInt(100000000);
@@ -34,7 +34,7 @@ public class Demo7 {
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			System.err.println("Êı¾İ¿â¼ÓÔØÊ§°Ü");
+			System.err.println("æ•°æ®åº“åŠ è½½å¤±è´¥");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {

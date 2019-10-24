@@ -7,18 +7,18 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 /**
- * ÓÃÓÚ·¢ËÍÊı¾İ
+ * ç”¨äºå‘é€æ•°æ®
  * @author tako_
  *
  */
 public class Demo02Send implements Runnable {
-	//¿ØÖÆÌ¨ÊäÈëÁ÷
+	//æ§åˆ¶å°è¾“å…¥æµ
 	private BufferedReader console;
-	//¹ÜµÀÊä³öÁ÷
+	//ç®¡é“è¾“å‡ºæµ
 	private DataOutputStream dos;
 	private boolean isRunning = true;
 	
-	//¹¹ÔìÆ÷
+	//æ„é€ å™¨
 	public Demo02Send() {
 		console = new BufferedReader(new InputStreamReader(System.in));
 	}
@@ -33,7 +33,7 @@ public class Demo02Send implements Runnable {
 		}
 	}
 	
-	//´Ó¿ØÖÆÌ¨½ÓÊÕÊı¾İ
+	//ä»æ§åˆ¶å°æ¥æ”¶æ•°æ®
 	private String getMessageFromConsole() {
 		String str = "";
 		try {
@@ -43,7 +43,7 @@ public class Demo02Send implements Runnable {
 		}
 		return str;
 	}
-	//·¢ËÍÊı¾İ
+	//å‘é€æ•°æ®
 	public void send() {
 		String message = getMessageFromConsole();
 		try {
@@ -57,7 +57,7 @@ public class Demo02Send implements Runnable {
 			CloseUtil.close(dos, console);
 		}		
 	}
-	//Ïß³ÌÌå
+	//çº¿ç¨‹ä½“
 	@Override
 	public void run() {
 		while(isRunning) send();

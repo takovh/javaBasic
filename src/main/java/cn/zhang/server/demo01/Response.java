@@ -8,17 +8,17 @@ import java.net.Socket;
 import java.util.Date;
 
 /**
- * ·â×°ÏàÓ¦ĞÅÏ¢
+ * å°è£…ç›¸åº”ä¿¡æ¯
  * @author tako_
  *
  */
 public class Response {
 	public static String BLANK = " ";
 	public static String CRLF = "\r\n";
-	private BufferedWriter bw;//Á÷
-	private StringBuilder headInfo;//´æ´¢Í·ĞÅÏ¢
-	private StringBuilder content;//ÕıÎÄ
-	private int len;//ÕıÎÄ³¤¶È
+	private BufferedWriter bw;//æµ
+	private StringBuilder headInfo;//å­˜å‚¨å¤´ä¿¡æ¯
+	private StringBuilder content;//æ­£æ–‡
+	private int len;//æ­£æ–‡é•¿åº¦
 	
 	public Response(){
 		headInfo = new StringBuilder();
@@ -40,10 +40,10 @@ public class Response {
 		}
 	}
 	/**
-	 * ¹¹½¨ÏìÓ¦Í·
+	 * æ„å»ºå“åº”å¤´
 	 */
 	private void creatHeadInfo(int code) {
-		//1.HTTPĞ­Òé°æ±¾¡¢×´Ì¬´úÂë¡¢ÃèÊö
+		//1.HTTPåè®®ç‰ˆæœ¬ã€çŠ¶æ€ä»£ç ã€æè¿°
 		headInfo.append("HTTP/1.1").append(BLANK).append(code).append(BLANK);
 		switch(code) {
 			case 200: headInfo.append("OK"); break;
@@ -51,16 +51,16 @@ public class Response {
 			case 505: headInfo.append("SERVER ERROR"); break;
 		}
 		headInfo.append(CRLF);
-		//2.ÏìÓ¦Í·£¨Respons Head£©
+		//2.å“åº”å¤´ï¼ˆRespons Headï¼‰
 		headInfo.append("Server:tencent Server/0.0.1").append(CRLF);
 		headInfo.append(new Date()).append(CRLF);//"Data:Mon,7Jan2019 13:18:00 GMT"
 		headInfo.append("Content-type:text/html;charset=GBK").append(CRLF);
-		headInfo.append("Content-length:").append(len).append(CRLF);//ÕıÎÄ³¤¶È£º×Ö½Ú³¤¶È
-		//3.ÕıÎÄÖ®Ç°
+		headInfo.append("Content-length:").append(len).append(CRLF);//æ­£æ–‡é•¿åº¦ï¼šå­—èŠ‚é•¿åº¦
+		//3.æ­£æ–‡ä¹‹å‰
 		headInfo.append(CRLF);
 	}
 	/**
-	 * ¹¹½¨ÕıÎÄ
+	 * æ„å»ºæ­£æ–‡
 	 */
 	public Response print(String info) {
 		content.append(info);
@@ -73,15 +73,15 @@ public class Response {
 		return this;
 	}
 	/**
-	 * ÍÆËÍµ½¿Í»§¶Ë
+	 * æ¨é€åˆ°å®¢æˆ·ç«¯
 	 * @throws IOException 
 	 */
 	void pushToClient(int code) throws IOException {
 		if(null==headInfo) code = 500;
 		creatHeadInfo(code);
-		//Í·ĞÅÏ¢+·Ö¸ô·û
+		//å¤´ä¿¡æ¯+åˆ†éš”ç¬¦
 		bw.append(headInfo.toString());
-		//ÕıÎÄ
+		//æ­£æ–‡
 		bw.append(content.toString());
 		bw.flush();
 	}

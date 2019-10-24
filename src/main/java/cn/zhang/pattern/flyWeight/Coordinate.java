@@ -1,7 +1,7 @@
 package cn.zhang.pattern.flyWeight;
 
 /**
- * �ⲿ״̬UnsharedConcreteFlyWeight
+ * 外部状态UnsharedConcreteFlyWeight
  * @author tako_
  *
  */

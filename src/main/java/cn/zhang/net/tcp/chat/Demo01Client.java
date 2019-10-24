@@ -9,29 +9,29 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
- * ¿Í»§¶Ë
- * 1.´´½¨¿Í»§¶Ë£º·¢ËÍÊı¾İ+½ÓÊÕÊı¾İ£¬±ØĞëÖ¸¶¨·şÎñÆ÷ + ¶Ë¿Ú£¬´ËÊ±¾ÍÔÚÁ¬½Ó
- * Ğ´³öÊı¾İ£ºÊä³öÁ÷
- * ¶ÁÈ¡Êı¾İ£ºÊäÈëÁ÷
- * 2.×¼±¸Êı¾İ	double-->×Ö½ÚÊı×é
- * 3.½ÓÊÕÊı¾İ + ·¢ËÍÊı¾İ
+ * å®¢æˆ·ç«¯
+ * 1.åˆ›å»ºå®¢æˆ·ç«¯ï¼šå‘é€æ•°æ®+æ¥æ”¶æ•°æ®ï¼Œå¿…é¡»æŒ‡å®šæœåŠ¡å™¨ + ç«¯å£ï¼Œæ­¤æ—¶å°±åœ¨è¿æ¥
+ * å†™å‡ºæ•°æ®ï¼šè¾“å‡ºæµ
+ * è¯»å–æ•°æ®ï¼šè¾“å…¥æµ
+ * 2.å‡†å¤‡æ•°æ®	double-->å­—èŠ‚æ•°ç»„
+ * 3.æ¥æ”¶æ•°æ® + å‘é€æ•°æ®
  * @author tako_
  *
  */
 public class Demo01Client {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws UnknownHostException, IOException {
-		//1.´´½¨¿Í»§¶Ë£¬Ö¸¶¨·şÎñÆ÷ + ¶Ë¿Ú£¬´ËÊ±¾ÍÔÚÁ¬½Ó
-		Socket socket = new Socket("localhost", 9999);//Óëserver½¨Á¢Á¬½Ó
+		//1.åˆ›å»ºå®¢æˆ·ç«¯ï¼ŒæŒ‡å®šæœåŠ¡å™¨ + ç«¯å£ï¼Œæ­¤æ—¶å°±åœ¨è¿æ¥
+		Socket socket = new Socket("localhost", 9999);//ä¸serverå»ºç«‹è¿æ¥
 		
-		//¿ØÖÆÌ¨ÊäÈëÁ÷
-		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));//clientÊäÈëÁÄÌìÄÚÈİ
-		String info = console.readLine();//info <-- ÊäÈëÁÄÌìÄÚÈİ
-		//Êä³öÁ÷
+		//æ§åˆ¶å°è¾“å…¥æµ
+		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));//clientè¾“å…¥èŠå¤©å†…å®¹
+		String info = console.readLine();//info <-- è¾“å…¥èŠå¤©å†…å®¹
+		//è¾“å‡ºæµ
 		DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 		dos.writeUTF(info);
 		dos.flush();
-		//ÊäÈëÁ÷
+		//è¾“å…¥æµ
 		DataInputStream dis = new DataInputStream(socket.getInputStream());
 		String message = dis.readUTF();
 		System.out.println(message);

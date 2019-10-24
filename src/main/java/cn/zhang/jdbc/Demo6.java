@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * ²âÊÔÊÂÎñµÄ»ù±¾¸ÅÄîºÍÓÃ·¨
+ * æµ‹è¯•äº‹åŠ¡çš„åŸºæœ¬æ¦‚å¿µå’Œç”¨æ³•
  * @author tako_
  *
  */
@@ -16,36 +16,35 @@ public class Demo6 {
 		PreparedStatement ps1 = null;
 		PreparedStatement ps2 = null;
 		try {
-			//¼ÓÔØÇı¶¯Àà
+			//åŠ è½½é©±åŠ¨ç±»
 			Class.forName("com.mysql.jdbc.Driver");
-			//½¨Á¢Á¬½Ó
+			//å»ºç«‹è¿æ¥
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testjdbc","root","111111");
-			conn.setAutoCommit(false);//JDBCÄ¬ÈÏtrue,»á×Ô¶¯Ìá½»ÊÂÎñ
+			conn.setAutoCommit(false);//JDBCé»˜è®¤true,ä¼šè‡ªåŠ¨æäº¤äº‹åŠ¡
 			
 			ps1 = conn.prepareStatement("insert into t_user(username,pwd) values(?,?)");
-			ps1.setObject(1, "ÕÅìÏ");
+			ps1.setObject(1, "å¼ ç…œ");
 			ps1.setObject(2, 123456);
 			ps1.execute();
-			System.out.println("²åÈëÒ»Ìõ¼ÇÂ¼¡£¡£¡£");
+			System.out.println("æ’å…¥ä¸€æ¡è®°å½•ã€‚ã€‚ã€‚");
 			
 			Thread.sleep(3000);
 			ps2 = conn.prepareStatement("insert into t_user(username,pwd) values(?,?,?)");
-			ps2.setObject(1, "Òü½Ü");
+			ps2.setObject(1, "å°¹æ°");
 			ps2.setObject(2, 123456);
 			ps2.execute();
-			System.out.println("²åÈëÒ»Ìõ¼ÇÂ¼¡£¡£¡£");
+			System.out.println("æ’å…¥ä¸€æ¡è®°å½•ã€‚ã€‚ã€‚");
 			
-			conn.commit();//Ìá½»ÊÂÎñ
+			conn.commit();//æäº¤äº‹åŠ¡
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			System.err.println("Êı¾İ¿â¼ÓÔØÊ§°Ü");
+			System.err.println("æ•°æ®åº“åŠ è½½å¤±è´¥");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			try {
 				conn.rollback();
-				System.err.println("ÊÂÎñ»Ø¹öÖĞ¡£¡£¡£");
+				System.err.println("äº‹åŠ¡å›æ»šä¸­ã€‚ã€‚ã€‚");
 			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}finally {

@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ·şÎñ¶Ë£¨ÈºÁÄ£©
- * 1.´´½¨·şÎñ¶Ë + ¶Ë¿Ú
- * 2.½ÓÊÕ¿Í»§¶ËµÄÁ¬½Ó ×èÈûÊ½
- * 3.·¢ËÍÊı¾İ + ½ÓÊÕÊı¾İ
+ * æœåŠ¡ç«¯ï¼ˆç¾¤èŠï¼‰
+ * 1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
+ * 2.æ¥æ”¶å®¢æˆ·ç«¯çš„è¿æ¥ é˜»å¡å¼
+ * 3.å‘é€æ•°æ® + æ¥æ”¶æ•°æ®
  * @author tako_
  *
  */
@@ -24,22 +24,22 @@ public class Demo03Server {
 	
 	@SuppressWarnings("resource")
 	public void connect() throws IOException {
-		// ´´½¨·şÎñ¶Ë + ¶Ë¿Ú
+		// åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
 		ServerSocket server = new ServerSocket(9999);
 		
-		// ½ÓÊÕÊı¾İ + ·¢ËÍÊı¾İ
+		// æ¥æ”¶æ•°æ® + å‘é€æ•°æ®
 		while (true) {
 			Socket client = server.accept();// The method blocks until a connection is made.
 			MyChannel channel = new MyChannel(client);
 			allConnect.add(channel);
-			new Thread(channel).start();//Ò»ÌõµÀÂ·
+			new Thread(channel).start();//ä¸€æ¡é“è·¯
 		}
 	}
 	
 	/**
-	 * ÄÚ²¿Àà£º´ú±íÒ»¸ö¿Í»§¶ËÒ»ÌõµÀÂ·
-	 * ÊäÈëÁ÷+Êä³öÁ÷
-	 * ½ÓÊÕÊı¾İ+·¢ËÍÊı¾İ
+	 * å†…éƒ¨ç±»ï¼šä»£è¡¨ä¸€ä¸ªå®¢æˆ·ç«¯ä¸€æ¡é“è·¯
+	 * è¾“å…¥æµ+è¾“å‡ºæµ
+	 * æ¥æ”¶æ•°æ®+å‘é€æ•°æ®
 	 * @author tako_
 	 *
 	 */
@@ -48,11 +48,11 @@ public class Demo03Server {
 		private DataOutputStream dos;
 		@SuppressWarnings("unused")
 		private boolean isRunning = true;
-		//¹¹ÔìÆ÷£¬³õÊ¼»¯
+		//æ„é€ å™¨ï¼Œåˆå§‹åŒ–
 		public MyChannel(Socket client) {
 			try {
-				dis =  new DataInputStream(client.getInputStream());//ÊäÈëÁ÷
-				dos = new DataOutputStream(client.getOutputStream());//Êä³öÁ÷
+				dis =  new DataInputStream(client.getInputStream());//è¾“å…¥æµ
+				dos = new DataOutputStream(client.getOutputStream());//è¾“å‡ºæµ
 			} catch (IOException e) {
 				// e.printStackTrace();
 				CloseUtil.close(dis, dos);
@@ -61,7 +61,7 @@ public class Demo03Server {
 		}
 		
 		/***
-		 * ¶ÁÈ¡Êı¾İ
+		 * è¯»å–æ•°æ®
 		 * @return
 		 */
 		private String recieve() {
@@ -78,7 +78,7 @@ public class Demo03Server {
 		}
 		
 		/**
-		 * ·¢ËÍÊı¾İ
+		 * å‘é€æ•°æ®
 		 */
 		private void send(String msg) {
 			if(null==msg||msg.equals("")) return;
@@ -94,10 +94,10 @@ public class Demo03Server {
 		}
 		
 		/**
-		 * ·¢ËÍ¸øÆäËû¿Í»§¶Ë
+		 * å‘é€ç»™å…¶ä»–å®¢æˆ·ç«¯
 		 */
 		private void sendToOthers(String msg) {
-			//±éÀúÈİÆ÷
+			//éå†å®¹å™¨
 			for(MyChannel member : allConnect) {
 				if(member==this) continue;
 				member.send(msg);

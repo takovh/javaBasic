@@ -2,9 +2,9 @@ package cn.zhang.pattern.factory.simpleFactory;
 
 public class CarFactory {
 	public static Car creatCar(String type) {
-		if("°ÂµÏ".equals(type)) {
+		if("å¥¥è¿ª".equals(type)) {
 			return new Audi();
-		}else if("±ÈÑÇµÏ".equals(type)) {
+		}else if("æ¯”äºšè¿ª".equals(type)) {
 			return new Byd();
 		}else {
 			return null;

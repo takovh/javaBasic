@@ -10,16 +10,16 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 /**
- * ·â×°request
- * ´¦ÀíÇëÇó
+ * å°è£…request
+ * å¤„ç†è¯·æ±‚
  * @author tako_
  *
  */
 public class Request {
-	private String method;//ÇëÇó·½Ê½
-	private String url;//ÇëÇó×ÊÔ´
-	private Map<String,List<String>> parameterMapValues;//ÇëÇó²ÎÊı
-	//ÄÚ²¿
+	private String method;//è¯·æ±‚æ–¹å¼
+	private String url;//è¯·æ±‚èµ„æº
+	private Map<String,List<String>> parameterMapValues;//è¯·æ±‚å‚æ•°
+	//å†…éƒ¨
 	public static String CRLF = "\r\n";
 	@SuppressWarnings("unused")
 	private InputStream is;
@@ -41,45 +41,45 @@ public class Request {
 		} catch (IOException e) {
 			return ;
 		}
-		//·ÖÎöÍ·ĞÅÏ¢
+		//åˆ†æå¤´ä¿¡æ¯
 		parseRequestInfo();
 	}
-	//·ÖÎöÍ·ĞÅÏ¢
+	//åˆ†æå¤´ä¿¡æ¯
 	private void parseRequestInfo() {
 		requestInfo = requestInfo.trim();
 		if(null==requestInfo||requestInfo.equals("")) return ;
 		/**
 		 * =========================================
-		 * ´ÓĞÅÏ¢µÄÊ×ĞĞ·Ö½â³ö£ºÇëÇó·½Ê½£¬ÇëÇóÂ·¾¶£¬ÇëÇó²ÎÊı£¨get¿ÉÄÜ´æÔÚ£©
+		 * ä»ä¿¡æ¯çš„é¦–è¡Œåˆ†è§£å‡ºï¼šè¯·æ±‚æ–¹å¼ï¼Œè¯·æ±‚è·¯å¾„ï¼Œè¯·æ±‚å‚æ•°ï¼ˆgetå¯èƒ½å­˜åœ¨ï¼‰
 		 * GET /index.html?uname=zhangyu&pwd=123 HTTP/1.1
 		 * POST /index.html HTTP/1.1
-		 * Èç¹ûÎªpst·½Ê½£¬ ÇëÇó²ÎÊıÔÚ×îºóÕıÎÄÖĞ
+		 * å¦‚æœä¸ºpstæ–¹å¼ï¼Œ è¯·æ±‚å‚æ•°åœ¨æœ€åæ­£æ–‡ä¸­
 		 * ========================================= 
 		 */
-		String paramString = "";//½ÓÊÕÇëÇó²ÎÊı
-		//1.»ñÈ¡ÇëÇó²ÎÊı
+		String paramString = "";//æ¥æ”¶è¯·æ±‚å‚æ•°
+		//1.è·å–è¯·æ±‚å‚æ•°
 		String firstLine = requestInfo.substring(0, requestInfo.indexOf(CRLF));
-		int idx = requestInfo.indexOf("/");// /µÄÎ»ÖÃ
+		int idx = requestInfo.indexOf("/");// /çš„ä½ç½®
 		this.method = firstLine.substring(0, idx).trim();
 		String urlStr = firstLine.substring(idx, firstLine.indexOf("HTTP/")).trim();
 		if(this.method.equalsIgnoreCase("post")) {
 			this.url = urlStr;
 			paramString = requestInfo.substring(requestInfo.lastIndexOf(CRLF)).trim();
 		}else if(this.method.equalsIgnoreCase("get")) {
-			if(urlStr.contains("?")) {//ÊÇ·ñ´æÔÚ²ÎÊı
+			if(urlStr.contains("?")) {//æ˜¯å¦å­˜åœ¨å‚æ•°
 				String[] urlArray = urlStr.split("\\?");
 				this.url = urlArray[0];
-				paramString = urlArray[1];//½ÓÊÕÇëÇó²ÎÊı
+				paramString = urlArray[1];//æ¥æ”¶è¯·æ±‚å‚æ•°
 			}else {
 				this.url = urlStr;
 			}
 		}
-		//2.½«ÇëÇó²ÎÊı·â×°µ½MapÖĞ
+		//2.å°†è¯·æ±‚å‚æ•°å°è£…åˆ°Mapä¸­
 		if(paramString.equals("")) return ;
 		parseParams(paramString);
 	}
 	private void parseParams(String paramString) {
-		//·Ö¸î
+		//åˆ†å‰²
 		StringTokenizer token = new StringTokenizer(paramString, "&");
 		while(token.hasMoreTokens()) {
 			String[] keyValues = token.nextToken().split("=");
@@ -91,7 +91,7 @@ public class Request {
 		}
 	}
 	/**
-	 * ½â¾öÖĞÎÄÎÊÌâ
+	 * è§£å†³ä¸­æ–‡é—®é¢˜
 	 * @param value
 	 * @param code
 	 * @return
@@ -106,7 +106,7 @@ public class Request {
 		return null;
 	}
 	/**
-	 * ¸ù¾İÒ³ÃæµÄname»ñÈ¡¶ÔÓ¦µÄ¶à¸öÖµ
+	 * æ ¹æ®é¡µé¢çš„nameè·å–å¯¹åº”çš„å¤šä¸ªå€¼
 	 */
 	public String[] getParameterValues(String name) {
 		List<String> values = null;
@@ -114,7 +114,7 @@ public class Request {
 		else return values.toArray(new String[0]);
 	}
 	/**
-	 * ¸ù¾İÒ³ÃæµÄname»ñÈ¡¶ÔÓ¦µÄÖµ
+	 * æ ¹æ®é¡µé¢çš„nameè·å–å¯¹åº”çš„å€¼
 	 */
 	public String getParameter(String name) {
 		String[] values = getParameterValues(name);

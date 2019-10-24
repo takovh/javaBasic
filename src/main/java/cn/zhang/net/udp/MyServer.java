@@ -5,26 +5,26 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
 /**
- * ·şÎñ¶Ë
- * 1.´´½¨·şÎñ¶Ë + ¶Ë¿Ú
- * 2.×¼±¸½ÓÊÕÈİÆ÷
- * 3.·â×°³É°ü
- * 4.½ÓÊÕÊı¾İ
- * 5.·ÖÎöÊı¾İ
+ * æœåŠ¡ç«¯
+ * 1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
+ * 2.å‡†å¤‡æ¥æ”¶å®¹å™¨
+ * 3.å°è£…æˆåŒ…
+ * 4.æ¥æ”¶æ•°æ®
+ * 5.åˆ†ææ•°æ®
  * @author tako_
  *
  */
 public class MyServer {
 	public static void main(String[] args) throws IOException {
-		//1.´´½¨·şÎñ¶Ë + ¶Ë¿Ú
+		//1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
 		DatagramSocket server = new DatagramSocket(8888);
-		//2.×¼±¸½ÓÊÕÈİÆ÷
+		//2.å‡†å¤‡æ¥æ”¶å®¹å™¨
 		byte[] container = new byte[1024];
-		//3.·â×°³É°üDatagramPacket(buf, length)
+		//3.å°è£…æˆåŒ…DatagramPacket(buf, length)
 		DatagramPacket packet = new DatagramPacket(container, container.length);
-		//4.½ÓÊÕÊı¾İ
+		//4.æ¥æ”¶æ•°æ®
 		server.receive(packet);
-		//5.·ÖÎöÊı¾İ
+		//5.åˆ†ææ•°æ®
 		byte[] data = packet.getData();
 		int len = packet.getLength();
 		System.out.println(new String(data,0,len));

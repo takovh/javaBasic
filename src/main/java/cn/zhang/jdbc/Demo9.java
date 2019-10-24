@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 /**
- * ²âÊÔCLOB
+ * æµ‹è¯•CLOB
  * @author tako_
  *
  */
@@ -14,9 +14,9 @@ public class Demo9 {
 		Connection conn = null;
 		PreparedStatement ps1 = null;
 		try {
-			//¼ÓÔØÇý¶¯Àà
+			//åŠ è½½é©±åŠ¨ç±»
 			Class.forName("com.mysql.jdbc.Driver");
-			//½¨Á¢Á¬½Ó
+			//å»ºç«‹è¿žæŽ¥
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testjdbc","root","111111");
 			ps1 = conn.prepareStatement("select * from t_user where lastLoginTime>? and lastLoginTime<? order by lastLoginTime");
 			
@@ -24,7 +24,7 @@ public class Demo9 {
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			System.err.println("Êý¾Ý¿â¼ÓÔØÊ§°Ü");
+			System.err.println("æ•°æ®åº“åŠ è½½å¤±è´¥");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {

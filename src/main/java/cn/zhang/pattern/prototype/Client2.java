@@ -3,7 +3,7 @@ package cn.zhang.pattern.prototype;
 import java.util.Date;
 
 /**
- * ²âÊÔÔ­ĞÍÄ£Ê½(Éî¿ËÂ¡)
+ * æµ‹è¯•åŸå‹æ¨¡å¼(æ·±å…‹éš†)
  * @author tako_
  *
  */

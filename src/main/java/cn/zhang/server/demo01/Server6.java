@@ -5,8 +5,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ´´½¨·şÎñÆ÷²¢Æô¶¯
- * Ê¹ÓÃResponse+Request+servlet
+ * åˆ›å»ºæœåŠ¡å™¨å¹¶å¯åŠ¨
+ * ä½¿ç”¨Response+Request+servlet
  * @author tako_
  *
  */
@@ -19,7 +19,7 @@ public class Server6 {
 		server.start();
 	}
 	/**
-	 * Æô¶¯·½·¨
+	 * å¯åŠ¨æ–¹æ³•
 	 */
 	public void start() {		
 		try {
@@ -32,7 +32,7 @@ public class Server6 {
 		
 	}
 	/**
-	 * ½ÓÊÕ¿Í»§¶Ë
+	 * æ¥æ”¶å®¢æˆ·ç«¯
 	 */
 	private void recieve() {
 		try {
@@ -49,7 +49,7 @@ public class Server6 {
 		}
 	}
 	/**
-	 * Í£Ö¹·şÎñÆ÷
+	 * åœæ­¢æœåŠ¡å™¨
 	 */
 	public void stop() {
 		

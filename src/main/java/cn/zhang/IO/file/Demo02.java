@@ -5,12 +5,12 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 
 /**
- * ³£ÓÃ·½·¨
- * 1.ÎÄ¼şÃû
- * 2.ÅĞ¶ÏĞÅÏ¢
- * 3.³¤¶È×Ö½ÚÊı£¨²»ÄÜ¶ÁÈ¡ÎÄ¼ş¼ĞµÄ³¤¶È£©
- * 4.´´½¨¡¢É¾³ıÎÄ¼ş
- * 5.²Ù×÷Ä¿Â¼
+ * å¸¸ç”¨æ–¹æ³•
+ * 1.æ–‡ä»¶å
+ * 2.åˆ¤æ–­ä¿¡æ¯
+ * 3.é•¿åº¦å­—èŠ‚æ•°ï¼ˆä¸èƒ½è¯»å–æ–‡ä»¶å¤¹çš„é•¿åº¦ï¼‰
+ * 4.åˆ›å»ºã€åˆ é™¤æ–‡ä»¶
+ * 5.æ“ä½œç›®å½•
  * @author tako_
  *
  */
@@ -31,67 +31,67 @@ public class Demo02 {
 		test05();
 	}
 	
-	//ÎÄ¼şÃû
+	//æ–‡ä»¶å
 	public static void test01() {
 		File src = new File("D:/tmp/1.jpg");
-		System.out.println(src.getName());//·µ»ØÃû³Æ
-		System.out.println(src.getPath());//Èç¹ûÊÇ¾ø¶ÔÂ·¾¶£¬·µ»ØÍêÕûÂ·¾¶£»·ñÔò·µ»ØÏà¶ÔÂ·¾¶
-		System.out.println(src.getAbsolutePath());//·µ»Ø¾ø¶ÔÂ·¾¶
-		System.out.println(src.getParent());//·µ»ØÉÏÒ»¼¶Ä¿Â¼£¬Èç¹ûÊÇÏà¶Ô£¬·µ»Ønull
+		System.out.println(src.getName());//è¿”å›åç§°
+		System.out.println(src.getPath());//å¦‚æœæ˜¯ç»å¯¹è·¯å¾„ï¼Œè¿”å›å®Œæ•´è·¯å¾„ï¼›å¦åˆ™è¿”å›ç›¸å¯¹è·¯å¾„
+		System.out.println(src.getAbsolutePath());//è¿”å›ç»å¯¹è·¯å¾„
+		System.out.println(src.getParent());//è¿”å›ä¸Šä¸€çº§ç›®å½•ï¼Œå¦‚æœæ˜¯ç›¸å¯¹ï¼Œè¿”å›null
 	}
 	
-	//ÅĞ¶ÏĞÅÏ¢
+	//åˆ¤æ–­ä¿¡æ¯
 	public static void test02() {
 		String parentPath = "D:/tmp";
 		String name = "1.jpg";
-		System.out.println("********ÊÇÎÄ¼ş********");
+		System.out.println("********æ˜¯æ–‡ä»¶********");
 		File src = new File(parentPath,name);
-		System.out.println("ÎÄ¼şÊÇ·ñ´æÔÚ£º" + src.exists());
-		System.out.println("ÊÇÎÄ¼ş¼Ğ£¿" + src.isDirectory());
-		System.out.println("ÊÇÎÄ¼ş£¿" + src.isFile());
-		System.out.println("³¤¶ÈÎª£º" + src.length());
+		System.out.println("æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼š" + src.exists());
+		System.out.println("æ˜¯æ–‡ä»¶å¤¹ï¼Ÿ" + src.isDirectory());
+		System.out.println("æ˜¯æ–‡ä»¶ï¼Ÿ" + src.isFile());
+		System.out.println("é•¿åº¦ä¸ºï¼š" + src.length());
 		
-		System.out.println("********ÊÇÎÄ¼ş¼Ğ********");
+		System.out.println("********æ˜¯æ–‡ä»¶å¤¹********");
 		src = new File(parentPath);
-		System.out.println("ÎÄ¼şÊÇ·ñ´æÔÚ£º" + src.exists());
-		System.out.println("ÎÄ¼şÊÇ·ñ¿ÉĞ´£º" + src.canWrite());
-		System.out.println("ÊÇÎÄ¼ş¼Ğ£¿" + src.isDirectory());
-		System.out.println("ÊÇÎÄ¼ş£¿" + src.isFile());
-		System.out.println("³¤¶ÈÎª£º" + src.length());
+		System.out.println("æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼š" + src.exists());
+		System.out.println("æ–‡ä»¶æ˜¯å¦å¯å†™ï¼š" + src.canWrite());
+		System.out.println("æ˜¯æ–‡ä»¶å¤¹ï¼Ÿ" + src.isDirectory());
+		System.out.println("æ˜¯æ–‡ä»¶ï¼Ÿ" + src.isFile());
+		System.out.println("é•¿åº¦ä¸ºï¼š" + src.length());
 	}
 	
-	//´´½¨¡¢É¾³ıÎÄ¼ş
+	//åˆ›å»ºã€åˆ é™¤æ–‡ä»¶
 	public static void test03() throws IOException, InterruptedException {
 		String path = "D:/tmp/1.jpg";
 		File src = new File(path);
 		
-		//´´½¨ÎÄ¼ş
+		//åˆ›å»ºæ–‡ä»¶
 		if(!src.exists()) {
 			boolean flag = src.createNewFile();
-			System.out.println(flag?"´´½¨³É¹¦£¡":"´´½¨Ê§°Ü£¡");
+			System.out.println(flag?"åˆ›å»ºæˆåŠŸï¼":"åˆ›å»ºå¤±è´¥ï¼");
 		}
 		
-		//É¾³ıÎÄ¼ş
+		//åˆ é™¤æ–‡ä»¶
 		boolean flag = src.delete();
-		System.out.println(flag?"É¾³ı³É¹¦£¡":"É¾³ıÊ§°Ü£¡");
+		System.out.println(flag?"åˆ é™¤æˆåŠŸï¼":"åˆ é™¤å¤±è´¥ï¼");
 		
-		//´´½¨ÁÙÊ±ÎÄ¼ş
-		//static createTempFile(Ç°×º3¸ö×Ö½Ú³¤£¬ºó×ºÄ¬ÈÏ.temp)Ä¬ÈÏÁÙÊ±¿Õ¼ä
-		//static createTempFile(Ç°×º3¸ö×Ö½Ú³¤£¬ºó×ºÄ¬ÈÏ.temp£¬Ä¿Â¼£©
+		//åˆ›å»ºä¸´æ—¶æ–‡ä»¶
+		//static createTempFile(å‰ç¼€3ä¸ªå­—èŠ‚é•¿ï¼Œåç¼€é»˜è®¤.temp)é»˜è®¤ä¸´æ—¶ç©ºé—´
+		//static createTempFile(å‰ç¼€3ä¸ªå­—èŠ‚é•¿ï¼Œåç¼€é»˜è®¤.tempï¼Œç›®å½•ï¼‰
 		File temp = File.createTempFile("tes", ".temp" ,new File("D:/tmp"));
 		Thread.sleep(10000);
 		temp.deleteOnExit();
 	}
 	
-	//ÎÄ¼ş¼Ğ²Ù×÷
+	//æ–‡ä»¶å¤¹æ“ä½œ
 	public static void test04() {
 		String path1 = "D:/tmp/test";
 		File src = new File(path1);
-		src.mkdir();//¸¸Ä¿Â¼²»´æÔÚ»á´´½¨Ê§°Ü
-		src.mkdirs();//¸¸Ä¿Â¼Á´²»´æÔÚÒ²»áÒ»Í¬´´½¨
+		src.mkdir();//çˆ¶ç›®å½•ä¸å­˜åœ¨ä¼šåˆ›å»ºå¤±è´¥
+		src.mkdirs();//çˆ¶ç›®å½•é“¾ä¸å­˜åœ¨ä¹Ÿä¼šä¸€åŒåˆ›å»º
 	}
 	
-	//ÎÄ¼şÁĞ±í [ÎÄ¼ş|ÎÄ¼ş¼Ğ]
+	//æ–‡ä»¶åˆ—è¡¨ [æ–‡ä»¶|æ–‡ä»¶å¤¹]
 	public static void test05() {
 		String path = "D:/tmp";
 		File src = new File(path);
@@ -100,15 +100,15 @@ public class Demo02 {
 			for(String temp:subNames) System.out.println(temp);
 		}
 		
-		System.out.println("======×ÓÄ¿Â¼|ÎÄ¼şFile¶ÔÏó======");
+		System.out.println("======å­ç›®å½•|æ–‡ä»¶Fileå¯¹è±¡======");
 		File[] subFiles = src.listFiles();
 		for(File temp:subFiles) System.out.println(temp.getAbsolutePath());
 				
-		System.out.println("======×ÓÎÄ¼ş.mp3¶ÔÏó======");
-		//ÃüÁîÉè¼ÆÄ£Ê½
+		System.out.println("======å­æ–‡ä»¶.mp3å¯¹è±¡======");
+		//å‘½ä»¤è®¾è®¡æ¨¡å¼
 		subFiles = src.listFiles(new FilenameFilter() {
 			@Override
-			//dir´ú±ísrc
+			//dirä»£è¡¨src
 			public boolean accept(File dir, String name) {
 				return new File(dir,name).isFile()&&name.endsWith(".mp3");
 			}

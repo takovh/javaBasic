@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ·şÎñ¶Ë£¨ÈºÁÄ£©
- * 1.´´½¨·şÎñ¶Ë + ¶Ë¿Ú
- * 2.½ÓÊÕ¿Í»§¶ËµÄÁ¬½Ó ×èÈûÊ½
- * 3.·¢ËÍÊı¾İ + ½ÓÊÕÊı¾İ
- * bug:ºóÃæµÄÈËÒªµÈÇ°ÃæµÄÈËÊäÈë×Ô¼ºµÄêÇ³ÆÖ®ºó²ÅÄÜµÇÂ½
+ * æœåŠ¡ç«¯ï¼ˆç¾¤èŠï¼‰
+ * 1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
+ * 2.æ¥æ”¶å®¢æˆ·ç«¯çš„è¿æ¥ é˜»å¡å¼
+ * 3.å‘é€æ•°æ® + æ¥æ”¶æ•°æ®
+ * bug:åé¢çš„äººè¦ç­‰å‰é¢çš„äººè¾“å…¥è‡ªå·±çš„æ˜µç§°ä¹‹åæ‰èƒ½ç™»é™†
  * @author tako_
  *
  */
@@ -25,22 +25,22 @@ public class Demo04Server {
 	
 	@SuppressWarnings("resource")
 	public void connect() throws IOException {
-		// ´´½¨·şÎñ¶Ë + ¶Ë¿Ú
+		// åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
 		ServerSocket server = new ServerSocket(9999);
 		
-		// ½ÓÊÕÊı¾İ + ·¢ËÍÊı¾İ
+		// æ¥æ”¶æ•°æ® + å‘é€æ•°æ®
 		while (true) {
 			Socket client = server.accept();// The method blocks until a connection is made.
 			MyChannel channel = new MyChannel(client);
 			allConnect.add(channel);
-			new Thread(channel).start();//Ã¿¸öÓÃ»§Ò»ÌõµÀÂ·
+			new Thread(channel).start();//æ¯ä¸ªç”¨æˆ·ä¸€æ¡é“è·¯
 		}
 	}
 	
 	/**
-	 * ÄÚ²¿Àà£º´ú±íÒ»¸ö¿Í»§¶ËÒ»ÌõµÀÂ·
-	 * ÊäÈëÁ÷+Êä³öÁ÷
-	 * ½ÓÊÕÊı¾İ+·¢ËÍÊı¾İ
+	 * å†…éƒ¨ç±»ï¼šä»£è¡¨ä¸€ä¸ªå®¢æˆ·ç«¯ä¸€æ¡é“è·¯
+	 * è¾“å…¥æµ+è¾“å‡ºæµ
+	 * æ¥æ”¶æ•°æ®+å‘é€æ•°æ®
 	 * @author tako_
 	 *
 	 */
@@ -49,14 +49,14 @@ public class Demo04Server {
 		private DataOutputStream dos;
 		private boolean isRunning = true;
 		private String name;
-		//¹¹ÔìÆ÷£¬³õÊ¼»¯
+		//æ„é€ å™¨ï¼Œåˆå§‹åŒ–
 		public MyChannel(Socket client) {
 			try {
-				dis =  new DataInputStream(client.getInputStream());//ÊäÈëÁ÷
-				dos = new DataOutputStream(client.getOutputStream());//Êä³öÁ÷
+				dis =  new DataInputStream(client.getInputStream());//è¾“å…¥æµ
+				dos = new DataOutputStream(client.getOutputStream());//è¾“å‡ºæµ
 				this.name = dis.readUTF();
-				send("»¶Ó­Äã½øÈëÁÄÌìÊÒ£¡");
-				sendToOthers("ÎÒ½øÈëÁËÁÄÌìÊÒ£¡");
+				send("æ¬¢è¿ä½ è¿›å…¥èŠå¤©å®¤ï¼");
+				sendToOthers("æˆ‘è¿›å…¥äº†èŠå¤©å®¤ï¼");
 			} catch (IOException e) {
 				// e.printStackTrace();
 				CloseUtil.close(dis, dos);
@@ -65,7 +65,7 @@ public class Demo04Server {
 		}
 		
 		/***
-		 * ¶ÁÈ¡Êı¾İ
+		 * è¯»å–æ•°æ®
 		 * @return
 		 */
 		private String recieve() {
@@ -77,13 +77,13 @@ public class Demo04Server {
 				CloseUtil.close(dis);
 				isRunning = false;
 				allConnect.remove(this);
-				System.out.println(this.name + "Àë¿ªÁËÁÄÌìÊÒ£¡");
+				System.out.println(this.name + "ç¦»å¼€äº†èŠå¤©å®¤ï¼");
 			}
 			return msg;
 		}
 		
 		/**
-		 * ·¢ËÍÊı¾İ
+		 * å‘é€æ•°æ®
 		 */
 		private void send(String msg) {
 			if(null==msg||msg.equals("")) return;
@@ -95,26 +95,26 @@ public class Demo04Server {
 				CloseUtil.close(dos);
 				isRunning = false;
 				allConnect.remove(this);
-				System.out.println(this.name + "Àë¿ªÁËÁÄÌìÊÒ£¡");
+				System.out.println(this.name + "ç¦»å¼€äº†èŠå¤©å®¤ï¼");
 			}
 		}
 		
 		/**
-		 * ·¢ËÍ¸øÆäËû¿Í»§¶Ë
+		 * å‘é€ç»™å…¶ä»–å®¢æˆ·ç«¯
 		 */
 		private void sendToOthers(String msg) {
-			//ÊÇ·ñÎªË½ÁÄ(Ô¼¶¨@name:ÎªË½ÁÄ£¬·ñÔòÎªÈºÁÄ)
+			//æ˜¯å¦ä¸ºç§èŠ(çº¦å®š@name:ä¸ºç§èŠï¼Œå¦åˆ™ä¸ºç¾¤èŠ)
 			if(msg.startsWith("@")) {
 				for(MyChannel member : allConnect) {
 					String name = msg.substring(1,msg.indexOf(":"));
 					String content = msg.substring(msg.indexOf(":")+1);
-					if(member.name.equals(name)) member.send(this.name + "¶ÔÄãÇÄÇÄËµ:" + content);
+					if(member.name.equals(name)) member.send(this.name + "å¯¹ä½ æ‚„æ‚„è¯´:" + content);
 				}
 			}else {
-				//±éÀúÈİÆ÷
+				//éå†å®¹å™¨
 				for(MyChannel member : allConnect) {
 					if(member==this) continue;
-					member.send(this.name + "¶ÔËùÓĞÈËËµ£º" + msg);
+					member.send(this.name + "å¯¹æ‰€æœ‰äººè¯´ï¼š" + msg);
 				}
 			}
 		}

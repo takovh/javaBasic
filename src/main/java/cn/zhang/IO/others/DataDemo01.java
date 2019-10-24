@@ -10,13 +10,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
- * Êı¾İ+ÀàĞÍ Êä³öµ½ÎÄ¼ş
- * Êı¾İÀàĞÍ£¨»ù±¾+String£©´¦ÀíÁ÷
- * 1.ÊäÈëÁ÷DataInputStream ReadXxx()
- * 2.Êä³öÁ÷DataOutputStream WriteXxx()
- * ĞÂÔö·½·¨²»ÄÜÊ¹ÓÃ¶àÌ¬
+ * æ•°æ®+ç±»å‹ è¾“å‡ºåˆ°æ–‡ä»¶
+ * æ•°æ®ç±»å‹ï¼ˆåŸºæœ¬+Stringï¼‰å¤„ç†æµ
+ * 1.è¾“å…¥æµDataInputStream ReadXxx()
+ * 2.è¾“å‡ºæµDataOutputStream WriteXxx()
+ * æ–°å¢æ–¹æ³•ä¸èƒ½ä½¿ç”¨å¤šæ€
  * 
- * java.IO.EOFException :Ã»ÓĞ¶ÁÈ¡µ½Ïà¹ØµÄÄÚÈİ
+ * java.IO.EOFException :æ²¡æœ‰è¯»å–åˆ°ç›¸å…³çš„å†…å®¹
  * @author tako_
  *
  */
@@ -26,14 +26,14 @@ public class DataDemo01 {
 		read("D:/tmp/d.txt");
 	}
 	/**
-	 * Êı¾İ+ÀàĞÍ Êä³öµ½ÎÄ¼ş
+	 * æ•°æ®+ç±»å‹ è¾“å‡ºåˆ°æ–‡ä»¶
 	 * @throws IOException 
 	 */
 	public static void write(String destPath) throws IOException {
 		double point = 2.5;
 		long num = 100L;
-		String str = "Êı¾İÀàĞÍ";
-		//´´½¨Ô´
+		String str = "æ•°æ®ç±»å‹";
+		//åˆ›å»ºæº
 		File dest = new File(destPath);
 		///DataOutputStream
 		DataOutputStream dos = new DataOutputStream(
@@ -41,7 +41,7 @@ public class DataDemo01 {
 								new FileOutputStream(dest)
 							)
 				);
-		//²Ù×÷
+		//æ“ä½œ
 		dos.writeDouble(point);
 		dos.writeLong(num);
 		dos.writeUTF(str);
@@ -50,19 +50,19 @@ public class DataDemo01 {
 	}
 	
 	/**
-	 * ´ÓÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ+ÀàĞÍ
+	 * ä»æ–‡ä»¶ä¸­è¯»å–æ•°æ®+ç±»å‹
 	 * @throws IOException 
 	 */
 	public static void read(String destPath) throws IOException {
-		//´´½¨Ô´
+		//åˆ›å»ºæº
 		File src = new File(destPath);
-		//Ñ¡ÔñÁ÷
+		//é€‰æ‹©æµ
 		DataInputStream dis = new DataInputStream(
 					new BufferedInputStream(
 								new FileInputStream(src)
 							)
 				);
-		//²Ù×÷£º¶ÁÈ¡µÄË³Ğò±ØĞëÓëĞ´³öÒ»ÖÂ ±ØĞë´æÔÚ²ÅÄÜ¶ÁÈ¡
+		//æ“ä½œï¼šè¯»å–çš„é¡ºåºå¿…é¡»ä¸å†™å‡ºä¸€è‡´ å¿…é¡»å­˜åœ¨æ‰èƒ½è¯»å–
 		double num1 = dis.readDouble();
 		long num2 = dis.readLong();
 		String str = dis.readUTF();

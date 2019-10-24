@@ -1,7 +1,7 @@
 package cn.zhang.pattern.flyWeight;
 
 /**
- * ÏíÔªÀà
+ * äº«å…ƒç±»
  * @author tako_
  *
  */
@@ -34,8 +34,8 @@ class ConcreteChess implements ChessFlyWeight {
 
 	@Override
 	public void display(Coordinate c) {
-		System.out.println("Æå×ÓÑÕÉ«£º" + color);
-		System.out.println("Æå×ÓÎ»ÖÃ£º" + "(" + c.getX() + "," + c.getY() + ")");
+		System.out.println("æ£‹å­é¢œè‰²ï¼š" + color);
+		System.out.println("æ£‹å­ä½ç½®ï¼š" + "(" + c.getX() + "," + c.getY() + ")");
 	}
 	
 }

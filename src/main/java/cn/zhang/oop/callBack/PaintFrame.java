@@ -2,14 +2,14 @@ package cn.zhang.oop.callBack;
 
 public class PaintFrame {
 	public static void drawFrame(IMyFrame f) {
-		System.out.println("Æô¶¯Ïß³Ì");
-		System.out.println("Ôö¼ÓÑ­»·");
-		System.out.println("²é¿´ÏûÏ¢Õ»");
+		System.out.println("å¯åŠ¨çº¿ç¨‹");
+		System.out.println("å¢åŠ å¾ªç¯");
+		System.out.println("æŸ¥çœ‹æ¶ˆæ¯æ ˆ");
 		
-		//»­´°¿Ú
-		f.paint();//´«ÈëµÄÊÇ½Ó¿Ú£¬ÒÑ¾­¶¨ÒåºÃ·½·¨
+		//ç”»çª—å£
+		f.paint();//ä¼ å…¥çš„æ˜¯æ¥å£ï¼Œå·²ç»å®šä¹‰å¥½æ–¹æ³•
 		
-		System.out.println("Æô¶¯»º´æ£¬Ôö¼ÓĞ§ÂÊ");
+		System.out.println("å¯åŠ¨ç¼“å­˜ï¼Œå¢åŠ æ•ˆç‡");
 	}
 	
 	public static void main(String[] args) {
@@ -22,12 +22,12 @@ public class PaintFrame {
 class GameFrame01 implements IMyFrame{
 	public void paint() {
 		System.out.println("GameFrame01.paint()");
-		System.out.println("»­´°¿Ú...");
+		System.out.println("ç”»çª—å£...");
 	}
 }
 class GameFrame02 implements IMyFrame{
 	public void paint() {
 		System.out.println("GameFrame02.paint()");
-		System.out.println("»­´°¿Ú...");
+		System.out.println("ç”»çª—å£...");
 	}
 }

@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Ê¹ÓÃCollections
+ * ä½¿ç”¨Collections
  * @author tako_
  *
  */
@@ -17,12 +17,12 @@ public class NewsItemApp {
 	 */
 	public static void main(String[] args) {
 		List<NewsItem> news = new ArrayList<NewsItem>();
-		news.add(new NewsItem("ÀîÏÕ¹óÍÑµ¥ÁË£¡£¡£¡",100,new Date()));
-		news.add(new NewsItem("Òü½ÜÍÑµ¥ÁË£¡£¡£¡",200,new Date(System.currentTimeMillis()-1000*60*60)));
-		news.add(new NewsItem("ÀîÏÕ¹ó¿ªÇ»ÁË£¡£¡£¡",90,new Date(System.currentTimeMillis()-1000*60*60)));
-		System.out.println("ÅÅĞòÇ°£º\n"+news);
+		news.add(new NewsItem("æé™©è´µè„±å•äº†ï¼ï¼ï¼",100,new Date()));
+		news.add(new NewsItem("å°¹æ°è„±å•äº†ï¼ï¼ï¼",200,new Date(System.currentTimeMillis()-1000*60*60)));
+		news.add(new NewsItem("æé™©è´µå¼€è…”äº†ï¼ï¼ï¼",90,new Date(System.currentTimeMillis()-1000*60*60)));
+		System.out.println("æ’åºå‰ï¼š\n"+news);
 		
 		Collections.sort(news);
-		System.out.println("ÅÅĞòºó£º\n"+news);
+		System.out.println("æ’åºåï¼š\n"+news);
 	}
 }

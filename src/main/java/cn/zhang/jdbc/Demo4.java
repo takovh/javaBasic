@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * ²âÊÔResultSet½á¹û¼¯µÄ»ù±¾ÓÃ·¨
+ * æµ‹è¯•ResultSetç»“æœé›†çš„åŸºæœ¬ç”¨æ³•
  * @author tako_
  *
  */
@@ -17,40 +17,37 @@ public class Demo4 {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
-			//¼ÓÔØÇı¶¯Àà
+			//åŠ è½½é©±åŠ¨ç±»
 			Class.forName("com.mysql.jdbc.Driver");
-			//½¨Á¢Á¬½Ó
+			//å»ºç«‹è¿æ¥
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testjdbc","root","111111");
 			
-			String sql = "select * from t_user where id>?";//?Õ¼Î»·û
+			String sql = "select * from t_user where id>?";//?å ä½ç¬¦
 			ps = conn.prepareStatement(sql);
 			ps.setObject(1, 2);
 			rs = ps.executeQuery();
 			while(rs.next()) System.out.println(rs.getObject(1)+"."+rs.getObject(2)+""+rs.getObject(3));
 
 		} catch (ClassNotFoundException e) {
-			System.err.println("Êı¾İ¿â¼ÓÔØÊ§°Ü");
+			System.err.println("æ•°æ®åº“åŠ è½½å¤±è´¥");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			//¹Ø±ÕË³Ğò×ñÑ­£ºresultSet-->statement-->connection£¬Èı¸ö¿éÒ»¶¨Òª·Ö¿ªĞ´
+			//å…³é—­é¡ºåºéµå¾ªï¼šresultSet-->statement-->connectionï¼Œä¸‰ä¸ªå—ä¸€å®šè¦åˆ†å¼€å†™
 			try {
 				if(rs!=null) rs.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
 				if(ps!=null) ps.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
 				if(conn!=null) conn.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

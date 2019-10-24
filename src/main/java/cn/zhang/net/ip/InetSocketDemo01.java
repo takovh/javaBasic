@@ -4,8 +4,8 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 
 /**
- * ·â×°ÁË¶Ë¿Ú
- * ÔÚInetAddressµÄ»ù´¡ÉÏ+¶Ë¿Ú
+ * å°è£…äº†ç«¯å£
+ * åœ¨InetAddressçš„åŸºç¡€ä¸Š+ç«¯å£
  * 1.getPort()
  * 2.getHostName()
  * 3.getAddress()
@@ -21,7 +21,7 @@ public class InetSocketDemo01 {
 		System.out.println("getPort:" + addr.getPort());
 		
 		InetAddress add = addr.getAddress();
-		System.out.println("getHostAddress:" + add.getHostAddress());//·µ»Ø192.168.227.1
-		System.out.println("getHostName:" + add.getHostName());//Êä³ö¼ÆËã»úÃû£ºDESKTOP-59NVJL1
+		System.out.println("getHostAddress:" + add.getHostAddress());//è¿”å›192.168.227.1
+		System.out.println("getHostName:" + add.getHostName());//è¾“å‡ºè®¡ç®—æœºåï¼šDESKTOP-59NVJL1
 	}
 }

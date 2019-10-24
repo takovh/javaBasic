@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 
 /**
- * ´´½¨·şÎñÆ÷²¢Æô¶¯
- * Ê¹ÓÃResponse+Request+servlet
+ * åˆ›å»ºæœåŠ¡å™¨å¹¶å¯åŠ¨
+ * ä½¿ç”¨Response+Request+servlet
  * @author tako_
  *
  */
@@ -20,7 +20,7 @@ public class Server7 {
 		server.start();
 	}
 	/**
-	 * Æô¶¯·½·¨
+	 * å¯åŠ¨æ–¹æ³•
 	 */
 	public void start(int port) {		
 		try {
@@ -35,7 +35,7 @@ public class Server7 {
 		start(8888);	
 	}
 	/**
-	 * ½ÓÊÕ¿Í»§¶Ë
+	 * æ¥æ”¶å®¢æˆ·ç«¯
 	 */
 	private void recieve() {
 		try {
@@ -48,7 +48,7 @@ public class Server7 {
 		}
 	}
 	/**
-	 * Í£Ö¹·şÎñÆ÷
+	 * åœæ­¢æœåŠ¡å™¨
 	 */
 	public void stop() {
 		isShutDown = true;

@@ -9,15 +9,15 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 
 /**
- * »ñÈ¡×ÊÔ´£ºÔ´´úÂë
+ * è·å–èµ„æºï¼šæºä»£ç 
  * @author tako_
  *
  */
 public class URLDemo02 {
 	public static void main(String[] args) throws IOException {
-		URL url = new URL("http://www.baidu.com");//Ö÷Ò³--Ä¬ÈÏ×ÊÔ´	
-		//»ñÈ¡×ÊÔ´--ÍøÂçÁ÷
-		/*utf-8ÂÒÂë
+		URL url = new URL("http://www.baidu.com");//ä¸»é¡µ--é»˜è®¤èµ„æº	
+		//è·å–èµ„æº--ç½‘ç»œæµ
+		/*utf-8ä¹±ç 
 		InputStream is = url.openStream();
 		byte[] flush = new byte[1024];
 		int len = 0;
@@ -26,7 +26,7 @@ public class URLDemo02 {
 		}
 		is.close();
 		*/
-		//Ê¹ÓÃ×ª»»Á÷
+		//ä½¿ç”¨è½¬æ¢æµ
 		BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream(),"utf-8"));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("D:/tmp/baidu.html"),"utf-8"));
 		String message = null;

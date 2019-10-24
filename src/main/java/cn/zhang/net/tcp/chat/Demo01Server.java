@@ -7,27 +7,27 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ·þÎñ¶Ë£¨½ÓÊÕ¶à¸ö¿Í»§¶Ë£©
- * 1.´´½¨·þÎñ¶Ë + ¶Ë¿Ú
- * 2.½ÓÊÕ¿Í»§¶ËµÄÁ¬½Ó ×èÈûÊ½
- * 3.·¢ËÍÊý¾Ý + ½ÓÊÕÊý¾Ý
+ * æœåŠ¡ç«¯ï¼ˆæŽ¥æ”¶å¤šä¸ªå®¢æˆ·ç«¯ï¼‰
+ * 1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
+ * 2.æŽ¥æ”¶å®¢æˆ·ç«¯çš„è¿žæŽ¥ é˜»å¡žå¼
+ * 3.å‘é€æ•°æ® + æŽ¥æ”¶æ•°æ®
  * @author tako_
  *
  */
 public class Demo01Server {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws IOException {
-		//1.´´½¨·þÎñ¶Ë + ¶Ë¿Ú
-		ServerSocket server = new ServerSocket(9999);//·þÎñ²»¹Ø±Õ£¬²»ÐèÒªserver.close()
-		Socket socket = server.accept();//µÃµ½Á¬½Ó¹ýÀ´µÄÒ»¸öclientµÄ*socket*
+		//1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
+		ServerSocket server = new ServerSocket(9999);//æœåŠ¡ä¸å…³é—­ï¼Œä¸éœ€è¦server.close()
+		Socket socket = server.accept();//å¾—åˆ°è¿žæŽ¥è¿‡æ¥çš„ä¸€ä¸ªclientçš„*socket*
 		
-		//Ð´³öÊý¾Ý
-		//ÊäÈëÁ÷
+		//å†™å‡ºæ•°æ®
+		//è¾“å…¥æµ
 		DataInputStream dis = new DataInputStream(socket.getInputStream());
 		String message = dis.readUTF();
-		//Êä³öÁ÷
+		//è¾“å‡ºæµ
 		DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
-		dos.writeUTF("·þÎñÆ÷-->" + message);
+		dos.writeUTF("æœåŠ¡å™¨-->" + message);
 		dos.flush();
 
 	}

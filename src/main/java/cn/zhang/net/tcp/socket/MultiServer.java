@@ -6,27 +6,27 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ·şÎñ¶Ë£¨½ÓÊÕ¶à¸ö¿Í»§¶Ë£©
- * 1.´´½¨·şÎñ¶Ë + ¶Ë¿Ú
- * 2.½ÓÊÕ¿Í»§¶ËµÄÁ¬½Ó ×èÈûÊ½
- * 3.·¢ËÍÊı¾İ + ½ÓÊÕÊı¾İ
+ * æœåŠ¡ç«¯ï¼ˆæ¥æ”¶å¤šä¸ªå®¢æˆ·ç«¯ï¼‰
+ * 1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
+ * 2.æ¥æ”¶å®¢æˆ·ç«¯çš„è¿æ¥ é˜»å¡å¼
+ * 3.å‘é€æ•°æ® + æ¥æ”¶æ•°æ®
  * @author tako_
  *
  */
 public class MultiServer {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws IOException {
-		//1.´´½¨·şÎñ¶Ë + ¶Ë¿Ú
-		ServerSocket server = new ServerSocket(8888);//·şÎñ²»¹Ø±Õ£¬²»ĞèÒªserver.close()		
+		//1.åˆ›å»ºæœåŠ¡ç«¯ + ç«¯å£
+		ServerSocket server = new ServerSocket(8888);//æœåŠ¡ä¸å…³é—­ï¼Œä¸éœ€è¦server.close()		
 		while(true) {
-			//2.½ÓÊÕ¿Í»§¶ËµÄÁ¬½Ó ×èÈûÊ½ ÎÕÊÖ
+			//2.æ¥æ”¶å®¢æˆ·ç«¯çš„è¿æ¥ é˜»å¡å¼ æ¡æ‰‹
 			//accept()
 			//The method blocks until a connection is made. 
 			Socket socket = server.accept();
-			System.out.println("Ò»¸ö¿Í»§¶Ë½¨Á¢Á¬½Ó");//ä¯ÀÀÆ÷·ÃÎÊhttp:localhost:8888
-			//3.·¢ËÍÊı¾İ + ½ÓÊÕÊı¾İ
-			String message = "»¶Ó­Ê¹ÓÃ";
-			//Êä³öÁ÷			
+			System.out.println("ä¸€ä¸ªå®¢æˆ·ç«¯å»ºç«‹è¿æ¥");//æµè§ˆå™¨è®¿é—®http:localhost:8888
+			//3.å‘é€æ•°æ® + æ¥æ”¶æ•°æ®
+			String message = "æ¬¢è¿ä½¿ç”¨";
+			//è¾“å‡ºæµ			
 			DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 			dos.writeUTF(message);
 			dos.flush();

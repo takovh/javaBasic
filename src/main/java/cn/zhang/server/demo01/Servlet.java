@@ -2,8 +2,8 @@ package cn.zhang.server.demo01;
 
 public class Servlet {
 	public void service(Request req, Response rep) {
-		rep.println("<html><head><title>HTTPÏìÓ¦Ê¾Àı</title></head><body>");
-		rep.println("»¶Ó­£º").println(req.getParameter("uname")).println("»ØÀ´ÁË£¡");
+		rep.println("<html><head><title>HTTPå“åº”ç¤ºä¾‹</title></head><body>");
+		rep.println("æ¬¢è¿ï¼š").println(req.getParameter("uname")).println("å›æ¥äº†ï¼");
 		rep.println("</body></html>");
 	}
 }

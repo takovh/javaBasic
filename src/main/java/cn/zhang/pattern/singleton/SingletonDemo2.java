@@ -1,7 +1,7 @@
 package cn.zhang.pattern.singleton;
 
 /**
- * ²âÊÔÀÁººÊ½µ¥ÀıÄ£Ê½
+ * æµ‹è¯•æ‡’æ±‰å¼å•ä¾‹æ¨¡å¼
  * @author tako_
  *
  */

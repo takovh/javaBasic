@@ -6,22 +6,22 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
- * ¿Í»§¶Ë
- * 1.´´½¨¿Í»§¶Ë£º±ØĞëÖ¸¶¨·şÎñÆ÷ + ¶Ë¿Ú£¬´ËÊ±¾ÍÔÚÁ¬½Ó
- * 2.×¼±¸Êı¾İ	double-->×Ö½ÚÊı×é
- * 3.½ÓÊÕÊı¾İ + ·¢ËÍÊı¾İ
+ * å®¢æˆ·ç«¯
+ * 1.åˆ›å»ºå®¢æˆ·ç«¯ï¼šå¿…é¡»æŒ‡å®šæœåŠ¡å™¨ + ç«¯å£ï¼Œæ­¤æ—¶å°±åœ¨è¿æ¥
+ * 2.å‡†å¤‡æ•°æ®	double-->å­—èŠ‚æ•°ç»„
+ * 3.æ¥æ”¶æ•°æ® + å‘é€æ•°æ®
  * @author tako_
  *
  */
 public class Client {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws UnknownHostException, IOException {
-		//1.´´½¨¿Í»§¶Ë£º±ØĞëÖ¸¶¨·şÎñÆ÷ + ¶Ë¿Ú£¬´ËÊ±¾ÍÔÚÁ¬½Ó
+		//1.åˆ›å»ºå®¢æˆ·ç«¯ï¼šå¿…é¡»æŒ‡å®šæœåŠ¡å™¨ + ç«¯å£ï¼Œæ­¤æ—¶å°±åœ¨è¿æ¥
 		Socket client = new Socket("localhost", 8888);
-		//2.½ÓÊÕÊı¾İ
+		//2.æ¥æ”¶æ•°æ®
 		/*
 		BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
-		String echo = br.readLine();//×èÈûÊ½·½·¨
+		String echo = br.readLine();//é˜»å¡å¼æ–¹æ³•
 		System.out.println(echo);
 		*/
 		DataInputStream dis = new DataInputStream(client.getInputStream());

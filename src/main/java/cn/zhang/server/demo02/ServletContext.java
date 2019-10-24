@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * ÉÏÏÂÎÄ
+ * ä¸Šä¸‹æ–‡
  * @author tako_
  *
  */
@@ -12,7 +12,7 @@ public class ServletContext {
 	private Map<String, String> servlet;
 	private Map<String, String> mapping;
 	public ServletContext() {
-		//ÎªÃ¿¸öservletÈ¡Ò»¸ö±ğÃû
+		//ä¸ºæ¯ä¸ªservletå–ä¸€ä¸ªåˆ«å
 		//login --> LoginServlet
 		servlet = new HashMap<String, String>();
 		//url-->login
