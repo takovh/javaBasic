@@ -14,9 +14,12 @@ public class Student extends Person{
 		this.name = name;
 	}
 	
-	public void print() {
-		System.out.println("stu.name = " + name);
-		System.out.println("headTeacher.name = " + headTeacher.name);
+	@Override
+	public String toString() {
+		return "Student{" +
+				"stu.name='" + name + '\'' +
+				", headTeacher.name='" + headTeacher.name + '\'' +
+				'}';
 	}
    
 }

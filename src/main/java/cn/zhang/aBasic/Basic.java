@@ -26,12 +26,32 @@ public class Basic {
         System.out.println(y); //2
         System.out.println(x); //3
     }
+    public void testPlusPlus2(){
+        int i = 5;
+        int result = i++ + ++i + i*10;
+        System.out.println("result:" + result); //82
+        System.out.println("i:" + i); //7
+    }
 
+    public void testPlusEqual(){
+        int i = 5;
+        i += i + 5;
+        System.out.println(i);
+    }
 
 
     public void testFor(){
         for (int i = 0; i < 5; i++) {
         }
+    }
+
+    public void testTryCatch() throws Exception {
+        int j = 0;
+        for (int i = 0; i < 5; i++){
+            j = i;
+            if (i == 2) throw new Exception("eee");
+        }
+        System.out.println(j);
     }
 
     /**
@@ -57,6 +77,10 @@ public class Basic {
 
     public static void main(String[] args) {
         Basic b = new Basic();
-        b.testSwitch();
+        try {
+            b.testTryCatch();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

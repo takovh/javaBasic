@@ -1,7 +1,7 @@
 package cn.zhang.cArray.testString;
 
 public class TestString {
-	public static void main(String[] args) {
+	public void testMethods(){
 		String str = "ab cd";
 		System.out.println(str);
 
@@ -19,5 +19,23 @@ public class TestString {
 		System.out.println("Abcbd".endsWith("bd"));
 		System.out.println("Abcbd".toLowerCase());
 		System.out.println("Abcbd".toUpperCase());
+	}
+
+	public void testEqual(){
+		String s0 = "ss";
+		String s1 = new String("ss");
+		String s2 = new String("ss");
+		System.out.println(s0==s1);
+		System.out.println(s2==s1);
+	}
+
+	public int countSubStrings(String str, String sub){
+		int count = 0;
+		return count;
+	}
+
+	public static void main(String[] args) {
+		TestString test = new TestString();
+		test.testEqual();
 	}
 }

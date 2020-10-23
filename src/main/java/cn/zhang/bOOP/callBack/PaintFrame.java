@@ -1,5 +1,11 @@
 package cn.zhang.bOOP.callBack;
 
+/**
+ * Java中可以使用接口来实现类似函数指针的功能，完成回调
+ * 1、定义一个接口，在接口中声明要调用的方法
+ * 2、在需要回调的地方使用这个接口
+ * 3、将接口的实现传入
+ */
 public class PaintFrame {
 	public static void drawFrame(IMyFrame f) {
 		System.out.println("启动线程");
