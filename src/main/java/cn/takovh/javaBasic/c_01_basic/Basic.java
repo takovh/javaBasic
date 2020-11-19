@@ -2,13 +2,43 @@ package cn.takovh.javaBasic.c_01_basic;
 
 public class Basic {
 
+    public static void main(String[] args) throws Exception {
+        Basic b = new Basic();
+        b.testIf();
+    }
+
+    public void testIf(){
+        int i = 0;
+        int j = i=0;
+        if(false&&i++==0){
+
+        }
+        System.out.println(i);
+    }
+
     /**
-     * 编译错时因为语法不正确，
+     * final 变量不可重新复制，否则编译不通过
+     */
+    public void testFinal(){
+        final int i = 0;
+//        i += 1;
+    }
+
+    /**
+     * 编译错是因为语法不正确，
      * 报异常有时候是程序自身的错误
+     * java.lang.NullPointerException
+     *
+     * 基本数据类型不能赋null，未初始化不能使用，否则编译异常
+     *
      */
     public void testDef(){
-        Integer i = null;
-        System.out.println(i+1);
+//        int i;  System.out.println(i);//编译异常
+        Integer I1 = null;  System.out.println(I1);//打印null
+        Integer I2 = null;  System.out.println(I2+1);//空指针异常
+        int[] arr = new int[3]; System.out.println(arr[0] + "," + arr[1]);//0，0
+//        String s1;   s1+="0";  System.out.println(s1);//编译异常
+        String s2 = null;   s2+="0";  System.out.println(s2);//打印null0
     }
 
     /**
@@ -74,13 +104,4 @@ public class Basic {
         }
     }
 
-
-    public static void main(String[] args) {
-        Basic b = new Basic();
-        try {
-            b.testTryCatch();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

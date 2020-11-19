@@ -1,6 +1,22 @@
 package cn.takovh.javaBasic.c_03_array.testString;
 
 public class TestString {
+
+	public static void main(String[] args) {
+		TestString test = new TestString();
+		test.testEqual();
+	}
+
+	/**
+	 * 打印结果是：hello nullword
+	 * 原因是，s = s+"world"; 等价于 s = String.valueOf(s)+"world";
+	 */
+	public void testNull(){
+		String s = null;
+		s = "hello " + s + "world";
+		System.out.println(s);
+	}
+
 	public void testMethods(){
 		String str = "ab cd";
 		System.out.println(str);
@@ -34,8 +50,4 @@ public class TestString {
 		return count;
 	}
 
-	public static void main(String[] args) {
-		TestString test = new TestString();
-		test.testEqual();
-	}
 }
