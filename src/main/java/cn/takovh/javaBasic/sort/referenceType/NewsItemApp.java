@@ -1,4 +1,4 @@
-package cn.takovh.javaBasic.sort.referenceType;
+package cn.takovh.javaBasic.c_16_algorithm.sort.referenceType;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package cn.takovh.javaBasic.sort.innerType;
+package cn.takovh.javaBasic.c_16_algorithm.sort.innerType;
 
 import java.util.ArrayList;
 import java.util.Collections;

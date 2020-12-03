@@ -1,4 +1,4 @@
-package cn.takovh.javaBasic.sort.bubbleSort;
+package cn.takovh.javaBasic.c_16_algorithm.sort.bubbleSort;
 
 /*
  * 冒泡排序

@@ -1,4 +1,4 @@
-package cn.takovh.javaBasic.sort.util;
+package cn.takovh.javaBasic.c_16_algorithm.sort.util;
 
 import java.util.ArrayList;
 import java.util.Collections;
