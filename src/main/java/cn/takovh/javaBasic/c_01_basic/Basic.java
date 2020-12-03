@@ -4,8 +4,9 @@ public class Basic {
 
     public static void main(String[] args) throws Exception {
         Basic b = new Basic();
-        b.testIf();
+        b.testPlusPlus();
     }
+
 
     public void testIf(){
         int i = 0;
@@ -55,6 +56,11 @@ public class Basic {
         int y = 0 + x++;
         System.out.println(y); //2
         System.out.println(x); //3
+
+        int a = 1;
+        int b = 2;
+        int c = (a++) + (++b);
+        System.out.println("(a++) + (++b) = " + c);
     }
     public void testPlusPlus2(){
         int i = 5;
