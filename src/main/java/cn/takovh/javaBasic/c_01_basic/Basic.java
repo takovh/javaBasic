@@ -4,7 +4,7 @@ public class Basic {
 
     public static void main(String[] args) throws Exception {
         Basic b = new Basic();
-        b.testPlusPlus();
+        b.testIf();
     }
 
 
